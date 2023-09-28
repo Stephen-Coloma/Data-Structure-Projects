@@ -22,6 +22,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ *  Represents a GUI page for adding a new course, providing input fields
+ *  for course name and course ID, as well as options to confirm or cancel
+ *  the addition.
+ */
 public class AddCoursePage extends JFrame {
 
     // Declare GUI components and data structures
@@ -37,6 +42,13 @@ public class AddCoursePage extends JFrame {
     static Color royalBlue = new Color(17, 41, 107);
     static Color flashWhite = new Color(237, 237, 237);
     static Color polynesianBlue = new Color(0, 80, 157);
+
+    /**
+     * Constructs a new AddCoursePage with the given course list and list model.
+     *
+     * @param courseListModel List model of courses to be displayed and updated.
+     * @param courseList List of courses to which a new course may be added.
+     */
     public AddCoursePage(DefaultListModel<Course<Term<Topic>>> courseListModel, DoublyLinkedList<Course<Term<Topic>>> courseList) {
 
         setTitle("Add Course");
@@ -139,6 +151,11 @@ public class AddCoursePage extends JFrame {
 
     }
 
+    /**
+     * Applies a uniform design to the given button.
+     *
+     * @param button The button to be styled.
+     */
     private void buttonDesign(JButton button) {
         // Styling buttons similar to CourseListPage's buttonDesign method
         button.setFont(new Font("Roboto", Font.BOLD, 14));
@@ -150,6 +167,13 @@ public class AddCoursePage extends JFrame {
         button.setForeground(mustard);
 
         button.addMouseListener(new MouseAdapter() {
+
+            /**
+             * Invoked when the mouse cursor has been moved onto the button.
+             * Changes the button's appearance to give visual feedback to the user.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
@@ -161,6 +185,12 @@ public class AddCoursePage extends JFrame {
                 button.setForeground(flashWhite);
             }
 
+            /**
+             * Invoked when the mouse cursor has been moved out of the button.
+             * Reverts the button's appearance to its default state.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);

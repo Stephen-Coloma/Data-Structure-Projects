@@ -25,6 +25,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Represents a GUI page for adding a topic, providing functionality for
+ * specifying the module and task associated with the topic.
+ */
+
 public class AddTopicPage extends JFrame {
     // Declare GUI components and data structures
     private JLabel moduleLabel, taskLabel;
@@ -40,6 +45,12 @@ public class AddTopicPage extends JFrame {
     static Color flashWhite = new Color(237, 237, 237);
     static Color polynesianBlue = new Color(0, 80, 157);
 
+    /**
+     * Constructs a new AddTopicPage with the given term and topic list model.
+     *
+     * @param selectedTerm Term to which the new topic will be added.
+     * @param topicListModel List model that contains all topics.
+     */
     public AddTopicPage(Term<Topic> selectedTerm, DefaultListModel<Topic> topicListModel) {
         // Initialize data structures
         this.selectedTerm = selectedTerm;
@@ -129,6 +140,11 @@ public class AddTopicPage extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
+    /**
+     * Applies a uniform design to the given button.
+     *
+     * @param button The button to be styled.
+     */
     private void buttonDesign(RoundButton button) {
         button.setFont(new Font("Roboto", Font.BOLD, 14));
         button.setFocusPainted(false);
@@ -139,6 +155,12 @@ public class AddTopicPage extends JFrame {
         button.setForeground(mustard);
         button.addMouseListener(new MouseAdapter() {
 
+            /**
+             * Invoked when the mouse cursor has been moved onto the button.
+             * Changes the button's appearance to give visual feedback to the user.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
@@ -146,10 +168,16 @@ public class AddTopicPage extends JFrame {
                 button.setBorder(BorderFactory.createCompoundBorder(
                         BorderFactory.createLineBorder(royalBlue, 2, false),
                         BorderFactory.createEmptyBorder(8, 18, 8, 18)));
-                button.setBackground(royalBlue); // Set a new color when mouse hovers over the button
+                button.setBackground(royalBlue);
                 button.setForeground(flashWhite);
             } // end of mouseEntered method
 
+            /**
+             * Invoked when the mouse cursor has been moved out of the button.
+             * Reverts the button's appearance to its default state.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);
