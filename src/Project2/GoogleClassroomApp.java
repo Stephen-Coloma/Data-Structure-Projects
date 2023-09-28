@@ -8,13 +8,32 @@ import Project2.ReferenceClasses.Topic;
 
 import javax.swing.*;
 
+/**
+ * The GoogleClassroomApp class represents a simple simulation of Google Classroom application.
+ * The class provides functionality to populate and display courses.
+ * Each course consists of terms, and each term has multiple topics.
+ * The app uses a DoublyLinkedList to store the courses.
+ */
 public class GoogleClassroomApp extends JFrame {
+    /**
+     * A list to store courses.
+     */
     private DoublyLinkedList<Course<Term<Topic>>> courseList = new DoublyLinkedList<>();
+
+    /**
+     * The main method to launch the application.
+     *
+     * @param args Command line arguments (not used).
+     */
     public static void main(String[] args) {
         GoogleClassroomApp program = new GoogleClassroomApp();
         program.run();
     }
 
+    /**
+     * This method initializes and runs the app. It sets up the GUI,
+     * populates the courses, terms, and topics, and then displays them.
+     */
     private void run() {
         //initial population of Courses, Terms and Topics
         courseList = initialPopulation();
@@ -32,6 +51,12 @@ public class GoogleClassroomApp extends JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
+
+    /**
+     * Populates the application with initial data, including courses, terms, and topics.
+     *
+     * @return A DoublyLinkedList containing courses along with their respective terms and topics.
+     */
     private DoublyLinkedList<Course<Term<Topic>>> initialPopulation() {
         DoublyLinkedList<Course<Term<Topic>>> courseList = new DoublyLinkedList<>();
 
