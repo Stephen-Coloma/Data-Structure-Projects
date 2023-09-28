@@ -19,6 +19,9 @@ import Project2.ReferenceClasses.Topic;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ *  Represents a GUI page for displaying module and task details.
+ */
 public class ModulesTasksPage extends JPanel {
     // Declare GUI components in ModuleTaskPage class
     private JPanel panel;
@@ -28,6 +31,11 @@ public class ModulesTasksPage extends JPanel {
     static  Color mustard = new Color(255, 219, 87);
     static Color royalBlue = new Color(17, 41, 107);
 
+    /**
+     * Constructs a new ModulesTasksPage with the given topic.
+     *
+     * @param topic Topic whose module and task details are to be displayed.
+     */
     public ModulesTasksPage(Topic topic) {
         // Create a JPanel to contain the labels
         panel = new JPanel(new GridLayout(2, 1, 20, 5));

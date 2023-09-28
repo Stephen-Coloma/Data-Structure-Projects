@@ -25,6 +25,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ *  Represents a GUI page for listing topics within a term. Provides
+ *  functionalities for adding, deleting, and editing topics.
+ */
 public class TopicListPage extends JPanel {
     // Declare GUI components and data structures
     private JScrollPane scrollPane;
@@ -40,7 +44,10 @@ public class TopicListPage extends JPanel {
     static Color flashWhite = new Color(237, 237, 237);
     static Color polynesianBlue = new Color(0, 80, 157);
 
-    // Custom cell renderer to change the background color of the selected item
+    /**
+     * Custom cell renderer for changing the background color of selected items
+     * in the course list.
+     */
     class CustomListCellRenderer extends DefaultListCellRenderer {
         @Override
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
@@ -54,6 +61,12 @@ public class TopicListPage extends JPanel {
         }
     }
 
+
+    /**
+     * Constructs a new TopicListPage displaying topics for the given term.
+     *
+     * @param term The term whose topics are to be displayed.
+     */
     public TopicListPage(Term<Topic> term) {
         // Construct components
         topicsLabel = new JLabel("TOPICS FOR " + term.getTermName().toUpperCase());
@@ -216,7 +229,11 @@ public class TopicListPage extends JPanel {
         });
     }
 
-    // Open a new page for a selected topic
+    /**
+     * Opens the ModulesTasksPage for the given topic.
+     *
+     * @param topic The topic for which the ModulesTasksPage should be opened.
+     */
     private void openModulesTasksPage(Topic topic) {
         JFrame frame = new JFrame("Modules and Tasks");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -241,6 +258,11 @@ public class TopicListPage extends JPanel {
         });
     } // end of openModulesTasksPage method
 
+    /**
+     * Applies a uniform design to the given button.
+     *
+     * @param button The button to be styled.
+     */
     private void buttonDesign(RoundButton button) {
         button.setFont(new Font("Roboto", Font.BOLD, 14));
         button.setFocusPainted(false);
@@ -251,6 +273,12 @@ public class TopicListPage extends JPanel {
         button.setForeground(polynesianBlue);
         button.addMouseListener(new MouseAdapter() {
 
+            /**
+             * Invoked when the mouse cursor has been moved onto the button.
+             * Changes the button's appearance to give visual feedback to the user.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
@@ -262,6 +290,12 @@ public class TopicListPage extends JPanel {
                 button.setForeground(polynesianBlue);
             } // end of mouseEntered method
 
+            /**
+             * Invoked when the mouse cursor has been moved out of the button.
+             * Reverts the button's appearance to its default state.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);

@@ -19,6 +19,10 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Represents a GUI page for editing topics, allowing users to update
+ * details related to a selected topic.
+ */
 public class EditTopicPage extends JFrame{
     // Declare GUI components
     private JLabel moduleLabel, taskLabel;
@@ -32,6 +36,13 @@ public class EditTopicPage extends JFrame{
     static Color flashWhite = new Color(237, 237, 237);
     static Color polynesianBlue = new Color(0, 80, 157);
 
+    /**
+     * Constructs a new EditTopicPage for editing the details of a selected topic.
+     *
+     * @param topicDefaultListModel The default list model containing topics.
+     * @param selectedTopic The topic selected for editing.
+     * @param selectedIndex The index of the selected topic in the list model.
+     */
     public EditTopicPage(DefaultListModel<Topic> topicDefaultListModel, Topic selectedTopic, int selectedIndex) {
         // Initialize and populate input fields with topic details
         moduleField = new JTextField(selectedTopic.getModule());
@@ -104,34 +115,51 @@ public class EditTopicPage extends JFrame{
         setVisible(true);
     }
 
+    /**
+     * Applies a uniform design to the given button.
+     *
+     * @param button The button to be styled.
+     */
     private void buttonDesign(RoundButton button) {
         button.setFont(new Font("Roboto", Font.BOLD, 14));
         button.setFocusPainted(false);
         button.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(royalBlue, 2, false), // Set border color, thickness, and roundness
+                BorderFactory.createLineBorder(royalBlue, 2, false),
                 BorderFactory.createEmptyBorder(8, 18, 8, 18)));
         button.setBackground(polynesianBlue);
         button.setForeground(mustard);
         button.addMouseListener(new MouseAdapter() {
 
+            /**
+             * Invoked when the mouse cursor has been moved onto the button.
+             * Changes the button's appearance to give visual feedback to the user.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
                 button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 button.setBorder(BorderFactory.createCompoundBorder(
-                        BorderFactory.createLineBorder(royalBlue, 2, false), // Set border color, thickness, and roundness
+                        BorderFactory.createLineBorder(royalBlue, 2, false),
                         BorderFactory.createEmptyBorder(8, 18, 8, 18)));
                 button.setBackground(royalBlue); // Set a new color when mouse hovers over the button
                 button.setForeground(flashWhite);
             } // end of mouseEntered method
 
+            /**
+             * Invoked when the mouse cursor has been moved out of the button.
+             * Reverts the button's appearance to its default state.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);
                 button.setBorder(BorderFactory.createCompoundBorder(
-                        BorderFactory.createLineBorder(royalBlue, 2, false), // Set border color, thickness, and roundness
+                        BorderFactory.createLineBorder(royalBlue, 2, false),
                         BorderFactory.createEmptyBorder(8, 18, 8, 18)));
-                button.setBackground(polynesianBlue); // Set back the original color when the mouse leaves the button
+                button.setBackground(polynesianBlue);
                 button.setForeground(mustard);
             } // end of mouseExited method
         });

@@ -12,6 +12,7 @@
  *     SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  * </p>
  */
+
 package Project2.GUI.UtilGUI;
 
 import Project2.ReferenceClasses.Course;
@@ -23,6 +24,10 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ *  Represents a GUI page for editing course details such as course name and course ID.
+ *  Provides an interface for users to update the course information.
+ */
 public class EditCoursePage extends JFrame {
 
     // Declare GUI components
@@ -36,6 +41,13 @@ public class EditCoursePage extends JFrame {
     static Color flashWhite = new Color(237, 237, 237);
     static Color polynesianBlue = new Color(0, 80, 157);
 
+    /**
+     * Constructs a new EditCoursePage with the given course details for editing.
+     *
+     * @param courseDefaultListModel The list model containing courses.
+     * @param selectedCourse The course to be edited.
+     * @param selectedIndex The index of the selected course in the list model.
+     */
     public EditCoursePage(DefaultListModel<Course<Term<Topic>>> courseDefaultListModel, Course<Term<Topic>> selectedCourse, int selectedIndex) {
         setTitle("Edit Course");
         setLayout(new BorderLayout());
@@ -108,6 +120,11 @@ public class EditCoursePage extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Applies a uniform design to the given button.
+     *
+     * @param button The button to be styled.
+     */
     private void buttonDesign(RoundButton button) {
         button.setFont(new Font("Roboto", Font.BOLD, 14));
         button.setFocusPainted(false);
@@ -118,6 +135,12 @@ public class EditCoursePage extends JFrame {
         button.setForeground(mustard);
         button.setPreferredSize(new Dimension(100, button.getPreferredSize().height)); // set width to 100 and keep the original height
 
+        /**
+         * Invoked when the mouse cursor has been moved onto the button.
+         * Changes the button's appearance to give visual feedback to the user.
+         *
+         * @param e The MouseEvent containing information about the mouse action.
+         */
         button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -129,6 +152,12 @@ public class EditCoursePage extends JFrame {
                 button.setForeground(flashWhite);
             }
 
+            /**
+             * Invoked when the mouse cursor has been moved out of the button.
+             * Reverts the button's appearance to its default state.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 button.setBorder(BorderFactory.createCompoundBorder(

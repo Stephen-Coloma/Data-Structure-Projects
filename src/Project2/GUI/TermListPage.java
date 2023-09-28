@@ -25,6 +25,10 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Represents a GUI page for listing terms (Prelim, Midterm, Finals) of a given course.
+ * Provides functionality for navigating to individual terms' topic lists.
+ */
 public class TermListPage extends JPanel {
     // GUI components declarations
     private final JLabel termLabel;
@@ -41,6 +45,11 @@ public class TermListPage extends JPanel {
     static Color flashWhite = new Color(237, 237, 237);
     static Color polynesianBlue = new Color(0, 80, 157);
 
+    /**
+     * Constructs a new TermListPage for displaying terms associated with the given course.
+     *
+     * @param course The course for which terms will be displayed.
+     */
     public TermListPage(Course<Term<Topic>> course) {
 
         prelimButton = new RoundButton("");
@@ -129,6 +138,11 @@ public class TermListPage extends JPanel {
 
     }
 
+    /**
+     * Opens the TopicListPage for the given term.
+     *
+     * @param term The term for which the topic list page should be opened.
+     */
     private void openTopicsListPage(Term<Topic> term) {
         JFrame frame = new JFrame(term.getTermName());
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -139,6 +153,11 @@ public class TermListPage extends JPanel {
         frame.setVisible(true);
     } // end of openTopicsListPage method
 
+    /**
+     * Applies a uniform design to the given button.
+     *
+     * @param button The button to be styled.
+     */
     private void buttonDesign(RoundButton button) {
         button.setFont(new Font("Roboto", Font.BOLD, 14));
         button.setFocusPainted(false);
@@ -149,6 +168,12 @@ public class TermListPage extends JPanel {
         button.setForeground(polynesianBlue);
         button.addMouseListener(new MouseAdapter() {
 
+            /**
+             * Invoked when the mouse cursor has been moved onto the button.
+             * Changes the button's appearance to give visual feedback to the user.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
@@ -160,6 +185,12 @@ public class TermListPage extends JPanel {
                 button.setForeground(royalBlue);
             } // end of mouseEntered method
 
+            /**
+             * Invoked when the mouse cursor has been moved out of the button.
+             * Reverts the button's appearance to its default state.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);

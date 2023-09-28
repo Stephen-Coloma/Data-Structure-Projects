@@ -27,6 +27,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ * Represents a GUI page for listing courses, providing functionality for
+ *  adding, deleting, and editing courses.
+ */
 public class CourseListPage extends JPanel {
     private JLabel coursesLabel;
     private JTextField searchBar;
@@ -39,7 +43,10 @@ public class CourseListPage extends JPanel {
     static Color flashWhite = new Color(237, 237, 237);
     static Color polynesianBlue = new Color(0, 80, 157);
 
-    // Custom cell renderer to change the background color of the selected item
+    /**
+     * Custom cell renderer for changing the background color of selected items
+     * in the course list.
+     */
     class CustomListCellRenderer extends DefaultListCellRenderer {
         @Override
         public Component getListCellRendererComponent(JList list, Object value, int index,
@@ -54,6 +61,11 @@ public class CourseListPage extends JPanel {
         }
     }
 
+    /**
+     * Constructs a new CourseListPage with the given course list.
+     *
+     * @param courseList List of courses to be displayed.
+     */
     public CourseListPage(DoublyLinkedList<Course<Term<Topic>>> courseList) {
         //changing courseList type to what is compatible to JList
         DefaultListModel<Course<Term<Topic>>> courseListModel = new DefaultListModel<>();
@@ -219,7 +231,11 @@ public class CourseListPage extends JPanel {
         });
     }
 
-    // Open TermListPage for the given course
+    /**
+     * Opens the TermListPage for the given course.
+     *
+     * @param selectedCourse The course for which the term list page should be opened.
+     */
     private void openTermPage(Course<Term<Topic>> selectedCourse) {
         JFrame frame = new JFrame(selectedCourse.getCourseName());
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -230,6 +246,11 @@ public class CourseListPage extends JPanel {
         frame.setVisible(true);
     }
 
+    /**
+     * Applies a uniform design to the given button.
+     *
+     * @param button The button to be styled.
+     */
     private void buttonDesign(RoundButton button) {
         button.setFont(new Font("Roboto", Font.BOLD, 14));
         button.setFocusPainted(false);
@@ -240,6 +261,12 @@ public class CourseListPage extends JPanel {
         button.setForeground(polynesianBlue);
         button.addMouseListener(new MouseAdapter() {
 
+            /**
+             * Invoked when the mouse cursor has been moved onto the button.
+             * Changes the button's appearance to give visual feedback to the user.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
@@ -251,6 +278,12 @@ public class CourseListPage extends JPanel {
                 button.setForeground(polynesianBlue);
             } // end of mouseEntered method
 
+            /**
+             * Invoked when the mouse cursor has been moved out of the button.
+             * Reverts the button's appearance to its default state.
+             *
+             * @param e The MouseEvent containing information about the mouse action.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 super.mouseExited(e);
