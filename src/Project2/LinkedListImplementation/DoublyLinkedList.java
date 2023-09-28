@@ -1,52 +1,76 @@
+/**
+ Group MixAndMatch
+ Class Code and Course Number: 9342 - CS 211
+ Schedule: TF 9:00 - 10:30 AM
+ <p>
+ COLOMA, Stephen M.- 2232847@slu.edu.ph
+ GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
+ NONATO, Marius Glenn M.- 2232731@slu.edu.ph
+ RAGUDOS, Hannah T.- 2233361@slu.edu.ph
+ RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
+ ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
+ SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
+ </p>
+ */
 package Project2.LinkedListImplementation;
 
 import java.util.NoSuchElementException;
 
 /**
- *  DoublyLinkedList class is the template to make doubly-linked list. <br>
- *  Methods:
- *  1. getSize()
- *  2. isEmpty()
- *  3. search(E data)
- *  4. clear()
- *  5. setHead(E data)
- *  6. setTail(E data)
- *  7. insert(E data)
- *  8. insertAtHead(E data)
- *  9. insertAtTail(E data)
- *  10. insertAtIndex(int index, E data)
- *  11. getElement(int index)
- *  12. getElement(E data)
- *  13. delete()
- *  14. delete(E data)
- *  15. deleteAtHead()
- *  16.deleteAtTail()
- *  17. deleteAtIndex(int index)
- *  18. toString()
- *
- *  @author  Stephen Coloma
+ * DoublyLinkedList is a generic class that implements a doubly-linked list data structure.
+ * It allows insertion, deletion, and retrieval of elements from both ends and at specific indices.
+ * @param <E> The type of elements to be stored in the linked list.
  */
 public class DoublyLinkedList<E> implements LinkedListInterface<E> {
+    // Declare the instance variables for the DoublyLinkedList class
+    /**
+     * The size of the doubly-linked list, representing the number of elements it contains.
+     */
     private int size;
+
+    /**
+     * The reference to the first node (head) in the doubly-linked list.
+     */
     private Node<E> head;
+
+    /**
+     * The reference to the last node (tail) in the doubly-linked list.
+     */
     private Node<E> tail;
 
+
+    /**
+     * Constructs an empty DoublyLinkedList.
+     */
     public DoublyLinkedList(){
         this.head = null;
         this.tail = null;
         this.size = 0;
     }
 
+    /**
+     * Returns the current size of the linked list.
+     * @return The number of elements in the linked list.
+     */
     @Override
     public int getSize() {
         return size;
     }
 
+    /**
+     * Checks if the linked list is empty.
+     * @return True if the linked list is empty, false otherwise.
+     */
     @Override
     public boolean isEmpty() {
         return (head == null);
     }
 
+    /**
+     * Searches for an element in the linked list and returns its index.
+     * @param element The element to search for.
+     * @return The index of the first occurrence of the element, or -1 if not found.
+     */
     @Override
     public int search(String element) {
         Node<E> current = head;
@@ -63,6 +87,9 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         return -1; // Element not found
     }
 
+    /**
+     * Clears the linked list, removing all elements.
+     */
     @Override
     public void clear() {
         this.head = null;
@@ -70,6 +97,10 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         this.size = 0;
     }
 
+    /**
+     * Sets the head of the linked list to the given data element.
+     * @param data The data element to set as the new head.
+     */
     @Override
     public void setHead(E data) {
         Node<E> newNode = new Node<>(data);
@@ -88,6 +119,10 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         }
     }
 
+    /**
+     * Sets the tail of the linked list to the given data element.
+     * @param data The data element to set as the new tail.
+     */
     @Override
     public void setTail(E data) {
         Node<E> newNode = new Node<>(data);
@@ -106,6 +141,10 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         }
     }
 
+    /**
+     * Inserts a new element at the end (tail) of the linked list.
+     * @param data The data element to insert.
+     */
     @Override
     public void insert(E data){
         Node<E> newNode = new Node<>(data);
@@ -122,6 +161,10 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         size++;
     }
 
+    /**
+     * Inserts a new element at the head of the linked list.
+     * @param data The data element to insert.
+     */
     @Override
     public void insertAtHead(E data) {
         Node<E> newNode = new Node<>(data);
@@ -138,6 +181,10 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         size++;
     }
 
+    /**
+     * Inserts a new element at the tail of the linked list.
+     * @param data The data element to insert.
+     */
     @Override
     public void insertAtTail(E data) {
         Node<E> newNode = new Node<>(data);
@@ -154,6 +201,12 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         size++;
     }
 
+    /**
+     * Inserts a new element at the specified index in the linked list.
+     * @param index The index at which to insert the element.
+     * @param data  The data element to insert.
+     * @throws IndexOutOfBoundsException if the index is out of bounds.
+     */
     @Override
     public void insertAtIndex(int index, E data) {
         if (index < 0 || index > this.size) {
@@ -205,6 +258,12 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         size++;
     }
 
+    /**
+     * Retrieves the element at the specified index in the linked list.
+     * @param index The index of the element to retrieve.
+     * @return The data element at the specified index.
+     * @throws NoSuchElementException if the index is invalid.
+     */
     @Override
     public E getElement(int index) throws NoSuchElementException{
         if (index < 0 || index>=this.size){
@@ -230,6 +289,12 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         }
     }
 
+    /**
+     * Searches for an element in the linked list and returns it.
+     * @param data The data element to search for.
+     * @return The first occurrence of the element found in the list.
+     * @throws NoSuchElementException if the element is not found.
+     */
     @Override
     public E getElement(E data) throws NoSuchElementException{
         Node<E> current = head;
@@ -243,6 +308,10 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         throw new NoSuchElementException("No such element was found");
     }
 
+    /**
+     * Deletes the current element (tail) from the linked list.
+     * @throws NoSuchElementException if the list is empty.
+     */
     @Override
     public void delete() throws NoSuchElementException{
         if (tail == null){//0 elements
@@ -258,6 +327,11 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         }
     }
 
+    /**
+     * Deletes the first occurrence of the specified element from the linked list.
+     * @param data The data element to delete.
+     * @throws NoSuchElementException if the element is not found.
+     */
     @Override
     public void delete(E data) throws NoSuchElementException{
         if (this.isEmpty()){
@@ -300,7 +374,10 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         }
     }
 
-
+    /**
+     * Deletes the current element (head) from the linked list.
+     * @throws NoSuchElementException if the list is empty.
+     */
     @Override
     public void deleteAtHead() throws NoSuchElementException{
         if (head == null) {
@@ -316,6 +393,10 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         }
     }
 
+    /**
+     * Deletes the current element (tail) from the linked list.
+     * @throws NoSuchElementException if the list is empty.
+     */
     @Override
     public void deleteAtTail() {
         if (tail == null){//0 elements
@@ -331,6 +412,12 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         }
     }
 
+
+    /**
+     * Deletes the element at the specified index in the linked list.
+     * @param index The index of the element to delete.
+     * @throws IndexOutOfBoundsException if the index is out of bounds.
+     */
     @Override
     public void deleteAtIndex(int index) {
         if (index >= this.size || index < 0){
@@ -365,6 +452,11 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         }
     }
 
+
+    /**
+     * Returns a string representation of the linked list.
+     * @return A string representation of the linked list in the format: "null <--> ... <--> null".
+     */
     @Override
     public String toString(){
         if (head == null){
@@ -385,5 +477,3 @@ public class DoublyLinkedList<E> implements LinkedListInterface<E> {
         }
     }
 }
-
-
