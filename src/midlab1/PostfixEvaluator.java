@@ -31,7 +31,7 @@ public class PostfixEvaluator {
      * Evaluates the postfix expression and returns the result.
      * @return int: The result of the evaluated postfix expression.
      */
-    public int evaluate() {
+    public int evaluate(String expression) {
         // Initialize a stack to hold operands during evaluation
         MyStack<Integer> operandStack = new MyStack<>();
 
@@ -74,9 +74,5 @@ public class PostfixEvaluator {
         // 3. Return the result.
 
         return -1;
-    }
-
-    public static void main(String[] args) {
-
     }
 }
