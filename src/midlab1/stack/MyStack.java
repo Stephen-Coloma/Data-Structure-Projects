@@ -64,9 +64,29 @@ public class MyStack<T> implements MyStackInterface<T>{
         return count;
     }
 
-    /**Checks if the stack is empty.
+    /**
+     * Checks if the stack is empty.
      * @return true if stack is empty, otherwise false. */
     public boolean isEmpty(){
         return (count==0);
     }
+
+    /**
+     * Returns the String representation of the stack
+     * @return string representation of the stack
+     */
+    public String toString(){
+        StringBuilder result = new StringBuilder("[");
+        Node<T> current = top;
+        while(current!=null){
+            result.append(current.getDatum());
+            if(current.getNext()!=null){
+                result.append(",");
+            }
+            current = current.getNext();
+        }
+        result.append("]");
+        return result.toString();
+    }
+
 } // end of MyStack class

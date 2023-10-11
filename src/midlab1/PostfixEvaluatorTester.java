@@ -1,5 +1,7 @@
 package midlab1;
 
+import midlab1.stack.StackUnderflowException;
+
 import java.util.Scanner;
 
 public class PostfixEvaluatorTester {
@@ -16,6 +18,8 @@ public class PostfixEvaluatorTester {
             System.out.print("Result: " +result);
         } catch (ArithmeticException e) {
             System.out.println("Error: " + e.getMessage());
+        } catch(Exception e1){
+            e1.printStackTrace();
         }
     }
 }

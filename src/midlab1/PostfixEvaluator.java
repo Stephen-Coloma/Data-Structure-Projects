@@ -14,6 +14,7 @@
 package midlab1;
 
 import midlab1.stack.MyStack;
+import midlab1.stack.StackUnderflowException;
 
 public class PostfixEvaluator {
     private String expression;
@@ -31,33 +32,64 @@ public class PostfixEvaluator {
      * Evaluates the postfix expression and returns the result.
      * @return int: The result of the evaluated postfix expression.
      */
-    public int evaluate(String expression) {
+    //Algorithm
+    // 1. Iterate through each character in the expression.
+    // 2. If the character is a digit, push it onto the operandStack.
+    // 3. If the character is an operator (+, -, *, /, ^):
+    //    a. Pop the top two elements from the operandStack (ensure the stack is not empty).
+    //    b. Apply the operator and push the result back onto the operandStack.
+    // 4. The final result should be the only element left on the operandStack. Pop and return it.
+
+    public int evaluate(String postfixExpression) throws StackUnderflowException {
         // Initialize a stack to hold operands during evaluation
         MyStack<Integer> operandStack = new MyStack<>();
 
-        // TODO: Implement the evaluation algorithm
-        // 1. Iterate through each character in the expression.
-        // 2. If the character is a digit, push it onto the operandStack.
-        // 3. If the character is an operator (+, -, *, /, ^):
-        //    a. Pop the top two elements from the operandStack (ensure the stack is not empty).
-        //    b. Apply the operator and push the result back onto the operandStack.
-        // 4. The final result should be the only element left on the operandStack. Pop and return it.
+        String[] tokens = postfixExpression.split(" ");
+        int operandStackIndex = 0;
+        int value=0;
+        System.out.println("Postfix String -> " + postfixExpression);
+        System.out.println("Symbol\tOperand1\tOperand2\tValue\tOperandStack");
 
-        for(int i = 0; i < expression.length(); i++) {
-            char symbol = expression.charAt(i);
+        for (String token : tokens) {
+            char symbol = token.charAt(0);
+            if (Character.isDigit(symbol)) {            // If it's an operand, push it onto the stack
+                int operand = Integer.parseInt(token);
+                operandStack.push(operand);
+                operandStackIndex++;
 
-            if(Character.isDigit(symbol)) {
-                // TODO: Push the digit onto the operandStack
-            } else {
-                // TODO: Implement operator handling and perform the operation
-                // Hint: Use the performOperation() method to get the result of the operation
-                // and push the result back onto the operandStack.
+                System.out.printf("%s\t\t\t\t\t%30s%n", symbol, operandStack);          // Print the table row with the updated operand stack
             }
+            else if (isOperator(symbol)) {       // It's an operator
+                if (operandStackIndex < 2) {
+                    throw new IllegalArgumentException("Invalid expression");
+                }
+                int operand2 = operandStack.pop();
+                int operand1 = operandStack.pop();
+                value = performOperation(symbol, operand1, operand2);
+                operandStack.push(value);
+                operandStackIndex--;
+
+                System.out.printf("%s\t%10d\t%10d\t%10d\t%10s%n", symbol, operand1, operand2, value, operandStack);     // Print the table row with the updated operand stack
+            } else {
+                throw new IllegalArgumentException("Invalid symbol: " + symbol);
+            }
+        }//end of for
+
+        if (operandStackIndex != 1) {
+            throw new IllegalArgumentException("Invalid expression");
         }
 
-        // TODO: Return the final result from the operandStack.
-        // Ensure that the stack is not empty before popping the final result.
-        return -1;
+        return operandStack.pop();
+    }
+
+    /**
+     * Checks if the symbol of the string expression is an operator
+     * @param symbol : symbol from the string expression
+     * @return boolean: The result of determining whether the symbol is an operator or not.
+     */
+    private boolean isOperator(char symbol) {
+       //TODO: Implement the logic where this method checks if the symbol is equal to a certain operator
+        return false;
     }
 
     /**
@@ -68,7 +100,7 @@ public class PostfixEvaluator {
      * @return int: The result of applying the operator to op1 and op2.
      */
     private int performOperation(char operator, int op1, int op2) {
-        // TODO: Implement the operation logic
+        System.out.println("test");
         // 1. Use a switch statement or if-else to determine which operator was passed.
         // 2. Perform the corresponding operation on op1 and op2.
         // 3. Return the result.
