@@ -1,12 +1,6 @@
-/**
- TODO: Create an algorithm for the whole class
- */
-
 package midlab1;
 
 import midlab1.stack.MyStack;
-
-import javax.crypto.spec.PSource;
 
 //TODO: Create javadoc comments
 public class InfixConverter {
@@ -41,16 +35,20 @@ public class InfixConverter {
             while (index != infix.length()) {
                 char symbol = infix.charAt(index);
 
-                //checks for consecutive operators. But '(' and ')' are allowed
-                if (isOperator(symbol)) {
-                    if (isOperator(lastChar) && symbol != '(' && symbol != ')') {
-                        return "Cannot be converted to postfix: No two consecutive operators.";
-                    }
-                }
-
+                //checks for consecutive operands such as AB
                 if (isOperand(symbol)) {
+                    if (isOperand(lastChar)) {
+                        return "Cannot be converted to postfix: No two consecutive operands.";
+                    }
                     postfixExpression += symbol;
                 } else {
+                    //checks for consecutive operators. But '(' and ')' are allowed
+                    if (isOperator(symbol)) {
+                        if (isOperator(lastChar) && symbol != '(' && symbol != ')') {
+                            return "Cannot be converted to postfix: No two consecutive operators.";
+                        }
+                    }
+
                     while (!operatorStack.isEmpty() && precedence(operatorStack.peek(), symbol)) {
                         char topSymbol = operatorStack.pop();
                         postfixExpression += topSymbol;
@@ -121,7 +119,7 @@ public class InfixConverter {
     }
 
     public static void main(String[] args) {
-        InfixConverter hi = new InfixConverter("+(A+B/C*(D+E)-F)");
+        InfixConverter hi = new InfixConverter("(A+B/C*(D+E)-F)");
         System.out.println(hi.convertToPostfix());
     }
 }
