@@ -4,7 +4,7 @@
  * 1. Create an empty stack for storing operands.
  * 2. For each character in the postfix expression string:
  *    - If it's a digit, push it onto the stack.
- *    - If it's an operator (+, -, *, /, ^):
+ *    - If it's an operator (+, -, *, /, $):
  * 3. Pop the top two operands from the stack.
  * 4. Apply the operator and push the result back onto the stack.
  * 5. The final result should be the only element left on the stack.
@@ -24,8 +24,11 @@ public class PostfixEvaluator {
      * @param expression: A string that represents the postfix expression.
      */
     public PostfixEvaluator(String expression) {
-        // TODO: Validate the expression
-        this.expression = expression;
+        if (isValidPostfixExpression(expression)) {
+            this.expression = expression;
+        } else {
+            throw new IllegalArgumentException("Invalid postfix expression");
+        }
     }
 
     /**
@@ -46,30 +49,31 @@ public class PostfixEvaluator {
 
         String[] tokens = postfixExpression.split(" ");
         int operandStackIndex = 0;
-        int value=0;
+        int value = 0;
+
         System.out.println("Postfix String -> " + postfixExpression);
         System.out.println("Symbol\tOperand1\tOperand2\tValue\tOperandStack");
 
         for (String token : tokens) {
             char symbol = token.charAt(0);
-            if (Character.isDigit(symbol)) {            // If it's an operand, push it onto the stack
+            if (Character.isDigit(symbol)) { // If it's an operand, push it onto the stack
                 int operand = Integer.parseInt(token);
                 operandStack.push(operand);
                 operandStackIndex++;
 
-                System.out.printf("%s\t\t\t\t\t%30s%n", symbol, operandStack);          // Print the table row with the updated operand stack
-            }
-            else if (isOperator(symbol)) {       // It's an operator
-                if (operandStackIndex < 2) {
+                System.out.printf("%s\t\t\t\t\t%30s%n", symbol, operandStack); // Print the table row with the updated operand stack
+            } else if (isOperator(symbol)) { // It's an operator
+                if (operandStackIndex < 2)
                     throw new IllegalArgumentException("Invalid expression");
-                }
+
                 int operand2 = operandStack.pop();
                 int operand1 = operandStack.pop();
                 value = performOperation(symbol, operand1, operand2);
                 operandStack.push(value);
                 operandStackIndex--;
 
-                System.out.printf("%s\t%10d\t%10d\t%10d\t%10s%n", symbol, operand1, operand2, value, operandStack);     // Print the table row with the updated operand stack
+                // Print the table row with the updated operand stack
+                System.out.printf("%s\t%10d\t%10d\t%10d\t%10s%n", symbol, operand1, operand2, value, operandStack);
             } else {
                 throw new IllegalArgumentException("Invalid symbol: " + symbol);
             }
@@ -83,17 +87,65 @@ public class PostfixEvaluator {
     }
 
     /**
+     * Checks if a given postfix expression is valid.
+     * @param expression: The postfix expression to validate.
+     * @return true if the expression is valid, false otherwise.
+     */
+    private boolean isValidPostfixExpression(String expression) {
+        char[] tokens = expression.toCharArray(); // Convert the expression to a character array
+
+        int operandCount = 0;
+        int operatorCount = 0;
+
+        for (char token : tokens) {
+            if (Character.isWhitespace(token)) {
+                continue;
+            }
+            if (isOperand(String.valueOf(token))) {
+                operandCount++;
+            } else if (isOperator(token)) {
+                operatorCount++;
+            } else {
+                // Invalid character found
+                return false;
+            }
+        }
+
+        // For a valid postfix expression, the number of operands should be one more than the number of operators
+        return operandCount == operatorCount + 1;
+    }
+
+    /**
+     * Check if a token is a valid operand (integer in this case).
+     * @param token: The token to check.
+     * @return true if the token is a valid operand, false otherwise.
+     */
+    private boolean isOperand(String token) {
+        try {
+            Integer.parseInt(token);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
      * Checks if the symbol of the string expression is an operator
      * @param symbol : symbol from the string expression
      * @return boolean: The result of determining whether the symbol is an operator or not.
      */
     private boolean isOperator(char symbol) {
-        return symbol == '+' || symbol == '-' || symbol == '*' || symbol == '/' || symbol == '^';
+        char[] arr = { '+', '-', '*', '/', '$', '(', ')' };
+        for (char i : arr) {
+            if (symbol == i)
+                return true;
+        }
+        return false;
     }
 
     /**
      * Performs the operation and returns the result.
-     * @param operator: The operator to apply (one of +, -, *, /, ^).
+     * @param operator: The operator to apply (one of +, -, *, /, $).
      * @param op1: The first operand.
      * @param op2: The second operand.
      * @return int: The result of applying the operator to op1 and op2.
@@ -111,7 +163,7 @@ public class PostfixEvaluator {
                     throw new ArithmeticException("Cannot divide by zero");
                 }
                 return op1 / op2;
-            case '^':
+            case '$':
                 return (int) Math.pow(op1, op2);
             default:
                 throw new IllegalArgumentException("Invalid operator: " + operator);
