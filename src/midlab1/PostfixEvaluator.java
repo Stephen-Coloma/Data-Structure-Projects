@@ -24,7 +24,7 @@ public class PostfixEvaluator {
      * @param expression: A string that represents the postfix expression.
      */
     public PostfixEvaluator(String expression) {
-        // TODO: Validate the expression (optional but recommended)
+        // TODO: Validate the expression
         this.expression = expression;
     }
 
@@ -88,8 +88,7 @@ public class PostfixEvaluator {
      * @return boolean: The result of determining whether the symbol is an operator or not.
      */
     private boolean isOperator(char symbol) {
-       //TODO: Implement the logic where this method checks if the symbol is equal to a certain operator
-        return false;
+        return symbol == '+' || symbol == '-' || symbol == '*' || symbol == '/' || symbol == '^';
     }
 
     /**
