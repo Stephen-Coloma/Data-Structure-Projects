@@ -1,22 +1,31 @@
+/**
+ Group MixAndMatch
+ Class Code and Course Number: 9342 - CS 211
+ Schedule: TF 9:00 - 10:30 AM
+ <p>
+ COLOMA, Stephen M.- 2232847@slu.edu.ph
+ GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
+ NONATO, Marius Glenn M.- 2232731@slu.edu.ph
+ RAGUDOS, Hannah T.- 2233361@slu.edu.ph
+ RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
+ ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
+ SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
+ </p>
+ */
 package midlab1;
 
 import midlab1.stack.StackUnderflowException;
 import java.util.Scanner;
 
+/**
+ * The PostfixEvaluatorTester class is an executable class
+ * for evaluating postfix expressions using the PostfixEvaluator class.
+ */
 public class PostfixEvaluatorTester {
-
-    /*
-    Algorithm for Evaluating a Postfix Expression:
-
-    1. Create an empty stack for storing operands.
-    2. For each character in the postfix expression string:
-        - If it's a digit, push it onto the stack.
-        - If it's an operator (+, -, *, /, ^):
-            a. Pop the top two operands from the stack.
-            b. Apply the operator and push the result back onto the stack.
-    3. The final result should be the only element left on the stack.
-    4. Pop and return it as the evaluated result.
-    */
+    /**
+     * The main method of the program.
+     * @param args the command-line arguments.
+     */
     public static void main(String[] args) {
         PostfixEvaluator postfixEvaluator;
         Scanner scanner = new Scanner(System.in);
@@ -39,4 +48,4 @@ public class PostfixEvaluatorTester {
             e1.printStackTrace();
         }
     }
-}
+} // end of PostfixEvaluatorTester class
