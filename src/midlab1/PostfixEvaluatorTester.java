@@ -27,24 +27,37 @@ public class PostfixEvaluatorTester {
      * @param args the command-line arguments.
      */
     public static void main(String[] args) {
+        PostfixEvaluatorTester myProgram;
+        try {
+            myProgram = new PostfixEvaluatorTester();
+            myProgram.run();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        System.exit(0);
+    }
+
+    /**
+     * The run method runs the functionality of the program, which allows the user to input a
+     * postfix expression, evaluates it, and displays the result or error messages as appropriate.
+     */
+    public void run() {
         PostfixEvaluator postfixEvaluator;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter a postfix expression (operands and operators separated by space): ");
+        System.out.println("Please enter a postfix expression. Use spaces to separate operands and operators.");
+        System.out.print("Enter postfix expression: ");
         String postfixExpression = scanner.nextLine();
 
         try {
             postfixEvaluator = new PostfixEvaluator(postfixExpression);
             int result = postfixEvaluator.evaluate(postfixExpression);
             System.out.print("Result: " + result);
-        }
-        catch (ArithmeticException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-        catch (StackUnderflowException e) {
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Error: " + e.getMessage());
+        } catch (StackUnderflowException e) {
             System.out.println("Stack Underflow Error: " + e.getMessage());
-        }
-        catch (Exception e1) {
+        } catch (Exception e1) {
             e1.printStackTrace();
         }
     }
