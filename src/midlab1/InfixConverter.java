@@ -6,6 +6,8 @@ package midlab1;
 
 import midlab1.stack.MyStack;
 
+import javax.crypto.spec.PSource;
+
 //TODO: Create javadoc comments
 public class InfixConverter {
     private String infix;
@@ -23,41 +25,59 @@ public class InfixConverter {
     }
 
     public String convertToPostfix(){
-         infix = infix.replaceAll(" ", "");
-         int index = 0;
+        infix = infix.replaceAll(" ", "");
+        int index = 0;
 
-         String postfixExpression = "";
-         MyStack<Character> operatorStack = new MyStack<>();
+        String postfixExpression = "";
+        MyStack<Character> operatorStack = new MyStack<>();
+        char lastChar = ' '; // Initialize to a space to ensure no two consecutive operators at the beginning.
 
-         try {
-             while (index!=infix.length()){
-                 char symbol = infix.charAt(index);
-                 if (isOperand(symbol)){
-                     postfixExpression+=symbol;
-                 }else {
-                     while (!operatorStack.isEmpty() && precedence(operatorStack.peek(), symbol)){
-                         char topSymbol = operatorStack.pop();
-                         postfixExpression+=topSymbol;
-                     }
+        //check if the first and last char is an operator
+        if (isOperator(infix.charAt(0)) || isOperator(infix.charAt(infix.length()-1))){
+            return "Cannot be converted to postfix: No operator in first or last character.";
+        }
 
-                     if (operatorStack.isEmpty() || symbol  != ')'){
-                         operatorStack.push(symbol);
-                     }
-                     else{
-                         char topSymbol = operatorStack.pop();
-                     }
-                 }
-                 index++;
-             }
+        try {
+            while (index != infix.length()) {
+                char symbol = infix.charAt(index);
 
+                //checks for consecutive operators. But '(' and ')' are allowed
+                if (isOperator(symbol)) {
+                    if (isOperator(lastChar) && symbol != '(' && symbol != ')') {
+                        return "Cannot be converted to postfix: No two consecutive operators.";
+                    }
+                }
+
+                if (isOperand(symbol)) {
+                    postfixExpression += symbol;
+                } else {
+                    while (!operatorStack.isEmpty() && precedence(operatorStack.peek(), symbol)) {
+                        char topSymbol = operatorStack.pop();
+                        postfixExpression += topSymbol;
+                    }
+
+                    if (operatorStack.isEmpty() || symbol != ')') {
+                        operatorStack.push(symbol);
+                    } else {
+                        char topSymbol = operatorStack.pop();
+                    }
+                }
+                lastChar = symbol; // Update the last character seen.
+                index++;
+            }
              while (!operatorStack.isEmpty()) {
                  char topSymbol = operatorStack.pop();
+
+                 if (topSymbol=='('){
+                     return "Cannot be converted to postfix: extra \"(\".";
+                 }else if (topSymbol==')'){
+                     return "Cannot be converted to postfix: extra \")\".";
+                 }
                  postfixExpression+=topSymbol;
              }
          }catch (Exception e){
              e.printStackTrace();
          }
-
          return postfixExpression;
     }
 
@@ -91,13 +111,17 @@ public class InfixConverter {
         return true;
     }
 
+    private boolean isOperator(char symbol) {
+        return symbol == '^' || symbol == '*' || symbol == '/' || symbol == '+' || symbol == '-';
+    }
+
     @Override
     public String toString() {
         return infix;
     }
 
     public static void main(String[] args) {
-        InfixConverter hi = new InfixConverter("(A+B/C*(D+E)-F)");
+        InfixConverter hi = new InfixConverter("+(A+B/C*(D+E)-F)");
         System.out.println(hi.convertToPostfix());
     }
 }
