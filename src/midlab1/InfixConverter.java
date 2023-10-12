@@ -27,8 +27,6 @@ public class InfixConverter {
     }
 
     private static boolean precedence(char operator1, char operator2){
-        //TODO: create an implementation of the precedence method
-
         //if operator 1 is ^ it has a higher precedence than any of the operator (*/+-)
         if ((operator1 == '^') && (operator2 == '*' || operator2 == '/' || operator2 == '+' || operator2 == '-'))
             return true; // returns true if operator 1 has a higher precedence
@@ -39,8 +37,10 @@ public class InfixConverter {
             return true;
         else if ((operator1 == '+' || operator1 == '-') && (operator2 == '+' || operator2 == '-'))
             return true;
-        else
-        return false;
+        else if (operator2 == ')'){
+            return true;
+        }else
+            return false;
     }
 
     @Override
