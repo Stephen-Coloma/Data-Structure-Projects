@@ -99,11 +99,22 @@ public class PostfixEvaluator {
      * @return int: The result of applying the operator to op1 and op2.
      */
     private int performOperation(char operator, int op1, int op2) {
-        System.out.println("test");
-        // 1. Use a switch statement or if-else to determine which operator was passed.
-        // 2. Perform the corresponding operation on op1 and op2.
-        // 3. Return the result.
-
-        return -1;
+        switch (operator) {
+            case '+':
+                return op1 + op2;
+            case '-':
+                return op1 - op2;
+            case '*':
+                return op1 * op2;
+            case '/':
+                if (op2 == 0) {
+                    throw new ArithmeticException("Cannot divide by zero");
+                }
+                return op1 / op2;
+            case '^':
+                return (int) Math.pow(op1, op2);
+            default:
+                throw new IllegalArgumentException("Invalid operator: " + operator);
+        }
     }
 }
