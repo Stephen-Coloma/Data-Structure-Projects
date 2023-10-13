@@ -1,6 +1,6 @@
-package midlab1;
+package Midterms.Project1;
 
-import midlab1.stack.MyStack;
+import Midterms.Project1.stack.MyStack;
 
 //TODO: Create javadoc comments
 public class InfixConverter {

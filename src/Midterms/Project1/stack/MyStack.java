@@ -1,4 +1,4 @@
-package midlab1.stack;
+package Midterms.Project1.stack;
 
 public class MyStack<T> implements MyStackInterface<T>{
     private Node<T> top;

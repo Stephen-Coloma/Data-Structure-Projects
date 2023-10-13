@@ -1,12 +1,12 @@
-# CS211_9342_MixAndMatch
+# CS211_9342_midGroupB
 
-## Prelim Group Project
+## Group Project 
 
-A group programming project for the course CS 211 - DATA STRUCTURES (AY 2023-2024). Prelims.
+A group programming project for the course CS 211 - DATA STRUCTURES (AY 2023-2024).
 
 ### Authors and Acknowledgment
 
-**Group Mix and Match**
+**Group B**
 1. **COLOMA**, Stephen M.
 2. **GUZMAN**, Sanchie Earl M.
 3. **NONATO**, Marius Glenn M.
@@ -120,87 +120,6 @@ For instructions on working with the source code:
 **Note:** Avoid merging changes directly into the main branch. Always use the feature branch and merge request method.
 
 ---
-
-## Directory Structure
-
-```
-CS211_9342_MixAndMatch
-│
-├── .idea
-│   ├── (IDE-related configuration files)
-│
-├── out
-│   ├── (Compiled output files)
-│
-├── src
-│   │
-│   ├── Prelims.Project1
-│   │   ├── dataset
-│   │   │   ├── FiftyThousand
-│   │   │   │   ├── 50K-AverageCase.csv
-│   │   │   │   ├── 50K-BestCase.csv
-│   │   │   │   └── 50K-WorstCase.csv
-│   │   │   │
-│   │   │   ├── FiveHundredThousand
-│   │   │   │   ├── 500K-AverageCase.csv
-│   │   │   │   ├── 500K-BestCase.csv
-│   │   │   │   └── 500K-WorstCase.csv
-│   │   │   │
-│   │   │   ├── OneMillion
-│   │   │   │   ├── 1M-AverageCase.csv
-│   │   │   │   ├── 1M-BestCase.csv
-│   │   │   │   └── 1M-WorstCase.csv
-│   │   │   │
-│   │   │   ├── TenThousand
-│   │   │   │   ├── 10K-AverageCase.csv
-│   │   │   │   ├── 10K-BestCase.csv
-│   │   │   │   └── 10K-WorstCase.csv
-│   │   │   │
-│   │   │   └── TwoHundredThousand
-│   │   │       ├── 200K-AverageCase.csv
-│   │   │       ├── 200K-BestCase.csv
-│   │   │       └── 200K-WorstCase.csv
-│   │   │
-│   │   ├── util
-│   │   │   ├── CSVReader
-│   │   │   ├── DatasetGenerator
-│   │   │   └── FilePathReader
-│   │   │
-│   │   ├── BubbleSort
-│   │   ├── InsertionSort
-│   │   └── SelectionSort
-│   │
-│   ├── Prelims.Project2
-│   │   ├── GUI
-│   │   │   ├── CourseListPage
-│   │   │   ├── ModulesTasksPage
-│   │   │   ├── TermListPage
-│   │   │   ├── TopicListPage
-│   │   │   └── UtilGUI
-│   │   │       ├── AddCoursePage
-│   │   │       ├── AddTopicPage
-│   │   │       ├── EditCoursePage
-│   │   │       ├── EditTopicPage
-│   │   │       └── RoundButton
-│   │   │
-│   │   ├── LinkedListImplementation
-│   │   │   ├── DoublyLinkedList
-│   │   │   ├── LinkedListInterface
-│   │   │   └── Node
-│   │   │
-│   │   ├── ReferenceClasses
-│   │   │   ├── Course
-│   │   │   ├── Term
-│   │   │   └── Topic
-│   │   │
-│   │   └── GoogleClassroomApp
-│   │
-├── .gitignore
-│
-├── CS211_9342_MixAndMatch.iml
-│
-├── README.md
-
 
 Explore and learn from our comparative analysis and linked list implementation.
 

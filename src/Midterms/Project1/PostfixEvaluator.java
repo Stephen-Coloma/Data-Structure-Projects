@@ -12,10 +12,10 @@
  SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  </p>
  */
-package midlab1;
+package Midterms.Project1;
 
-import midlab1.stack.MyStack;
-import midlab1.stack.StackUnderflowException;
+import Midterms.Project1.stack.MyStack;
+import Midterms.Project1.stack.StackUnderflowException;
 
 /**
  * The PostfixEvaluator class represents a postfix expression evaluator that

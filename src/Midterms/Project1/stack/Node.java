@@ -1,4 +1,4 @@
-package midlab1.stack;
+package Midterms.Project1.stack;
 
 public class Node<T> {
     private T datum;

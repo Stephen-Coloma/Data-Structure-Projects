@@ -36,9 +36,9 @@ SAMPLE RUN:
     +	        49	         3	        52	      [52]
     Result: 52
  */
-package midlab1;
+package Midterms.Project1;
 
-import midlab1.stack.StackUnderflowException;
+import Midterms.Project1.stack.StackUnderflowException;
 import java.util.Scanner;
 
 /**

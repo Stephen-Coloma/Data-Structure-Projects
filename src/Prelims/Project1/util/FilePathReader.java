@@ -17,48 +17,48 @@ package Prelims.Project1.util;
 import java.util.ArrayList;
 
 /**
- * The FilePathReader class is a utility class that provides methods to create and manage file paths for different Prelims.Project1/dataset cases.
- * It allows the creation of an ArrayList containing file paths for various Prelims.Project1/dataset sizes and arrangement variants.
+ * The FilePathReader class is a utility class that provides methods to create and manage file paths for different Prelims/Project1/dataset cases.
+ * It allows the creation of an ArrayList containing file paths for various Prelims/Project1/dataset sizes and arrangement variants.
  */
 public class FilePathReader {
     /**
      * Creates a list of file paths for the datasets.
      * Adds these files to the ArrayList.
-     * @return the ArrayList of file paths corresponding to different Prelims.Project1/dataset cases
+     * @return the ArrayList of file paths corresponding to different Prelims/Project1/dataset cases
      */
     /*
         ALGORITHM:
-        1. Define file paths for various Prelims.Project1/dataset cases (10K, 50K, 200K, 500K, 1M)
+        1. Define file paths for various Prelims/Project1/dataset cases (10K, 50K, 200K, 500K, 1M)
            and arrangement variants (Best, Worst, Average).
         2. Create an ArrayList to store the file paths.
         3. Add all the defined file paths to the ArrayList.
-        4. Return the ArrayList containing the file paths for different Prelims.Project1/dataset cases.
+        4. Return the ArrayList containing the file paths for different Prelims/Project1/dataset cases.
     */    
     public static ArrayList<String> createFilePathInList() {
-        // File paths for 10K Prelims.Project1/dataset cases
-        String Best10K = "src/Prelims.Project1/dataset/TenThousand/10K-BestCase.csv";
-        String Worst10K = "src/Prelims.Project1/dataset/TenThousand/10K-WorstCase.csv";
-        String Avg10K = "src/Prelims.Project1/dataset/TenThousand/10K-AverageCase.csv";
+        // File paths for 10K Prelims/Project1/dataset cases
+        String Best10K = "src/Prelims/Project1/dataset/TenThousand/10K-BestCase.csv";
+        String Worst10K = "src/Prelims/Project1/dataset/TenThousand/10K-WorstCase.csv";
+        String Avg10K = "src/Prelims/Project1/dataset/TenThousand/10K-AverageCase.csv";
 
-        // File paths for 50K Prelims.Project1/dataset cases
-        String Best50K = "src/Prelims.Project1/dataset/FiftyThousand/50K-BestCase.csv";
-        String Worst50K = "src/Prelims.Project1/dataset/FiftyThousand/50K-WorstCase.csv";
-        String Avg50K = "src/Prelims.Project1/dataset/FiftyThousand/50K-AverageCase.csv";
+        // File paths for 50K Prelims/Project1/dataset cases
+        String Best50K = "src/Prelims/Project1/dataset/FiftyThousand/50K-BestCase.csv";
+        String Worst50K = "src/Prelims/Project1/dataset/FiftyThousand/50K-WorstCase.csv";
+        String Avg50K = "src/Prelims/Project1/dataset/FiftyThousand/50K-AverageCase.csv";
 
-        // File paths for 200K Prelims.Project1/dataset cases
-        String Best200K = "src/Prelims.Project1/dataset/TwoHundredThousand/200K-BestCase.csv";
-        String Worst200K = "src/Prelims.Project1/dataset/TwoHundredThousand/200K-WorstCase.csv";
-        String Avg200K = "src/Prelims.Project1/dataset/TwoHundredThousand/200K-AverageCase.csv";
+        // File paths for 200K Prelims/Project1/dataset cases
+        String Best200K = "src/Prelims/Project1/dataset/TwoHundredThousand/200K-BestCase.csv";
+        String Worst200K = "src/Prelims/Project1/dataset/TwoHundredThousand/200K-WorstCase.csv";
+        String Avg200K = "src/Prelims/Project1/dataset/TwoHundredThousand/200K-AverageCase.csv";
 
-        // File paths for 500K Prelims.Project1/dataset cases
-        String Best500K = "src/Prelims.Project1/dataset/FiveHundredThousand/500K-BestCase.csv";
-        String Worst500K = "src/Prelims.Project1/dataset/FiveHundredThousand/500K-WorstCase.csv";
-        String Avg500K = "src/Prelims.Project1/dataset/FiveHundredThousand/500K-AverageCase.csv";
+        // File paths for 500K Prelims/Project1/dataset cases
+        String Best500K = "src/Prelims/Project1/dataset/FiveHundredThousand/500K-BestCase.csv";
+        String Worst500K = "src/Prelims/Project1/dataset/FiveHundredThousand/500K-WorstCase.csv";
+        String Avg500K = "src/Prelims/Project1/dataset/FiveHundredThousand/500K-AverageCase.csv";
 
-        // File paths for 1M Prelims.Project1/dataset cases
-        String Best1M = "src/Prelims.Project1/dataset/OneMillion/1M-BestCase.csv";
-        String Worst1M = "src/Prelims.Project1/dataset/OneMillion/1M-WorstCase.csv";
-        String Avg1M = "src/Prelims.Project1/dataset/OneMillion/1M-AverageCase.csv";
+        // File paths for 1M Prelims/Project1/dataset cases
+        String Best1M = "src/Prelims/Project1/dataset/OneMillion/1M-BestCase.csv";
+        String Worst1M = "src/Prelims/Project1/dataset/OneMillion/1M-WorstCase.csv";
+        String Avg1M = "src/Prelims/Project1/dataset/OneMillion/1M-AverageCase.csv";
 
         // Create an ArrayList to store the file paths
         ArrayList<String> filePathsInList = new ArrayList<>();

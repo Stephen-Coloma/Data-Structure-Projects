@@ -1,4 +1,4 @@
-package midlab1.stack;
+package Midterms.Project1.stack;
 
 public interface MyStackInterface<T>{
     public void push(T item );
