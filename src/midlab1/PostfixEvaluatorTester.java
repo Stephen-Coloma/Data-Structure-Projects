@@ -69,7 +69,7 @@ public class PostfixEvaluatorTester {
         PostfixEvaluator postfixEvaluator;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please enter a postfix expression. Use spaces to separate operands and operators.");
+        System.out.println("Please enter a postfix expression.");
         System.out.print("Enter postfix expression: ");
         String postfixExpression = scanner.nextLine();
 
