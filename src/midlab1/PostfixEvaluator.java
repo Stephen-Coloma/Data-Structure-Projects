@@ -58,7 +58,7 @@ public class PostfixEvaluator {
         // Initialize a stack to hold operands during evaluation
         MyStack<Integer> operandStack = new MyStack<>();
 
-        String[] tokens = postfixExpression.split(" ");
+        String[] tokens = postfixExpression.split("");
         int operandStackIndex = 0;
         int value = 0;
 
