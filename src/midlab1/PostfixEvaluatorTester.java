@@ -12,6 +12,30 @@
  SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  </p>
  */
+
+/*
+SAMPLE RUN:
+    Please enter a postfix expression. Use spaces to separate operands and operators.
+    Enter postfix expression: 6 2 3 + - 3 8 2 / + * 2 $ 3 +
+    Postfix String -> 6 2 3 + - 3 8 2 / + * 2 $ 3 +
+    Symbol	Operand1	Operand2	Value	OperandStack
+    6					                           [6]
+    2					                         [2,6]
+    3					                       [3,2,6]
+    +	         2	         3	         5	     [5,6]
+    -	         6	         5	         1	       [1]
+    3					                         [3,1]
+    8					                       [8,3,1]
+    2					                     [2,8,3,1]
+    /	         8	         2	         4	   [4,3,1]
+    +	         3	         4	         7	     [7,1]
+    *	         1	         7	         7	       [7]
+    2					                         [2,7]
+    $	         7	         2	        49	      [49]
+    3					                        [3,49]
+    +	        49	         3	        52	      [52]
+    Result: 52
+ */
 package midlab1;
 
 import midlab1.stack.StackUnderflowException;
