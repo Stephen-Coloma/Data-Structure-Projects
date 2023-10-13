@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bb6cd34-ea78-4d70-b1a8-aa205fb4f259" name="Changes" comment="">
+    <list default="true" id="3bb6cd34-ea78-4d70-b1a8-aa205fb4f259" name="Changes" comment="Update tokenization and handling of operands in PostfixEvaluator&#10;&#10;- Modify tokenization to split by spaces for multi-digit operands and clearer separation of operators.&#10;- Ensure proper handling and error messaging for invalid symbols in the expression.&#10;- Add single-line comments to preserve inline documentation.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Prelims/Project1/util/FilePathReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prelims/Project1/util/FilePathReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midlab1/InfixConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/InfixConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midlab1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midlab1/PostfixEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midlab1/PostfixEvaluatorTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluatorTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midlab1/stack/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/stack/MyStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midlab1/stack/MyStackInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/stack/MyStackInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midlab1/stack/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/stack/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midlab1/stack/StackUnderflowException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/stack/StackUnderflowException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,16 +43,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "merge-second-repo",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;merge-second-repo&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.PostfixEvaluatorTester">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Prelims.Project1.BubbleSort" />
@@ -212,6 +205,7 @@
     <MESSAGE value="add: PostfixEvaluator class, methods todos and algorithm" />
     <MESSAGE value="Implemented the logic for isOperator method that checks if the symbol is equal to a certain operator" />
     <MESSAGE value="Implement performOperation method to handle basic arithmetic operations&#10;&#10;- Handle addition, subtraction, multiplication, division, and exponentiation.&#10;- Include checks to prevent division by zero and to manage invalid operators." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement performOperation method to handle basic arithmetic operations&#10;&#10;- Handle addition, subtraction, multiplication, division, and exponentiation.&#10;- Include checks to prevent division by zero and to manage invalid operators." />
+    <MESSAGE value="Update tokenization and handling of operands in PostfixEvaluator&#10;&#10;- Modify tokenization to split by spaces for multi-digit operands and clearer separation of operators.&#10;- Ensure proper handling and error messaging for invalid symbols in the expression.&#10;- Add single-line comments to preserve inline documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update tokenization and handling of operands in PostfixEvaluator&#10;&#10;- Modify tokenization to split by spaces for multi-digit operands and clearer separation of operators.&#10;- Ensure proper handling and error messaging for invalid symbols in the expression.&#10;- Add single-line comments to preserve inline documentation." />
   </component>
 </project>
