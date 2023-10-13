@@ -52,12 +52,14 @@ public class PostfixEvaluatorTester {
      */
     public static void main(String[] args) {
         PostfixEvaluatorTester myProgram;
+
         try {
             myProgram = new PostfixEvaluatorTester();
             myProgram.run();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        System.out.println("Thank you for using our program!");
         System.exit(0);
     }
 
@@ -68,21 +70,27 @@ public class PostfixEvaluatorTester {
     public void run() {
         PostfixEvaluator postfixEvaluator;
         Scanner scanner = new Scanner(System.in);
+        char ans;
+        do {
+            System.out.println("Please enter a postfix expression.");
+            System.out.print("Enter postfix expression: ");
+            String postfixExpression = scanner.nextLine();
 
-        System.out.println("Please enter a postfix expression.");
-        System.out.print("Enter postfix expression: ");
-        String postfixExpression = scanner.nextLine();
-
-        try {
-            postfixEvaluator = new PostfixEvaluator(postfixExpression);
-            int result = postfixEvaluator.evaluate(postfixExpression);
-            System.out.print("Result: " + result);
-        } catch (ArithmeticException e) {
-            System.out.println("Arithmetic Error: " + e.getMessage());
-        } catch (StackUnderflowException e) {
-            System.out.println("Stack Underflow Error: " + e.getMessage());
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
+            try {
+                postfixEvaluator = new PostfixEvaluator(postfixExpression);
+                int result = postfixEvaluator.evaluate(postfixExpression);
+                System.out.println("Result: " + result);
+            } catch (ArithmeticException e) {
+                System.out.println("Arithmetic Error: " + e.getMessage());
+            }catch(IllegalArgumentException e1){
+                System.out.println("Illegal Argument: " +e1.getMessage());
+            } catch(StackUnderflowException e2) {
+                System.out.println("Stack Underflow Error: " + e2.getMessage());
+            } catch (Exception e3) {
+                e3.printStackTrace();
+            }
+            System.out.print("Do you want to evaluate another expression? (Y/N): ");
+            ans = scanner.nextLine().charAt(0);
+        } while (Character.toUpperCase(ans) == 'Y');
     }
 } // end of PostfixEvaluatorTester class
