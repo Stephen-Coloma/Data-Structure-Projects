@@ -13,11 +13,11 @@
  * </p>
  */
 
-package Project2.GUI.UtilGUI;
+package Prelims.Project2.GUI.UtilGUI;
 
-import Project2.ReferenceClasses.Course;
-import Project2.ReferenceClasses.Term;
-import Project2.ReferenceClasses.Topic;
+import Prelims.Project2.ReferenceClasses.Course;
+import Prelims.Project2.ReferenceClasses.Term;
+import Prelims.Project2.ReferenceClasses.Topic;
 
 import javax.swing.*;
 import java.awt.*;
@@ -110,7 +110,7 @@ public class EditCoursePage extends JFrame {
         add(editCoursePanel, BorderLayout.NORTH);
         add(buttonPanel, BorderLayout.CENTER);
         // Add the icon to the JFrame
-        String iconPath = "src/Project2/GUI/Icons/COURSE ICON.png";
+        String iconPath = "src/Prelims.Project2/GUI/Icons/COURSE ICON.png";
         ImageIcon icon = new ImageIcon(iconPath);
         this.setIconImage(icon.getImage());
 

@@ -12,9 +12,9 @@
  SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  </p>
  */
-package Project2.ReferenceClasses;
+package Prelims.Project2.ReferenceClasses;
 
-import Project2.LinkedListImplementation.DoublyLinkedList;
+import Prelims.Project2.LinkedListImplementation.DoublyLinkedList;
 
 /**
  * The Course class represents a course with a name, an ID, and a list of terms (semesters).
@@ -91,9 +91,9 @@ public class Course<Term> extends DoublyLinkedList<Term> {
      * @param termName The name of the term to retrieve.
      * @return The term with the specified name, or null if not found.
      */
-    public Project2.ReferenceClasses.Term<Topic> getTerm(String termName) {
+    public Prelims.Project2.ReferenceClasses.Term<Topic> getTerm(String termName) {
         for (int i = 0; i < getSize(); i++) {
-            Project2.ReferenceClasses.Term<Topic> term = (Project2.ReferenceClasses.Term<Topic>) getElement(i);
+            Prelims.Project2.ReferenceClasses.Term<Topic> term = (Prelims.Project2.ReferenceClasses.Term<Topic>) getElement(i);
             if (term.getTermName().equals(termName)) {
                 return term;
             }

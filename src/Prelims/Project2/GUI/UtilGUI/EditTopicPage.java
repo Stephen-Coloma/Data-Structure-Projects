@@ -12,32 +12,23 @@
  *     SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  * </p>
  */
-
-package Project2.GUI.UtilGUI;
-
-import Project2.ReferenceClasses.Term;
-import Project2.ReferenceClasses.Topic;
-
+package Prelims.Project2.GUI.UtilGUI;
+import Prelims.Project2.ReferenceClasses.Topic;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * Represents a GUI page for adding a topic, providing functionality for
- * specifying the module and task associated with the topic.
+ * Represents a GUI page for editing topics, allowing users to update
+ * details related to a selected topic.
  */
-
-public class AddTopicPage extends JFrame {
-    // Declare GUI components and data structures
+public class EditTopicPage extends JFrame{
+    // Declare GUI components
     private JLabel moduleLabel, taskLabel;
     private JTextField moduleField, taskField;
-    private JPanel addTopicPanel, buttonPanel;
-    private Term<Topic> selectedTerm;
-    private DefaultListModel<Topic> topicListModel;
-    private RoundButton addButton, cancelButton;
+    private RoundButton updateButton;
+    private JPanel editTopicPanel, buttonPanel;
 
     //Declare static instances of the Color class representing colors used in the GUI of the program.
     static  Color mustard = new Color(255, 219, 87);
@@ -46,28 +37,20 @@ public class AddTopicPage extends JFrame {
     static Color polynesianBlue = new Color(0, 80, 157);
 
     /**
-     * Constructs a new AddTopicPage with the given term and topic list model.
+     * Constructs a new EditTopicPage for editing the details of a selected topic.
      *
-     * @param selectedTerm Term to which the new topic will be added.
-     * @param topicListModel List model that contains all topics.
+     * @param topicDefaultListModel The default list model containing topics.
+     * @param selectedTopic The topic selected for editing.
+     * @param selectedIndex The index of the selected topic in the list model.
      */
-    public AddTopicPage(Term<Topic> selectedTerm, DefaultListModel<Topic> topicListModel) {
-        // Initialize data structures
-        this.selectedTerm = selectedTerm;
-        this.topicListModel = topicListModel;
-
-        setTitle("Add Topic");
-        setLayout(new BorderLayout());
-
+    public EditTopicPage(DefaultListModel<Topic> topicDefaultListModel, Topic selectedTopic, int selectedIndex) {
+        // Initialize and populate input fields with topic details
+        moduleField = new JTextField(selectedTopic.getModule());
+        taskField = new JTextField(selectedTopic.getTask());
         // Initialize GUI components
         moduleLabel = new JLabel("Module: ");
         taskLabel = new JLabel("Task: ");
-        moduleField = new JTextField(30);
-        taskField = new JTextField(30);
-        addTopicPanel = new JPanel(new GridLayout(2, 2, 5, 10));
-        buttonPanel = new JPanel(new GridLayout(1, 2, 30, 5));
-        cancelButton = new RoundButton("Cancel");
-        addButton = new RoundButton("Add");
+        updateButton = new RoundButton("Update");
 
         // Modify the text field appearance
         int textFieldHeight = 40; // Adjust the height as needed
@@ -84,60 +67,52 @@ public class AddTopicPage extends JFrame {
         taskLabel.setFont(labelFont);
 
         // Modify the term buttons' appearance
-        buttonDesign(addButton);
-        buttonDesign(cancelButton);
+        buttonDesign(updateButton);
 
-        // Action listener for the Add button
-        addButton.addActionListener(e -> {
+        // Action listener for the Update Button
+        updateButton.addActionListener(e -> {
             try {
-                String module = moduleField.getText();
-                String task = taskField.getText();
+                // Update the topic details based on the input fields
+                selectedTopic.setModule(moduleField.getText());
+                selectedTopic.setTask(taskField.getText());
+                topicDefaultListModel.setElementAt(selectedTopic, selectedIndex);
 
-                if (!module.isEmpty() && !task.isEmpty()) {
-                    // Create a new topic and add it to the term and list model
-                    Topic newTopic = new Topic(module, task);
-                    selectedTerm.insert(newTopic);
-                    topicListModel.addElement(newTopic);
-                    dispose();
-                } else {
-                    // Display error message if input fields are empty
-                    JOptionPane.showMessageDialog(AddTopicPage.this, "Both Module and Task must be filled out.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
+                // Close the edit page after updating
+                dispose();
             } catch (Exception ex) {
-                // Generic error handling
-                JOptionPane.showMessageDialog(AddTopicPage.this, "An error occurred: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                // Handle unexpected exceptions and display an error message
+                JOptionPane.showMessageDialog(this, "An error occurred: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
 
-        // Action listener for the cancel button
-        cancelButton.addActionListener(e->{
-                dispose();
-        });
+        // Set up GUI layout for topic editing
+        editTopicPanel = new JPanel(new GridLayout(4, 1, 5, 5));
+        editTopicPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        editTopicPanel.add(moduleLabel);
+        editTopicPanel.add(moduleField);
+        editTopicPanel.add(taskLabel);
+        editTopicPanel.add(taskField);
+        editTopicPanel.setBackground(mustard);
 
-        // Set up GUI layout
-        addTopicPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        addTopicPanel.add(moduleLabel);
-        addTopicPanel.add(moduleField);
-        addTopicPanel.add(taskLabel);
-        addTopicPanel.add(taskField);
-        addTopicPanel.setBackground(mustard);
-
-        buttonPanel.setBorder(BorderFactory.createEmptyBorder(5, 30, 10, 30));
-        buttonPanel.add(addButton);
-        buttonPanel.add(cancelButton);
+        buttonPanel = new JPanel(new GridLayout(1, 1, 5, 5));
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(5, 100, 10, 100));
+        buttonPanel.add(updateButton);
         buttonPanel.setBackground(mustard);
 
-        add(addTopicPanel, BorderLayout.NORTH);
+        add(editTopicPanel, BorderLayout.NORTH);
         add(buttonPanel, BorderLayout.CENTER);
+
         // Add the icon to the JFrame
-        String iconPath = "src/Project2/GUI/Icons/COURSE ICON.png";
+        String iconPath = "src/Prelims.Project2/GUI/Icons/COURSE ICON.png";
         ImageIcon icon = new ImageIcon(iconPath);
         this.setIconImage(icon.getImage());
 
-        // Frame properties
-        setSize(470, 210);
-        setLocationRelativeTo(null);
+        // Frame Properties
+        setTitle("Edit Topic");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setSize(470, 300);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     /**
@@ -168,7 +143,7 @@ public class AddTopicPage extends JFrame {
                 button.setBorder(BorderFactory.createCompoundBorder(
                         BorderFactory.createLineBorder(royalBlue, 2, false),
                         BorderFactory.createEmptyBorder(8, 18, 8, 18)));
-                button.setBackground(royalBlue);
+                button.setBackground(royalBlue); // Set a new color when mouse hovers over the button
                 button.setForeground(flashWhite);
             } // end of mouseEntered method
 
@@ -190,4 +165,4 @@ public class AddTopicPage extends JFrame {
         });
     } // end of buttonDesign method
 
-} // end of AddTopicPage class
+} // end of EditTopicPage class

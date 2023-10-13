@@ -13,7 +13,7 @@
  * </p>
  */
 
-package Project2.GUI.UtilGUI;
+package Prelims.Project2.GUI.UtilGUI;
 
 import javax.swing.*;
 import java.awt.*;

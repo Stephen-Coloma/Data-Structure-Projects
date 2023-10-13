@@ -12,7 +12,7 @@
  SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  </p>
  */
-package Project2.LinkedListImplementation;
+package Prelims.Project2.LinkedListImplementation;
 
 /**
  * Node is a generic class representing a node in a doubly-linked list.

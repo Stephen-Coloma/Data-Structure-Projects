@@ -13,15 +13,15 @@
  * </p>
  */
 
-package Project2.GUI;
+package Prelims.Project2.GUI;
 
-import Project2.GUI.UtilGUI.AddCoursePage;
-import Project2.GUI.UtilGUI.EditCoursePage;
-import Project2.GUI.UtilGUI.RoundButton;
-import Project2.LinkedListImplementation.DoublyLinkedList;
-import Project2.ReferenceClasses.Course;
-import Project2.ReferenceClasses.Term;
-import Project2.ReferenceClasses.Topic;
+import Prelims.Project2.GUI.UtilGUI.AddCoursePage;
+import Prelims.Project2.GUI.UtilGUI.EditCoursePage;
+import Prelims.Project2.GUI.UtilGUI.RoundButton;
+import Prelims.Project2.LinkedListImplementation.DoublyLinkedList;
+import Prelims.Project2.ReferenceClasses.Course;
+import Prelims.Project2.ReferenceClasses.Term;
+import Prelims.Project2.ReferenceClasses.Topic;
 
 import java.awt.*;
 import java.awt.event.*;

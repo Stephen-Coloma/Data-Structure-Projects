@@ -13,9 +13,9 @@
  SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  </p>
  */
-package Project2.GUI;
+package Prelims.Project2.GUI;
 
-import Project2.ReferenceClasses.Topic;
+import Prelims.Project2.ReferenceClasses.Topic;
 import java.awt.*;
 import javax.swing.*;
 

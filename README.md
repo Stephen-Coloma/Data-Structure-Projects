@@ -23,17 +23,17 @@ This project aims to perform a comparative analysis of three sorting algorithms:
 
 ### Sorting Util Classes
 
-- **Project1.BubbleSort.java**: Contains the implementation of the Bubble Sort algorithm.
+- **Prelims.Project1.BubbleSort.java**: Contains the implementation of the Bubble Sort algorithm.
 
-- **Project1.InsertionSort.java**: Holds the implementation of the Insertion Sort algorithm.
+- **Prelims.Project1.InsertionSort.java**: Holds the implementation of the Insertion Sort algorithm.
 
-- **Project1.SelectionSort.java**: Features the implementation of the Selection Sort algorithm.
+- **Prelims.Project1.SelectionSort.java**: Features the implementation of the Selection Sort algorithm.
 
 ### Technical Report, Data Files, and More
 
 For a report of our findings, methodology, and results, refer to our detailed [MixAndMatchPrelimGroupProjectOnAlgorithmAnalysis](https://docs.google.com/document/d/1gKtJAHLXlthI0EKCrLfHiYVjrzdE2HUzpNh-_AHTRSQ/edit).
 
-Data files for various sizes and scenarios can be found in the `Project1.dataset` directory.
+Data files for various sizes and scenarios can be found in the `Prelims.Project1.dataset` directory.
 
 ---
 
@@ -43,52 +43,52 @@ This section provides information about our second project, which utilizes linke
 
 ### GUI and Utility Classes
 
-- **Project2.GUI**: Describes the primary GUI components of our application.
+- **Prelims.Project2.GUI**: Describes the primary GUI components of our application.
 
-- **Project2.UtilGUI**: Contains utility GUI classes that support the main GUI.
+- **Prelims.Project2.UtilGUI**: Contains utility GUI classes that support the main GUI.
 
-- **Project2.LinkedListImplementation**: Provides the core linked list functionality for our system.
+- **Prelims.Project2.LinkedListImplementation**: Provides the core linked list functionality for our system.
 
 ### Sample Run
 
 1. On course list page
 
-![Alt Text](src/Project2/assets/README/CourseListPage.png)
+![Alt Text](src/Prelims/Project2/assets/README/CourseListPage.png)
 
 
 2. Adding course in course list
 
-![Alt Text](src/Project2/assets/README/AddCourseInList.png)
+![Alt Text](src/Prelims/Project2/assets/README/AddCourseInList.png)
 
 
 3. Editing course in course list
 
-![Alt Text](src/Project2/assets/README/EditCourseInList.png)
+![Alt Text](src/Prelims/Project2/assets/README/EditCourseInList.png)
 
 
 4. On term list page
 
-![Alt Text](src/Project2/assets/README/TermListPage.png)
+![Alt Text](src/Prelims/Project2/assets/README/TermListPage.png)
 
 
 5. On topic list page with selected term
 
-![Alt Text](src/Project2/assets/README/SelectedTermAndTopicListPage.png)
+![Alt Text](src/Prelims/Project2/assets/README/SelectedTermAndTopicListPage.png)
 
 
 6. Adding topic in topic list
 
-![Alt Text](src/Project2/assets/README/AddTopicInList.png)
+![Alt Text](src/Prelims/Project2/assets/README/AddTopicInList.png)
 
 
 7. Editing topic in topic list
 
-![Alt Text](src/Project2/assets/README/EditTopicInList.png)
+![Alt Text](src/Prelims/Project2/assets/README/EditTopicInList.png)
 
 
 8. On module and task page
 
-![Alt Text](src/Project2/assets/README/ModuleAndTaskPage.png)
+![Alt Text](src/Prelims/Project2/assets/README/ModuleAndTaskPage.png)
 
 ---
 
@@ -134,7 +134,7 @@ CS211_9342_MixAndMatch
 │
 ├── src
 │   │
-│   ├── Project1
+│   ├── Prelims.Project1
 │   │   ├── dataset
 │   │   │   ├── FiftyThousand
 │   │   │   │   ├── 50K-AverageCase.csv
@@ -170,7 +170,7 @@ CS211_9342_MixAndMatch
 │   │   ├── InsertionSort
 │   │   └── SelectionSort
 │   │
-│   ├── Project2
+│   ├── Prelims.Project2
 │   │   ├── GUI
 │   │   │   ├── CourseListPage
 │   │   │   ├── ModulesTasksPage

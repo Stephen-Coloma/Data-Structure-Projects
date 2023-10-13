@@ -12,7 +12,7 @@
  SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  </p>
  */
-package Project2.LinkedListImplementation;
+package Prelims.Project2.LinkedListImplementation;
 
 /**
  * The LinkedListInterface is an interface representing a generic linked list data structure.

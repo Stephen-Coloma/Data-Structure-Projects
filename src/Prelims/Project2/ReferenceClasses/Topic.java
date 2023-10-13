@@ -12,7 +12,7 @@
  SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  </p>
  */
-package Project2.ReferenceClasses;
+package Prelims.Project2.ReferenceClasses;
 
 /**
  * The Topic class represents a topic or module with a name and a task description.

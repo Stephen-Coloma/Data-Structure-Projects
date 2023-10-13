@@ -12,9 +12,9 @@
  SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
  </p>
  */
-package Project2.ReferenceClasses;
+package Prelims.Project2.ReferenceClasses;
 
-import Project2.LinkedListImplementation.DoublyLinkedList;
+import Prelims.Project2.LinkedListImplementation.DoublyLinkedList;
 
 /**
  * The Term class represents a term or semester with a name and a list of topics.

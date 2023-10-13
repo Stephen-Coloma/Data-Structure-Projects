@@ -1,10 +1,10 @@
-package Project2;
+package Prelims.Project2;
 
-import Project2.GUI.CourseListPage;
-import Project2.LinkedListImplementation.DoublyLinkedList;
-import Project2.ReferenceClasses.Course;
-import Project2.ReferenceClasses.Term;
-import Project2.ReferenceClasses.Topic;
+import Prelims.Project2.GUI.CourseListPage;
+import Prelims.Project2.LinkedListImplementation.DoublyLinkedList;
+import Prelims.Project2.ReferenceClasses.Course;
+import Prelims.Project2.ReferenceClasses.Term;
+import Prelims.Project2.ReferenceClasses.Topic;
 
 import javax.swing.*;
 
@@ -42,7 +42,7 @@ public class GoogleClassroomApp extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // Set the icon image for the taskbar
-        String iconPath = "src/Project2/GUI/Icons/COURSE ICON.png";
+        String iconPath = "src/Prelims.Project2/GUI/Icons/COURSE ICON.png";
         ImageIcon icon = new ImageIcon(iconPath);
         this.setIconImage(icon.getImage());
 
