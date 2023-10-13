@@ -46,9 +46,10 @@ public class InfixConverter {
     /**
      * Method that converts the infix expression into a postfix expression
      * @return the converted infix, which is the postfix expression
+     * @throws IllegalArgumentException when there are error characters in input infix
      */
     public String convertToPostfix() throws Exception{
-        infix = infix.replaceAll(" ", "");
+        infix = infix.replaceAll(" ", "").toUpperCase();
         int index = 0;
 
         String postfixExpression = "";
@@ -133,7 +134,7 @@ public class InfixConverter {
     }
 
     /**
-     * Method that checks if a character is an operand or not
+     * Private method that checks if a character is an operand or not
      * @param symbol The character to be checked
      * @return true if the character is an operand, and false if it is not
      */
@@ -152,10 +153,20 @@ public class InfixConverter {
         }
     }
 
+    /**
+     * Checks if the given character is an operator.
+     * @param symbol The character to be checked.
+     * @return true if the character is one of the following operators: '^', '*', '/', '+', or '-',
+     *         false otherwise.
+     */
     private boolean isOperator(char symbol) {
         return symbol == '^' || symbol == '*' || symbol == '/' || symbol == '+' || symbol == '-';
     }
 
+    /**
+     * Returns the string representation of the object.
+     * @return The infix expression represented as a string.
+     */
     @Override
     public String toString() {
         return infix;
