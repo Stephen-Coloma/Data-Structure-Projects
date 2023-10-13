@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bb6cd34-ea78-4d70-b1a8-aa205fb4f259" name="Changes" comment="Update tokenization and handling of operands in PostfixEvaluator&#10;&#10;- Modify tokenization to split by spaces for multi-digit operands and clearer separation of operators.&#10;- Ensure proper handling and error messaging for invalid symbols in the expression.&#10;- Add single-line comments to preserve inline documentation.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: fixed EditCoursePage's design">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluatorTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluatorTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
