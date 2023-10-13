@@ -112,7 +112,7 @@ public class PostfixEvaluator {
             char token = tokens[i-1];
             if(i%2==0){
                 if(isOperand(String.valueOf(token)) || isOperator(token)) {
-                    System.out.println("token: " + token);  //debugger to check which token is being pointed
+                    System.out.println("Invalid token: " + token);  // Checker on which token is invalid
                     return false;
                 }
             }else {
@@ -125,8 +125,6 @@ public class PostfixEvaluator {
                     operatorCount++;
                 }
             }
-            System.out.println("i: "+i); //debugger to check the value of i
-
 
 
         }
