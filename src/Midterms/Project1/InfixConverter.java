@@ -52,8 +52,6 @@ public class InfixConverter {
      * @return the converted infix, which is the postfix expression
      * @throws IllegalArgumentException when there are error characters in input infix
      */
-
-
     public String convertToPostfix() throws Exception {
         infix = infix.replaceAll(" ", "").toUpperCase();
         int index = 0;
@@ -134,6 +132,12 @@ public class InfixConverter {
         return postfixExpression;
     }
 
+    /**
+     * Method that displays a table of information for a given symbol, postfix expression, and operator stack.
+     * @param symbol The character to be displayed in the first column of the table.
+     * @param postfixExpression The expression to be displayed in the second column of the table.
+     * @param operatorStack The operators to be displayed in the third column of the table.
+     */
     private void displayTable(String symbol, String postfixExpression, String operatorStack) {
         StringBuilder reversedOperatorStack = new StringBuilder(operatorStack);
         reversedOperatorStack.reverse();
@@ -142,7 +146,6 @@ public class InfixConverter {
 
 
         System.out.printf("%-16s%-25s%-16s%n", symbol, postfixExpression, operatorStack);
-
     }
 
     /**
