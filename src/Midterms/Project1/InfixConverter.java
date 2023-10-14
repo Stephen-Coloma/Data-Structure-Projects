@@ -116,7 +116,15 @@ public class InfixConverter {
     }
 
     public void displayTable(String symbol, String postfixExpression, String operatorStack) {
+
+        StringBuilder reversedOperatorStack = new StringBuilder(operatorStack);
+        reversedOperatorStack.reverse();
+
+        operatorStack = reversedOperatorStack.toString().replace("[", "").replace("]", "");
+
+
         System.out.printf("%-16s%-25s%-16s%n", symbol, postfixExpression, operatorStack);
+
     }
     /**
      * Method that checks if the precedence of operator1 is higher than operator2
