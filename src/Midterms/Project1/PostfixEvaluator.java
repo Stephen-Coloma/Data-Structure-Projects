@@ -40,9 +40,17 @@ public class PostfixEvaluator {
     }
 
     /**
-     * Evaluates the postfix expression and returns the result.
-     * @return int the result of the evaluated postfix expression.
+     * Evaluates a postfix expression and returns the result.
+     * This method also prints a detailed table of the evaluation process,
+     * including the current symbol, operands, result of operation, and
+     * the state of the operand stack at each step.
+     *
+     * @param postfixExpression The string of the postfix expression to be evaluated.
+     * @return int The result of the evaluated postfix expression.
+     * @throws StackUnderflowException if the stack underflows (i.e., an operator is found
+     *         without enough operands in the stack).
      */
+
     /*
         Algorithm:
         1. Create an empty stack for storing operands.
@@ -54,47 +62,49 @@ public class PostfixEvaluator {
         3. The final result should be the only element left on the stack.
         4. Pop and return it as the evaluated result.
     */
-    public int evaluate(String postfixExpression) throws StackUnderflowException {
-        // Initialize a stack to hold operands during evaluation
-        MyStack<Integer> operandStack = new MyStack<>();
-        String[] tokens = postfixExpression.split(" "); // Split by spaces
 
-        int operandStackIndex = 0;
-        int value = 0;
+    public int evaluate(String postfixExpression) throws StackUnderflowException {
+        MyStack<Integer> operandStack = new MyStack<>();
+        String[] tokens = postfixExpression.split(" ");
 
         System.out.println("Postfix String -> " + postfixExpression);
-        System.out.println("Symbol\tOperand1\tOperand2\tValue\tOperandStack");
+        System.out.println("+--------+----------+----------+-------+-----------------+");
+        System.out.println("| Symbol | Operand1 | Operand2 | Value | OperandStack    |");
+        System.out.println("+--------+----------+----------+-------+-----------------+");
 
         for (String token : tokens) {
             char symbol = token.charAt(0);
-                if (Character.isDigit(symbol)) { // If it's an operand, push it onto the stack
-                    int operand = Integer.parseInt(String.valueOf(symbol));
-                    operandStack.push(operand);
-                    operandStackIndex++;
 
-                    // Print the table row with the updated operand stack
-                    System.out.printf("%s\t\t\t\t\t%30s%n", symbol, operandStack);
-                } else if (isOperator(symbol)) { // It's an operator
-                    if (operandStackIndex < 2)
-                        throw new IllegalArgumentException("Invalid expression");
+            // If it's an operand, push it onto the stack and print the state.
+            if (Character.isDigit(symbol)) {
+                int operand = Integer.parseInt(token);
+                operandStack.push(operand);
+                System.out.printf("| %-6s |          |          |       | %-15s |\n", symbol, operandStack.toString());
+                System.out.println("+--------+----------+----------+-------+-----------------+");
+            }
+            // If it's an operator, pop the top two operands, perform the operation,
+            // push the result back onto the stack, and print the state.
+            else if (isOperator(symbol)) {
+                int operand2 = operandStack.pop();
+                int operand1 = operandStack.pop();
+                int value = performOperation(symbol, operand1, operand2);
+                operandStack.push(value);
+                System.out.printf("| %-6s | %-8d | %-8d | %-5d | %-15s |\n", symbol, operand1, operand2, value, operandStack.toString());
+                System.out.println("+--------+----------+----------+-------+-----------------+");
+            }
+            // If it's neither an operand nor an operator, throw an exception.
+            else {
+                throw new IllegalArgumentException("Invalid symbol: " + symbol);
+            }
+        }
 
-                    int operand2 = operandStack.pop();
-                    int operand1 = operandStack.pop();
-                    value = performOperation(symbol, operand1, operand2);
-                    operandStack.push(value);
-                    operandStackIndex--;
-
-                    // Print the table row with the updated operand stack
-                    System.out.printf("%s\t%10d\t%10d\t%10d\t%10s%n", symbol, operand1, operand2, value, operandStack);
-                } else {
-                    throw new IllegalArgumentException("Invalid symbol: " + symbol);
-                }
-        } // end of first for
-
-        if (operandStackIndex != 1) {
+        // If the stack does not contain exactly one operand (the final result),
+        // the expression was invalid.
+        if (operandStack.size() != 1) {
             throw new IllegalArgumentException("Invalid expression");
         }
 
+        // Pop and return the final result from the stack.
         return operandStack.pop();
     }
 
@@ -104,7 +114,7 @@ public class PostfixEvaluator {
      * @return true if the expression is valid, false otherwise.
      */
     private boolean isValidPostfixExpression(String expression) {
-        char[] tokens = expression.toCharArray(); // Convert the expression to a character array
+        char[] tokens = expression.toCharArray();
         int operandCount = 0;
         int operatorCount = 0;
 
@@ -112,7 +122,7 @@ public class PostfixEvaluator {
             char token = tokens[i-1];
             if(i%2==0){
                 if(isOperand(String.valueOf(token)) || isOperator(token)) {
-                    System.out.println("Invalid token: " + token);  // Checker on which token is invalid
+                    System.out.println("Invalid token: " + token);
                     return false;
                 }
             }else {

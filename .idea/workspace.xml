@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: fixed EditCoursePage's design">
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="Implement performOperation method to handle basic arithmetic operations&#10;&#10;- Handle addition, subtraction, multiplication, division, and exponentiation.&#10;- Include checks to prevent division by zero and to manage invalid operators.">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" afterDir="false" />
@@ -26,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="converter" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
