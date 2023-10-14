@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="docs: Add Javadoc comments to MyStackInterface&#10;&#10;- Provide descriptions for the interface and its methods to explain their intended functionalities.&#10;- Specify the @param and @throws annotations to clarify input and exception handling.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="docs: Add multiline comments to StackUnderflowException class&#10;&#10;- Provide a comment explaining the purpose and usage of the StackUnderflowException class.&#10;- Add a constructor comment detailing its purpose and parameter." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -211,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697293247416</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="docs: Add multiline comments to StackUnderflowException class&#10;&#10;- Provide a comment explaining the purpose and usage of the StackUnderflowException class.&#10;- Add a constructor comment detailing its purpose and parameter.">
+      <created>1697294338975</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697294338975</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +254,7 @@
     <MESSAGE value="feat: refactor PostfixEvaluatorTester for enhanced user interaction&#10;&#10;- Improve user prompts and feedback for clearer and friendlier interaction in `run` method.&#10;- Simplify exception handling for cleaner code structure and efficient error tracking.&#10;- Ensure the application loops until the user opts to exit, enhancing user experience.&#10;- Update class and method documentation to reflect changes and clarify usage." />
     <MESSAGE value="docs: Add Javadoc comments to MyStack class&#10;&#10;- Provide detailed documentation for the MyStack class and its methods.&#10;- Explain the purpose and usage of each method in the class." />
     <MESSAGE value="docs: Add Javadoc comments to MyStackInterface&#10;&#10;- Provide descriptions for the interface and its methods to explain their intended functionalities.&#10;- Specify the @param and @throws annotations to clarify input and exception handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: Add Javadoc comments to MyStackInterface&#10;&#10;- Provide descriptions for the interface and its methods to explain their intended functionalities.&#10;- Specify the @param and @throws annotations to clarify input and exception handling." />
+    <MESSAGE value="docs: Add multiline comments to StackUnderflowException class&#10;&#10;- Provide a comment explaining the purpose and usage of the StackUnderflowException class.&#10;- Add a constructor comment detailing its purpose and parameter." />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: Add multiline comments to StackUnderflowException class&#10;&#10;- Provide a comment explaining the purpose and usage of the StackUnderflowException class.&#10;- Add a constructor comment detailing its purpose and parameter." />
   </component>
 </project>
