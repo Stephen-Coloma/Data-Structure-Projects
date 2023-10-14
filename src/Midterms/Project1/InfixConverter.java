@@ -58,7 +58,8 @@ public class InfixConverter {
         MyStack<Character> operatorStack = new MyStack<>();
         char lastChar = ' '; // Initialize to a space to ensure no two consecutive operators at the beginning.
 
-        displayTable("Symbol","postfixExpression","operatorStack");
+        System.out.printf("%-16s%-25s%-16s%n", "Symbol", "postfixExpression", "operatorStack");
+//        displayTable("Symbol","postfixExpression","operatorStack");
 
         //check if the first and last char is an operator
         if (isOperator(infix.charAt(0)) || isOperator(infix.charAt(infix.length()-1))){
@@ -99,7 +100,7 @@ public class InfixConverter {
         }
 
         System.out.println();
-        System.out.print("Converted Infix Expression: ");
+        System.out.print("Equivalent Postfix Expression: ");
 
         //concatenating remaining operator in the operatorStack
         while (!operatorStack.isEmpty()) {
@@ -115,8 +116,7 @@ public class InfixConverter {
          return postfixExpression;
     }
 
-    public void displayTable(String symbol, String postfixExpression, String operatorStack) {
-
+    private void displayTable(String symbol, String postfixExpression, String operatorStack) {
         StringBuilder reversedOperatorStack = new StringBuilder(operatorStack);
         reversedOperatorStack.reverse();
 
