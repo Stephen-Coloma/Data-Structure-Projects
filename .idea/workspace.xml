@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="Implement performOperation method to handle basic arithmetic operations&#10;&#10;- Handle addition, subtraction, multiplication, division, and exponentiation.&#10;- Include checks to prevent division by zero and to manage invalid operators.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" afterDir="false" />
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: enhance output and documentation of PostfixEvaluator&#10;&#10;- Implement detailed tabular output for each step in the evaluation process of postfix expressions in `evaluate` method.&#10;- Add comprehensive multiline comments explaining the algorithm and functionality of the `evaluate` method.&#10;- Ensure alignment and formatting consistency in printed output tables.">
       <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluatorTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluatorTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697106863279</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: enhance output and documentation of PostfixEvaluator&#10;&#10;- Implement detailed tabular output for each step in the evaluation process of postfix expressions in `evaluate` method.&#10;- Add comprehensive multiline comments explaining the algorithm and functionality of the `evaluate` method.&#10;- Ensure alignment and formatting consistency in printed output tables.">
+      <created>1697291255717</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697291255717</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +210,7 @@
     <MESSAGE value="Implemented the logic for isOperator method that checks if the symbol is equal to a certain operator" />
     <MESSAGE value="Implement performOperation method to handle basic arithmetic operations&#10;&#10;- Handle addition, subtraction, multiplication, division, and exponentiation.&#10;- Include checks to prevent division by zero and to manage invalid operators." />
     <MESSAGE value="Update tokenization and handling of operands in PostfixEvaluator&#10;&#10;- Modify tokenization to split by spaces for multi-digit operands and clearer separation of operators.&#10;- Ensure proper handling and error messaging for invalid symbols in the expression.&#10;- Add single-line comments to preserve inline documentation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update tokenization and handling of operands in PostfixEvaluator&#10;&#10;- Modify tokenization to split by spaces for multi-digit operands and clearer separation of operators.&#10;- Ensure proper handling and error messaging for invalid symbols in the expression.&#10;- Add single-line comments to preserve inline documentation." />
+    <MESSAGE value="feat: enhance output and documentation of PostfixEvaluator&#10;&#10;- Implement detailed tabular output for each step in the evaluation process of postfix expressions in `evaluate` method.&#10;- Add comprehensive multiline comments explaining the algorithm and functionality of the `evaluate` method.&#10;- Ensure alignment and formatting consistency in printed output tables." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance output and documentation of PostfixEvaluator&#10;&#10;- Implement detailed tabular output for each step in the evaluation process of postfix expressions in `evaluate` method.&#10;- Add comprehensive multiline comments explaining the algorithm and functionality of the `evaluate` method.&#10;- Ensure alignment and formatting consistency in printed output tables." />
   </component>
 </project>
