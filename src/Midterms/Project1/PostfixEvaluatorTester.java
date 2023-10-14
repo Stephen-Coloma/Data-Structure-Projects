@@ -15,82 +15,168 @@
 
 /*
 SAMPLE RUN:
-    Please enter a postfix expression. Use spaces to separate operands and operators.
-    Enter postfix expression: 6 2 3 + - 3 8 2 / + * 2 $ 3 +
-    Postfix String -> 6 2 3 + - 3 8 2 / + * 2 $ 3 +
-    Symbol	Operand1	Operand2	Value	OperandStack
-    6					                           [6]
-    2					                         [2,6]
-    3					                       [3,2,6]
-    +	         2	         3	         5	     [5,6]
-    -	         6	         5	         1	       [1]
-    3					                         [3,1]
-    8					                       [8,3,1]
-    2					                     [2,8,3,1]
-    /	         8	         2	         4	   [4,3,1]
-    +	         3	         4	         7	     [7,1]
-    *	         1	         7	         7	       [7]
-    2					                         [2,7]
-    $	         7	         2	        49	      [49]
-    3					                        [3,49]
-    +	        49	         3	        52	      [52]
-    Result: 52
+    Please enter a postfix expression.
+Enter postfix expression: 6 2 3 + - 3 8 2 / + * 2 $ 3 +
+Postfix String -> 6 2 3 + - 3 8 2 / + * 2 $ 3 +
++--------+----------+----------+-------+-----------------+
+| Symbol | Operand1 | Operand2 | Value | OperandStack    |
++--------+----------+----------+-------+-----------------+
+| 6      |          |          |       | [6]             |
++--------+----------+----------+-------+-----------------+
+| 2      |          |          |       | [2,6]           |
++--------+----------+----------+-------+-----------------+
+| 3      |          |          |       | [3,2,6]         |
++--------+----------+----------+-------+-----------------+
+| +      | 2        | 3        | 5     | [5,6]           |
++--------+----------+----------+-------+-----------------+
+| -      | 6        | 5        | 1     | [1]             |
++--------+----------+----------+-------+-----------------+
+| 3      |          |          |       | [3,1]           |
++--------+----------+----------+-------+-----------------+
+| 8      |          |          |       | [8,3,1]         |
++--------+----------+----------+-------+-----------------+
+| 2      |          |          |       | [2,8,3,1]       |
++--------+----------+----------+-------+-----------------+
+| /      | 8        | 2        | 4     | [4,3,1]         |
++--------+----------+----------+-------+-----------------+
+| +      | 3        | 4        | 7     | [7,1]           |
++--------+----------+----------+-------+-----------------+
+| *      | 1        | 7        | 7     | [7]             |
++--------+----------+----------+-------+-----------------+
+| 2      |          |          |       | [2,7]           |
++--------+----------+----------+-------+-----------------+
+| $      | 7        | 2        | 49    | [49]            |
++--------+----------+----------+-------+-----------------+
+| 3      |          |          |       | [3,49]          |
++--------+----------+----------+-------+-----------------+
+| +      | 49       | 3        | 52    | [52]            |
++--------+----------+----------+-------+-----------------+
+Result: 52
+
+Do you want to evaluate another expression? (Y/N): Y
+
+Please enter a postfix expression.
+Enter postfix expression: 8 4 + 3 2 * +
+Postfix String -> 8 4 + 3 2 * +
++--------+----------+----------+-------+-----------------+
+| Symbol | Operand1 | Operand2 | Value | OperandStack    |
++--------+----------+----------+-------+-----------------+
+| 8      |          |          |       | [8]             |
++--------+----------+----------+-------+-----------------+
+| 4      |          |          |       | [4,8]           |
++--------+----------+----------+-------+-----------------+
+| +      | 8        | 4        | 12    | [12]            |
++--------+----------+----------+-------+-----------------+
+| 3      |          |          |       | [3,12]          |
++--------+----------+----------+-------+-----------------+
+| 2      |          |          |       | [2,3,12]        |
++--------+----------+----------+-------+-----------------+
+| *      | 3        | 2        | 6     | [6,12]          |
++--------+----------+----------+-------+-----------------+
+| +      | 12       | 6        | 18    | [18]            |
++--------+----------+----------+-------+-----------------+
+Result: 18
+
+Do you want to evaluate another expression? (Y/N): N
+
+Thank you for using our program!
  */
+
 package Midterms.Project1;
 
 import Midterms.Project1.stack.StackUnderflowException;
 import java.util.Scanner;
 
+
 /**
- * The PostfixEvaluatorTester class is an executable class
- * for evaluating postfix expressions using the PostfixEvaluator class.
+ * The PostfixEvaluatorTester class interacts with the user,
+ * prompting them to input postfix expressions and displays
+ * the evaluated result or relevant error messages.
  */
 public class PostfixEvaluatorTester {
-    /**
-     * The main method of the program.
-     * @param args the command-line arguments.
-     */
-    public static void main(String[] args) {
-        PostfixEvaluatorTester myProgram;
 
+    private static final String THANK_YOU_MESSAGE = "Thank you for using our program!";
+    private static final String ANOTHER_EXPRESSION_PROMPT = "Do you want to evaluate another expression? (Y/N): ";
+    private static final String POSTFIX_PROMPT = "Please enter a postfix expression.\nEnter postfix expression: ";
+
+    public static void main(String[] args) {
         try {
-            myProgram = new PostfixEvaluatorTester();
-            myProgram.run();
+            new PostfixEvaluatorTester().run();
         } catch (Exception ex) {
             ex.printStackTrace();
+            System.out.println("An unexpected error occurred. Please try again.");
+        } finally {
+            System.out.println(THANK_YOU_MESSAGE);
+            System.exit(0);
         }
-        System.out.println("Thank you for using our program!");
-        System.exit(0);
     }
 
     /**
-     * The run method runs the functionality of the program, which allows the user to input a
-     * postfix expression, evaluates it, and displays the result or error messages as appropriate.
+     * The run method manages the user interaction, looping until
+     * the user decides not to evaluate more expressions.
      */
     public void run() {
-        PostfixEvaluator postfixEvaluator;
         Scanner scanner = new Scanner(System.in);
-        char ans;
-        do {
-            System.out.println("Please enter a postfix expression.");
-            System.out.print("Enter postfix expression: ");
-            String postfixExpression = scanner.nextLine();
+        String ans = "";
 
+        while (!"N".equalsIgnoreCase(ans)) {
             try {
-                postfixEvaluator = new PostfixEvaluator(postfixExpression);
-                int result = postfixEvaluator.evaluate(postfixExpression);
-                System.out.println("Result: " + result);
-            } catch (ArithmeticException e) {
-                System.out.println("Arithmetic Error: " + e.getMessage());
-            }catch(IllegalArgumentException e1){
-                System.out.println("Illegal Argument: " +e1.getMessage());
-            } catch(StackUnderflowException e2) {
-                System.out.println("Stack Underflow Error: " + e2.getMessage());
-            } catch (Exception e3) {
-                e3.printStackTrace();
+                evaluateExpression(scanner);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("An unexpected error occurred while evaluating the expression.");
             }
-            System.out.print("Do you want to evaluate another expression? (Y/N): ");
-            ans = scanner.nextLine().charAt(0);
-        } while (Character.toUpperCase(ans) == 'Y');
+            ans = getYesOrNoAnswer(scanner, ANOTHER_EXPRESSION_PROMPT);
+            System.out.println();
+        }
+    }
+
+    /**
+     * The evaluateExpression method prompts the user for a postfix expression,
+     * utilizes PostfixEvaluator for evaluation, and displays the result or
+     * an error message. Additionally, it prints a formatted table as an example.
+     *
+     * @param scanner a Scanner object for user input.
+     */
+    private void evaluateExpression(Scanner scanner) {
+        System.out.print(POSTFIX_PROMPT);
+        String postfixExpression = scanner.nextLine();
+
+        try {
+            // Evaluate the expression
+            PostfixEvaluator postfixEvaluator = new PostfixEvaluator(postfixExpression);
+            int result = postfixEvaluator.evaluate(postfixExpression);
+            System.out.println("Result: " + result);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Error: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Illegal Argument: " + e.getMessage());
+        } catch (StackUnderflowException e) {
+            System.out.println("Stack Underflow Error: " + e.getMessage());
+        }
+        System.out.println();
+    }
+
+    /**
+     * The getYesOrNoAnswer method prompts the user with a specified message
+     * and ensures the input is either 'Y' or 'N'.
+     *
+     * @param scanner the Scanner object for accepting user input.
+     * @param message the message to display as the prompt.
+     * @return A String, which is either "Y" or "N".
+     */
+    private String getYesOrNoAnswer(Scanner scanner, String message) {
+        String ans;
+        while (true) {
+            System.out.print(message);
+            ans = scanner.nextLine().trim().toUpperCase();
+            if ("Y".equals(ans) || "N".equals(ans)) {
+                break;
+            } else {
+                System.out.println("Invalid input. Please enter 'Y' or 'N'.");
+            }
+        }
+        return ans;
     }
 } // end of PostfixEvaluatorTester class
