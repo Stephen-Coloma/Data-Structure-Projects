@@ -13,6 +13,33 @@
  </p>
  */
 
+/*SAMPLE RUN:
+Infix Expression: ((A-(B+C))*D)^(E+F)
+
+Symbol          postfixExpression        operatorStack
+(                                        (
+(                                        ((
+A               A                        ((
+-               A                        ((-
+(               A                        ((-(
+B               AB                       ((-(
++               AB                       ((-(+
+C               ABC                      ((-(+
+)               ABC+                     ((-
+)               ABC+-                    (
+*               ABC+-                    (*
+D               ABC+-D                   (*
+)               ABC+-D*
+^               ABC+-D*                  ^
+(               ABC+-D*                  ^(
+E               ABC+-D*E                 ^(
++               ABC+-D*E                 ^(+
+F               ABC+-D*EF                ^(+
+)               ABC+-D*EF+               ^
+
+Equivalent Postfix Expression: ABC+-D*EF+^
+
+Process finished with exit code 0*/
 package Midterms.Project1;
 
 import Midterms.Project1.stack.MyStack;
@@ -110,14 +137,6 @@ public class InfixConverter {
             index++;
         }
 
-        System.out.printf("%-16s%-25s%-16s%n", "Symbol", "postfixExpression", "operatorStack");
-        for (int i = 0; i < symbolList.size(); i++) {
-            displayTable(symbolList.get(i), postfixExpressionList.get(i), operatorStackList.get(i));
-        }
-
-        System.out.println();
-        System.out.print("Equivalent Postfix Expression: ");
-
         while (!operatorStack.isEmpty()) {
             char topSymbol = operatorStack.pop();
 
@@ -129,23 +148,31 @@ public class InfixConverter {
             postfixExpression += topSymbol;
         }
 
-        return postfixExpression;
+        System.out.printf("%-16s%-25s%-16s%n", "Symbol", "postfixExpression", "operatorStack");
+        displayTable(symbolList,postfixExpressionList,operatorStackList);
+        System.out.println();
+        return "Equivalent Postfix Expression: " + postfixExpression;
     }
 
     /**
      * Method that displays a table of information for a given symbol, postfix expression, and operator stack.
-     * @param symbol The character to be displayed in the first column of the table.
-     * @param postfixExpression The expression to be displayed in the second column of the table.
-     * @param operatorStack The operators to be displayed in the third column of the table.
+     * @param symbolList linked list that contains the symbols.
+     * @param postfixExpressionList linked list that contains the postfix string expression.
+     * @param operatorStackList linked list that contains the operator stack.
      */
-    private void displayTable(String symbol, String postfixExpression, String operatorStack) {
-        StringBuilder reversedOperatorStack = new StringBuilder(operatorStack);
-        reversedOperatorStack.reverse();
+    private void displayTable(LinkedList<String> symbolList, LinkedList<String> postfixExpressionList, LinkedList<String> operatorStackList) {
+        for (int i = 0; i < symbolList.size(); i++) {
+            String symbol = symbolList.get(i);
+            String postfixExpression = postfixExpressionList.get(i);
+            String operatorStack = operatorStackList.get(i);
 
-        operatorStack = reversedOperatorStack.toString().replace("[", "").replace("]", "");
+            StringBuilder reversedOperatorStack = new StringBuilder(operatorStack);
+            reversedOperatorStack.reverse();
 
+            operatorStack = reversedOperatorStack.toString().replace("[", "").replace("]", "");
 
-        System.out.printf("%-16s%-25s%-16s%n", symbol, postfixExpression, operatorStack);
+            System.out.printf("%-16s%-25s%-16s%n", symbol, postfixExpression, operatorStack);
+        }
     }
 
     /**
