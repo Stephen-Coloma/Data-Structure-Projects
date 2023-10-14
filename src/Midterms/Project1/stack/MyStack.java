@@ -1,86 +1,112 @@
+/**
+ Group MixAndMatch
+ Class Code and Course Number: 9342 - CS 211
+ Schedule: TF 9:00 - 10:30 AM
+ <p>
+ COLOMA, Stephen M.- 2232847@slu.edu.ph
+ GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
+ NONATO, Marius Glenn M.- 2232731@slu.edu.ph
+ RAGUDOS, Hannah T.- 2233361@slu.edu.ph
+ RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
+ ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
+ SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
+ </p>
+ */
+
 package Midterms.Project1.stack;
 
-public class MyStack<T> implements MyStackInterface<T>{
+/**
+ * MyStack is a generic stack implementation that provides
+ * fundamental stack operations such as push, pop, and peek.
+ *
+ * @param <T> the type of elements in this stack
+ */
+public class MyStack<T> implements MyStackInterface<T> {
     private Node<T> top;
     private int count;
 
-    /**Constructs new null Stack. Initialize the count to 0*/
+    /**
+     * Constructs a new, empty stack.
+     */
     public MyStack(){
-        top=null;
-        count=0;
+        top = null;
+        count = 0;
     }
 
-    /**Pushes/adds an element on top of the stack and updating the elements count.
-     * @param item item to be added on the stack.*/
-    public void push(T item ){
-        Node<T> newNode = new Node<T>(item, null);
+    /**
+     * Adds (pushes) an item onto the top of this stack and updates the element count.
+     *
+     * @param item the item to be added onto the top of this stack
+     */
+    public void push(T item) {
+        Node<T> newNode = new Node<>(item, null);
         if (isEmpty()) {
             top = newNode;
-        }
-
-        else {
+        } else {
             newNode.setNext(top);
             top = newNode;
         }
-        count +=1;
-        return;
+        count += 1;
     }
 
-    /**Pops/deletes an element on top of the stack and updating the elements count.
-     * @throws  StackUnderflowException when the stack is empty.
-     * @return element being popped out of the stack.*/
-    public T pop() throws StackUnderflowException{
-        T topElement=null;
-        if (isEmpty())
-            throw new StackUnderflowException("Stack is empty");
-        else {
-            topElement = top.getDatum();
-            if (count == 1) {
-                top = null;
-            } else {
-                top = top.getNext();
-            }
-            count -= 1;
-        }
+    /**
+     * Removes (pops) the item at the top of this stack, updates the element count, and returns the item.
+     *
+     * @return the item at the top of this stack
+     * @throws StackUnderflowException if this stack is empty
+     */
+    public T pop() throws StackUnderflowException {
+        if (isEmpty()) throw new StackUnderflowException("Stack is empty");
+
+        T topElement = top.getDatum();
+        top = (count == 1) ? null : top.getNext();
+        count -= 1;
         return topElement;
     }
 
-    /**Peeks/checks the element on top of the stack.
-     * @throws  StackUnderflowException when the stack is empty.
-     * @return top element of the stack.*/
+    /**
+     * Retrieves (peeks) the item at the top of this stack without removing it.
+     *
+     * @return the item at the top of this stack
+     * @throws StackUnderflowException if this stack is empty
+     */
     public T peek() throws StackUnderflowException {
-        T topElement=null;
-        if (isEmpty())
-            throw new StackUnderflowException("Stack is empty");
-        else {
-            topElement = top.getDatum();
-        }
-        return topElement;
+        if (isEmpty()) throw new StackUnderflowException("Stack is empty");
+        return top.getDatum();
     }
 
-    /**Returns the element count of the stack.
-     * @return the element count*/
-    public int size(){
+    /**
+     * Retrieves the number of elements in this stack.
+     *
+     * @return the number of elements in this stack
+     */
+    public int size() {
         return count;
     }
 
     /**
-     * Checks if the stack is empty.
-     * @return true if stack is empty, otherwise false. */
-    public boolean isEmpty(){
-        return (count==0);
+     * Checks if this stack is empty.
+     *
+     * @return {@code true} if this stack contains no items; {@code false} otherwise
+     */
+    public boolean isEmpty() {
+        return (count == 0);
     }
 
     /**
-     * Returns the String representation of the stack
-     * @return string representation of the stack
+     * Returns a string representation of this stack. The string representation consists
+     * of the stack's elements in order from top to bottom, enclosed in square brackets ("[]").
+     * Adjacent elements are separated by the characters ", " (comma and space).
+     *
+     * @return a string representation of this stack
      */
-    public String toString(){
+    @Override
+    public String toString() {
         StringBuilder result = new StringBuilder("[");
         Node<T> current = top;
-        while(current!=null){
+        while (current != null) {
             result.append(current.getDatum());
-            if(current.getNext()!=null){
+            if (current.getNext() != null) {
                 result.append(",");
             }
             current = current.getNext();
@@ -88,5 +114,4 @@ public class MyStack<T> implements MyStackInterface<T>{
         result.append("]");
         return result.toString();
     }
-
 } // end of MyStack class
