@@ -220,6 +220,10 @@
           <properties class="java.lang.Exception" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="Midterms.Project1.stack.StackUnderflowException" package="Midterms.Project1.stack" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

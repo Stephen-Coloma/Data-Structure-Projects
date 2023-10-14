@@ -18,6 +18,8 @@ package Midterms.Project1;
 import Midterms.Project1.stack.MyStack;
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.LinkedList;
+
 public class InfixConverter {
     private String infix;
 
@@ -50,7 +52,9 @@ public class InfixConverter {
      * @return the converted infix, which is the postfix expression
      * @throws IllegalArgumentException when there are error characters in input infix
      */
-    public String convertToPostfix() throws Exception{
+
+
+    public String convertToPostfix() throws Exception {
         infix = infix.replaceAll(" ", "").toUpperCase();
         int index = 0;
 
@@ -58,17 +62,22 @@ public class InfixConverter {
         MyStack<Character> operatorStack = new MyStack<>();
         char lastChar = ' '; // Initialize to a space to ensure no two consecutive operators at the beginning.
 
-        System.out.printf("%-16s%-25s%-16s%n", "Symbol", "postfixExpression", "operatorStack");
-//        displayTable("Symbol","postfixExpression","operatorStack");
+        // Check if the first and last char is an operator
+        if (isOperator(infix.charAt(0)) || isOperator(infix.charAt(infix.length() - 1))) {
+            throw new IllegalArgumentException("Cannot be converted to postfix: No operator in first or last character.");
+        }
 
-        //check if the first and last char is an operator
+        LinkedList<String> symbolList = new LinkedList<>();
+        LinkedList<String> postfixExpressionList = new LinkedList<>();
+        LinkedList<String> operatorStackList = new LinkedList<>();
+
         if (isOperator(infix.charAt(0)) || isOperator(infix.charAt(infix.length()-1))){
             throw new IllegalArgumentException("Cannot be converted to postfix: No operator in first or last character.");
         }
 
         while (index != infix.length()) {
             char symbol = infix.charAt(index);
-
+            String symbolStr = String.valueOf(symbol);
             //checks for consecutive operands such as AB
             if (isOperand(symbol)) {
                 if (isOperand(lastChar)) {
@@ -94,26 +103,35 @@ public class InfixConverter {
                     char topSymbol = operatorStack.pop();
                 }
             }
-            displayTable(String.valueOf(symbol), postfixExpression, operatorStack.toString().replace(",", ""));
-            lastChar = symbol;// Update the last character seen.
+
+            symbolList.add(symbolStr);
+            postfixExpressionList.add(postfixExpression);
+            operatorStackList.add(operatorStack.toString().replace(",", ""));
+
+            lastChar = symbol;
             index++;
+        }
+
+        System.out.printf("%-16s%-25s%-16s%n", "Symbol", "postfixExpression", "operatorStack");
+        for (int i = 0; i < symbolList.size(); i++) {
+            displayTable(symbolList.get(i), postfixExpressionList.get(i), operatorStackList.get(i));
         }
 
         System.out.println();
         System.out.print("Equivalent Postfix Expression: ");
 
-        //concatenating remaining operator in the operatorStack
         while (!operatorStack.isEmpty()) {
             char topSymbol = operatorStack.pop();
 
-            if (topSymbol=='('){
+            if (topSymbol == '(') {
                 throw new IllegalArgumentException("Cannot be converted to postfix: extra \"(\".");
-            }else if (topSymbol==')'){
+            } else if (topSymbol == ')') {
                 throw new IllegalArgumentException("Cannot be converted to postfix: extra \")\".");
             }
-            postfixExpression+=topSymbol;
+            postfixExpression += topSymbol;
         }
-         return postfixExpression;
+
+        return postfixExpression;
     }
 
     private void displayTable(String symbol, String postfixExpression, String operatorStack) {
@@ -126,6 +144,7 @@ public class InfixConverter {
         System.out.printf("%-16s%-25s%-16s%n", symbol, postfixExpression, operatorStack);
 
     }
+
     /**
      * Method that checks if the precedence of operator1 is higher than operator2
      * @param operator1 The first operator
