@@ -1,5 +1,5 @@
 /**
- Group MixAndMatch
+ Group B
  Class Code and Course Number: 9342 - CS 211
  Schedule: TF 9:00 - 10:30 AM
  <p>
@@ -13,40 +13,15 @@
  </p>
  */
 
-/*SAMPLE RUN:
-Infix Expression: ((A-(B+C))*D)^(E+F)
-
-Symbol          postfixExpression        operatorStack
-(                                        (
-(                                        ((
-A               A                        ((
--               A                        ((-
-(               A                        ((-(
-B               AB                       ((-(
-+               AB                       ((-(+
-C               ABC                      ((-(+
-)               ABC+                     ((-
-)               ABC+-                    (
-*               ABC+-                    (*
-D               ABC+-D                   (*
-)               ABC+-D*
-^               ABC+-D*                  ^
-(               ABC+-D*                  ^(
-E               ABC+-D*E                 ^(
-+               ABC+-D*E                 ^(+
-F               ABC+-D*EF                ^(+
-)               ABC+-D*EF+               ^
-
-Equivalent Postfix Expression: ABC+-D*EF+^
-
-Process finished with exit code 0*/
 package Midterms.Project1;
 
 import Midterms.Project1.stack.MyStack;
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.LinkedList;
+import java.util.stream.Collectors;
 
+/**
+ * The InfixConverter class represents is used to convert infix expressions to postfix expressions.
+ */
 public class InfixConverter {
     private String infix;
 
@@ -77,7 +52,7 @@ public class InfixConverter {
     /**
      * Method that converts the infix expression into a postfix expression
      * @return the converted infix, which is the postfix expression
-     * @throws IllegalArgumentException when there are error characters in input infix
+     * @throws Exception when there are error characters in input infix
      */
     public String convertToPostfix() throws Exception {
         infix = infix.replaceAll(" ", "").toUpperCase();
@@ -148,10 +123,16 @@ public class InfixConverter {
             postfixExpression += topSymbol;
         }
 
-        System.out.printf("%-16s%-25s%-16s%n", "Symbol", "postfixExpression", "operatorStack");
+        //displaying the table
         displayTable(symbolList,postfixExpressionList,operatorStackList);
-        System.out.println();
-        return "Equivalent Postfix Expression: " + postfixExpression;
+
+        //spacing out the postfix expression
+        String spacedExpression = postfixExpression
+                .chars()
+                .mapToObj(c -> (char) c)
+                .map(String::valueOf)
+                .collect(Collectors.joining(" "));
+        return "Equivalent Postfix Expression: " + spacedExpression;
     }
 
     /**
@@ -161,6 +142,10 @@ public class InfixConverter {
      * @param operatorStackList linked list that contains the operator stack.
      */
     private void displayTable(LinkedList<String> symbolList, LinkedList<String> postfixExpressionList, LinkedList<String> operatorStackList) {
+        System.out.println("+---------------+------------------------+---------------+");
+        System.out.printf("%-16s%-25s%-16s%n", "| Symbol ", "| postfixExpression ", "| operatorStack |");
+        System.out.println("+---------------+------------------------+---------------+");
+
         for (int i = 0; i < symbolList.size(); i++) {
             String symbol = symbolList.get(i);
             String postfixExpression = postfixExpressionList.get(i);
@@ -171,8 +156,9 @@ public class InfixConverter {
 
             operatorStack = reversedOperatorStack.toString().replace("[", "").replace("]", "");
 
-            System.out.printf("%-16s%-25s%-16s%n", symbol, postfixExpression, operatorStack);
+            System.out.printf("%-2s%-13s%-2s%-22s%-2s%-13s%s%n", "|  ", symbol, "|  ", postfixExpression, "|  ", operatorStack ,"|");
         }
+        System.out.println("+---------------+------------------------+---------------+");
     }
 
     /**
@@ -205,6 +191,7 @@ public class InfixConverter {
      * Private method that checks if a character is an operand or not
      * @param symbol The character to be checked
      * @return true if the character is an operand, and false if it is not
+     * @throws Exception when the symbol is invalid operand
      */
     private boolean isOperand(char symbol) throws Exception{
         char[] operators = {'^', '(', ')', '*', '/', '+', '-'};
@@ -238,15 +225,5 @@ public class InfixConverter {
     @Override
     public String toString() {
         return infix;
-    }
-
-    public static void main(String[] args) {
-        InfixConverter hi = new InfixConverter("((A-(B+C))*D)^(E+F)");
-        try {
-            System.out.println("Infix Expression: " + hi + "\n");
-            System.out.println(hi.convertToPostfix());
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 }

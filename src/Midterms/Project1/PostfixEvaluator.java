@@ -1,5 +1,5 @@
 /**
- Group MixAndMatch
+ Group B
  Class Code and Course Number: 9342 - CS 211
  Schedule: TF 9:00 - 10:30 AM
  <p>
@@ -25,7 +25,7 @@ public class PostfixEvaluator {
     /**
      * The postfix expression to be evaluated.
      */
-    private String expression;
+    private String postfixExpression;
 
     /**
      * Constructor to initialize the expression to be evaluated.
@@ -33,9 +33,9 @@ public class PostfixEvaluator {
      */
     public PostfixEvaluator(String expression) {
         if (isValidPostfixExpression(expression)) {
-            this.expression = expression;
+            this.postfixExpression = expression;
         } else {
-            throw new IllegalArgumentException("Invalid postfix expression");
+            throw new IllegalArgumentException("Cannot be evaluated: Invalid postfix expression");
         }
     }
 
@@ -44,26 +44,12 @@ public class PostfixEvaluator {
      * This method also prints a detailed table of the evaluation process,
      * including the current symbol, operands, result of operation, and
      * the state of the operand stack at each step.
-     *
-     * @param postfixExpression The string of the postfix expression to be evaluated.
      * @return int The result of the evaluated postfix expression.
      * @throws StackUnderflowException if the stack underflows (i.e., an operator is found
      *         without enough operands in the stack).
      */
 
-    /*
-        Algorithm:
-        1. Create an empty stack for storing operands.
-        2. For each character in the postfix expression string:
-           a. If it's a digit, push it onto the stack.
-           b. If it's an operator (+, -, *, /, ^):
-              - Pop the top two operands from the stack.
-              - Apply the operator and push the result back onto the stack.
-        3. The final result should be the only element left on the stack.
-        4. Pop and return it as the evaluated result.
-    */
-
-    public int evaluate(String postfixExpression) throws StackUnderflowException {
+    public int evaluate() throws StackUnderflowException {
         MyStack<Integer> operandStack = new MyStack<>();
         String[] tokens = postfixExpression.split(" ");
 
@@ -80,7 +66,6 @@ public class PostfixEvaluator {
                 int operand = Integer.parseInt(token);
                 operandStack.push(operand);
                 System.out.printf("| %-6s |          |          |       | %-15s |\n", symbol, operandStack.toString());
-                System.out.println("+--------+----------+----------+-------+-----------------+");
             }
             // If it's an operator, pop the top two operands, perform the operation,
             // push the result back onto the stack, and print the state.
@@ -90,13 +75,13 @@ public class PostfixEvaluator {
                 int value = performOperation(symbol, operand1, operand2);
                 operandStack.push(value);
                 System.out.printf("| %-6s | %-8d | %-8d | %-5d | %-15s |\n", symbol, operand1, operand2, value, operandStack.toString());
-                System.out.println("+--------+----------+----------+-------+-----------------+");
             }
             // If it's neither an operand nor an operator, throw an exception.
             else {
                 throw new IllegalArgumentException("Invalid symbol: " + symbol);
             }
         }
+        System.out.println("+--------+----------+----------+-------+-----------------+");
 
         // If the stack does not contain exactly one operand (the final result),
         // the expression was invalid.
@@ -162,7 +147,7 @@ public class PostfixEvaluator {
      * @return boolean the result of determining whether the symbol is an operator or not.
      */
     private boolean isOperator(char symbol) {
-        char[] arr = { '+', '-', '*', '/', '$', '(', ')' };
+        char[] arr = { '+', '-', '*', '/', '^', '(', ')' };
         for (char i : arr) {
             if (symbol == i)
                 return true;
@@ -172,7 +157,7 @@ public class PostfixEvaluator {
 
     /**
      * Performs the operation and returns the result.
-     * @param operator the operator to apply (one of +, -, *, /, $).
+     * @param operator the operator to apply (one of +, -, *, /, ^).
      * @param op1 the first operand.
      * @param op2 the second operand.
      * @return int the result of applying the operator to op1 and op2.
@@ -189,7 +174,7 @@ public class PostfixEvaluator {
                 if (op2 == 0)
                     throw new ArithmeticException("Cannot divide by zero");
                 return op1 / op2;
-            case '$':
+            case '^':
                 return (int) Math.pow(op1, op2);
             default:
                 throw new IllegalArgumentException("Invalid operator: " + operator);
