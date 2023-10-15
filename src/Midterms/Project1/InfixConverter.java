@@ -80,7 +80,7 @@ public class InfixConverter {
             String symbolStr = String.valueOf(symbol);
             //checks for consecutive operands such as AB
             if (isOperand(symbol)) {
-                if (isOperand(lastChar)) {
+                if (isOperand(lastChar)&&lastChar != ' ') {
                     throw new IllegalArgumentException("Cannot be converted to postfix: No two consecutive operands.");
                 }
                 postfixExpression += symbol;
