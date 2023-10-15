@@ -1,8 +1,52 @@
+/**
+ Group MixAndMatch
+ Class Code and Course Number: 9342 - CS 211
+ Schedule: TF 9:00 - 10:30 AM
+ <p>
+ COLOMA, Stephen M.- 2232847@slu.edu.ph
+ GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
+ NONATO, Marius Glenn M.- 2232731@slu.edu.ph
+ RAGUDOS, Hannah T.- 2233361@slu.edu.ph
+ RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
+ ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
+ SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
+ </p>
+ */
+
+/*SAMPLE RUN:
+Infix Expression: ((A-(B+C))*D)^(E+F)
+
+Symbol          postfixExpression        operatorStack
+(                                        (
+(                                        ((
+A               A                        ((
+-               A                        ((-
+(               A                        ((-(
+B               AB                       ((-(
++               AB                       ((-(+
+C               ABC                      ((-(+
+)               ABC+                     ((-
+)               ABC+-                    (
+*               ABC+-                    (*
+D               ABC+-D                   (*
+)               ABC+-D*
+^               ABC+-D*                  ^
+(               ABC+-D*                  ^(
+E               ABC+-D*E                 ^(
++               ABC+-D*E                 ^(+
+F               ABC+-D*EF                ^(+
+)               ABC+-D*EF+               ^
+
+Equivalent Postfix Expression: ABC+-D*EF+^
+
+Process finished with exit code 0*/
 package Midterms.Project1;
 
 import Midterms.Project1.stack.MyStack;
+import org.w3c.dom.ls.LSOutput;
 
-//TODO: Create javadoc comments
+import java.util.LinkedList;
+
 public class InfixConverter {
     private String infix;
 
@@ -33,73 +77,109 @@ public class InfixConverter {
     /**
      * Method that converts the infix expression into a postfix expression
      * @return the converted infix, which is the postfix expression
+     * @throws IllegalArgumentException when there are error characters in input infix
      */
-    public String convertToPostfix(){
-        infix = infix.replaceAll(" ", "");
+    public String convertToPostfix() throws Exception {
+        infix = infix.replaceAll(" ", "").toUpperCase();
         int index = 0;
 
         String postfixExpression = "";
         MyStack<Character> operatorStack = new MyStack<>();
         char lastChar = ' '; // Initialize to a space to ensure no two consecutive operators at the beginning.
 
-        //check if the first and last char is an operator
-        if (isOperator(infix.charAt(0)) || isOperator(infix.charAt(infix.length()-1))){
-            return "Cannot be converted to postfix: No operator in first or last character.";
+        // Check if the first and last char is an operator
+        if (isOperator(infix.charAt(0)) || isOperator(infix.charAt(infix.length() - 1))) {
+            throw new IllegalArgumentException("Cannot be converted to postfix: No operator in first or last character.");
         }
 
-        try {
-            while (index != infix.length()) {
-                char symbol = infix.charAt(index);
+        LinkedList<String> symbolList = new LinkedList<>();
+        LinkedList<String> postfixExpressionList = new LinkedList<>();
+        LinkedList<String> operatorStackList = new LinkedList<>();
 
-                //checks for consecutive operands such as AB
-                if (isOperand(symbol)) {
-                    if (isOperand(lastChar)) {
-                        return "Cannot be converted to postfix: No two consecutive operands.";
-                    }
-                    postfixExpression += symbol;
-                } else {
-                    //checks for consecutive operators. But '(' and ')' are allowed
-                    if (isOperator(symbol)) {
-                        if (isOperator(lastChar) && symbol != '(' && symbol != ')') {
-                            return "Cannot be converted to postfix: No two consecutive operators.";
-                        }
-                    }
+        if (isOperator(infix.charAt(0)) || isOperator(infix.charAt(infix.length()-1))){
+            throw new IllegalArgumentException("Cannot be converted to postfix: No operator in first or last character.");
+        }
 
-                    while (!operatorStack.isEmpty() && precedence(operatorStack.peek(), symbol)) {
-                        char topSymbol = operatorStack.pop();
-                        postfixExpression += topSymbol;
-                    }
-
-                    if (operatorStack.isEmpty() || symbol != ')') {
-                        operatorStack.push(symbol);
-                    } else {
-                        char topSymbol = operatorStack.pop();
+        while (index != infix.length()) {
+            char symbol = infix.charAt(index);
+            String symbolStr = String.valueOf(symbol);
+            //checks for consecutive operands such as AB
+            if (isOperand(symbol)) {
+                if (isOperand(lastChar)) {
+                    throw new IllegalArgumentException("Cannot be converted to postfix: No two consecutive operands.");
+                }
+                postfixExpression += symbol;
+            } else {
+                //checks for consecutive operators. But '(' and ')' are allowed
+                if (isOperator(symbol)) {
+                    if (isOperator(lastChar) && symbol != '(' && symbol != ')') {
+                        throw new IllegalArgumentException("Cannot be converted to postfix: No two consecutive operators.");
                     }
                 }
-                lastChar = symbol; // Update the last character seen.
-                index++;
-            }
-             while (!operatorStack.isEmpty()) {
-                 char topSymbol = operatorStack.pop();
 
-                 if (topSymbol=='('){
-                     return "Cannot be converted to postfix: extra \"(\".";
-                 }else if (topSymbol==')'){
-                     return "Cannot be converted to postfix: extra \")\".";
-                 }
-                 postfixExpression+=topSymbol;
-             }
-         }catch (Exception e){
-             e.printStackTrace();
-         }
-         return postfixExpression;
+                while (!operatorStack.isEmpty() && precedence(operatorStack.peek(), symbol)) {
+                    char topSymbol = operatorStack.pop();
+                    postfixExpression += topSymbol;
+                }
+
+                if (operatorStack.isEmpty() || symbol != ')') {
+                    operatorStack.push(symbol);
+                } else {
+                    char topSymbol = operatorStack.pop();
+                }
+            }
+
+            symbolList.add(symbolStr);
+            postfixExpressionList.add(postfixExpression);
+            operatorStackList.add(operatorStack.toString().replace(",", ""));
+
+            lastChar = symbol;
+            index++;
+        }
+
+        while (!operatorStack.isEmpty()) {
+            char topSymbol = operatorStack.pop();
+
+            if (topSymbol == '(') {
+                throw new IllegalArgumentException("Cannot be converted to postfix: extra \"(\".");
+            } else if (topSymbol == ')') {
+                throw new IllegalArgumentException("Cannot be converted to postfix: extra \")\".");
+            }
+            postfixExpression += topSymbol;
+        }
+
+        System.out.printf("%-16s%-25s%-16s%n", "Symbol", "postfixExpression", "operatorStack");
+        displayTable(symbolList,postfixExpressionList,operatorStackList);
+        System.out.println();
+        return "Equivalent Postfix Expression: " + postfixExpression;
+    }
+
+    /**
+     * Method that displays a table of information for a given symbol, postfix expression, and operator stack.
+     * @param symbolList linked list that contains the symbols.
+     * @param postfixExpressionList linked list that contains the postfix string expression.
+     * @param operatorStackList linked list that contains the operator stack.
+     */
+    private void displayTable(LinkedList<String> symbolList, LinkedList<String> postfixExpressionList, LinkedList<String> operatorStackList) {
+        for (int i = 0; i < symbolList.size(); i++) {
+            String symbol = symbolList.get(i);
+            String postfixExpression = postfixExpressionList.get(i);
+            String operatorStack = operatorStackList.get(i);
+
+            StringBuilder reversedOperatorStack = new StringBuilder(operatorStack);
+            reversedOperatorStack.reverse();
+
+            operatorStack = reversedOperatorStack.toString().replace("[", "").replace("]", "");
+
+            System.out.printf("%-16s%-25s%-16s%n", symbol, postfixExpression, operatorStack);
+        }
     }
 
     /**
      * Method that checks if the precedence of operator1 is higher than operator2
      * @param operator1 The first operator
      * @param operator2 The second operator
-     * @return true if operator1 has higher precedence, and false if it is not
+     * @return true if operator1 has higher precedence or if they have the same level, and false if it is not.
      */
     private static boolean precedence(char operator1, char operator2){
         //if operator 1 is ^ it has a higher precedence than any of the operator (*/+-)
@@ -122,31 +202,51 @@ public class InfixConverter {
     }
 
     /**
-     * Method that checks if a character is an operand or not
+     * Private method that checks if a character is an operand or not
      * @param symbol The character to be checked
      * @return true if the character is an operand, and false if it is not
      */
-    private boolean isOperand(char symbol){
+    private boolean isOperand(char symbol) throws Exception{
         char[] operators = {'^', '(', ')', '*', '/', '+', '-'};
         for (char operator:operators) {
             if (operator==symbol){
                 return false;
             }
         }
-        return true;
+
+        if ((symbol >= 'A' && symbol <= 'Z') || symbol==' '){
+            return true;
+        }else {
+            throw new Exception("Cannot be converted to postfix: invalid character: " + String.valueOf(symbol));
+        }
     }
 
+    /**
+     * Checks if the given character is an operator.
+     * @param symbol The character to be checked.
+     * @return true if the character is one of the following operators: '^', '*', '/', '+', or '-',
+     *         false otherwise.
+     */
     private boolean isOperator(char symbol) {
         return symbol == '^' || symbol == '*' || symbol == '/' || symbol == '+' || symbol == '-';
     }
 
+    /**
+     * Returns the string representation of the object.
+     * @return The infix expression represented as a string.
+     */
     @Override
     public String toString() {
         return infix;
     }
 
     public static void main(String[] args) {
-        InfixConverter hi = new InfixConverter("(A+B/C*(D+E)-F)");
-        System.out.println(hi.convertToPostfix());
+        InfixConverter hi = new InfixConverter("((A-(B+C))*D)^(E+F)");
+        try {
+            System.out.println("Infix Expression: " + hi + "\n");
+            System.out.println(hi.convertToPostfix());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
