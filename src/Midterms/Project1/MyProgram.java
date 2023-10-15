@@ -100,80 +100,152 @@ package Midterms.Project1;
 
 import java.util.Scanner;
 
+/**
+ * MyProgram Class facilitates the conversion of infix expressions to postfix
+ * and evaluates postfix expressions through a user-friendly console interface.
+ */
 public class MyProgram {
+
     static Scanner kbd = new Scanner(System.in);
+
     public static void main(String[] args) {
         MyProgram runProgram = new MyProgram();
         runProgram.run();
-    }   // end of main method
+    } // end of main method
 
-    /**This method is called when running the program.*/
+    /**
+     * Main execution loop of the program.
+     * Manages user input and program flow through various functionalities until the user decides to exit.
+     */
     public void run() {
+        printWelcomeMessage();
+        promptEnterKey();
+
+        int choice;
+        do {
+            choice = getUserChoice();
+            handleUserChoice(choice);
+        } while (choice != 3);
+
+        kbd.close();
+    }
+
+    /**
+     * Outputs a welcome message to introduce the program to the user.
+     */
+    private void printWelcomeMessage() {
         System.out.println("========================================================");
         System.out.println("\t\t\t\tWelcome to our Program!");
         System.out.println("Our program allows user to convert infix expression");
         System.out.println("to postfix expression and evaluate postfix expressions.");
         System.out.println("========================================================");
+    }
+
+    /**
+     * Waits for the user to press ENTER to proceed.
+     */
+    private void promptEnterKey() {
         System.out.print("Please press ENTER to continue...");
         kbd.nextLine();
-        int choice;
+    }
 
-        do {
-            showMenu();
-            choice = Integer.parseInt(kbd.nextLine());
-            char repeat;
-            switch (choice) {
-                case 1: //converting infix to postfix
-                    repeat = 'y';
-                    while (repeat=='y'){
-                        System.out.print("Enter infix expression: ");
-                        String infix = kbd.nextLine();
-                        InfixConverter infixExpression = new InfixConverter(infix);
-                        try {
-                            System.out.println(infixExpression.convertToPostfix());
-                        } catch (Exception e) {
-                            System.out.println(e.getMessage());
-                        }
+    /**
+     * Displays a menu to the user and returns their selection.
+     *
+     * @return integer representing user's choice.
+     */
+    private int getUserChoice() {
+        showMenu();
+        try {
+            return Integer.parseInt(kbd.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a number.");
+            return 0;
+        }
+    }
 
-                        System.out.print("\nEnter another postfix (y/n)? ");
-                        repeat = kbd.nextLine().toLowerCase().charAt(0);
-                    }
-                    break;
-                case 2: //evaluating postfix
-                    repeat = 'y';
-                    while (repeat=='y'){
-                        System.out.print("Enter postfix expression (spaced with characters): ");
-                        String postfix = kbd.nextLine();
-                        try {
-                            PostfixEvaluator postfixExpression = new PostfixEvaluator(postfix);
-                            int result = postfixExpression.evaluate();
-                            System.out.println("Result: " + result);
-                        } catch (Exception e) {
-                            System.out.println(e.getMessage());
-                        }
-
-                        System.out.print("\nEnter another postfix (y/n)? ");
-                        repeat = kbd.nextLine().toLowerCase().toLowerCase().charAt(0);
-                    }
-                    break;
-                case 3:
-                    System.out.println("Thank you for using the program.");
-                    kbd.close();
-                    System.exit(0);
-                default:
-                    System.out.println("Invalid choice. Please try again. \n");
+    /**
+     * Handles the user's menu choice by activating the respective functionality.
+     *
+     * @param choice integer representing user's choice.
+     */
+    private void handleUserChoice(int choice) {
+        char repeat;
+        switch (choice) {
+            case 1 -> {
+                do {
+                    processInfixExpression();
+                    repeat = askUserToRepeat();
+                } while (repeat == 'y');
             }
-        } while (choice < 4);
-        kbd.close();
-    }   //end of run method
+            case 2 -> {
+                do {
+                    evaluatePostfixExpression();
+                    repeat = askUserToRepeat();
+                } while (repeat == 'y');
+            }
+            case 3 -> System.out.println("Thank you for using the program.");
+            default -> System.out.println("Invalid choice. Please try again. \n");
+        }
+    }
 
-    /**This method shows the three menu options.*/
-    public void showMenu() {
+    /**
+     * Outputs the main menu options to the console.
+     */
+    private void showMenu() {
         System.out.println("\nWhat would you like to perform?");
         System.out.println("[1] Convert Infix to Postfix ");
         System.out.println("[2] Evaluate Postfix Expression ");
         System.out.println("[3] Exit");
         System.out.println("------------------------------------");
         System.out.print("CHOICE : ");
-    }   // end of showMenu method
-}
+    }
+
+    /**
+     * Retrieves an infix expression from the user, converts it to postfix, and outputs the result.
+     */
+    private void processInfixExpression() {
+        System.out.print("Enter infix expression: ");
+        String infix = kbd.nextLine();
+        InfixConverter infixExpression = new InfixConverter(infix);
+        try {
+            System.out.println(infixExpression.convertToPostfix());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    /**
+     * Retrieves a postfix expression from the user, evaluates it, and outputs the result.
+     */
+    private void evaluatePostfixExpression() {
+        System.out.print("Enter postfix expression (spaced with characters): ");
+        String postfix = kbd.nextLine();
+        try {
+            PostfixEvaluator postfixExpression = new PostfixEvaluator(postfix);
+            int result = postfixExpression.evaluate();
+            System.out.println("Result: " + result);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    /**
+     * Asks if the user wants to perform another operation, ensuring that the input is either 'y' or 'n'.
+     *
+     * @return the first character of the user's input.
+     */
+    private char askUserToRepeat() {
+        char repeat;
+        while (true) {
+            System.out.print("\nEnter another expression (y/n)? ");
+            repeat = kbd.nextLine().toLowerCase().charAt(0);
+            if (repeat == 'y' || repeat == 'n') {
+                break;
+            } else {
+                System.out.println("Invalid input. Please enter 'y' or 'n'.");
+            }
+        }
+        return repeat;
+    }
+} // end of MyProgramClass
