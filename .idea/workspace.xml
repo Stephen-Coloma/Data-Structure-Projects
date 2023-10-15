@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="docs: Add multiline comments to StackUnderflowException class&#10;&#10;- Provide a comment explaining the purpose and usage of the StackUnderflowException class.&#10;- Add a constructor comment detailing its purpose and parameter.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS211_9342_MixAndMatch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CS211_9342_MixAndMatch.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/InfixConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/InfixConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/MyProgram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +47,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging rey",
+    "git-widget-placeholder": "rey",
+    "last_opened_file_path": "C:/Users/dana/IdeaProjects/BSCS 2/src/prelim",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.PostfixEvaluatorTester">
+  <component name="RunManager" selected="Application.MyProgram">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Prelims.Project1.BubbleSort" />
       <module name="CS211_9342_MixAndMatch" />
@@ -108,8 +106,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.Project1.Main" />
+    <configuration name="MyProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.Project1.MyProgram" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
@@ -147,9 +145,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PostfixEvaluatorTester" />
+        <item itemvalue="Application.MyProgram" />
         <item itemvalue="Application.InfixConverter" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.PostfixEvaluatorTester" />
         <item itemvalue="Application.InsertionSort" />
         <item itemvalue="Application.GoogleClassroomApp" />
       </list>
@@ -298,5 +296,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
