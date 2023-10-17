@@ -168,8 +168,11 @@ public class InfixConverter {
      * @return true if operator1 has higher precedence or if they have the same level, and false if it is not.
      */
     private static boolean precedence(char operator1, char operator2){
+        //if operator 1 is = it has a lowest precedence than any of the operator (*/+-)^
+        if ((operator1 == '=') && (operator2 == '*' || operator2 == '/' || operator2 == '+' || operator2 == '-' || operator2 == '^'))
+            return false;
         //if operator 1 is ^ it has a higher precedence than any of the operator (*/+-)
-        if ((operator1 == '^') && (operator2 == '*' || operator2 == '/' || operator2 == '+' || operator2 == '-'))
+        else if ((operator1 == '^') && (operator2 == '*' || operator2 == '/' || operator2 == '+' || operator2 == '-'))
             return true; // returns true if operator 1 has a higher precedence
         //if operator 1 is * or / it has a higher precedence than operator 2 of + and -
         else if ((operator1 == '*' || operator1 == '/') && (operator2 == '+' || operator2 == '-'))
@@ -194,14 +197,14 @@ public class InfixConverter {
      * @throws Exception when the symbol is invalid operand
      */
     private boolean isOperand(char symbol) throws Exception{
-        char[] operators = {'^', '(', ')', '*', '/', '+', '-'};
+        char[] operators = {'^', '(', ')', '*', '/', '+', '-', '='};
         for (char operator:operators) {
             if (operator==symbol){
                 return false;
             }
         }
 
-        if ((symbol >= 'A' && symbol <= 'Z') || symbol==' '){
+        if ((symbol >= 'A' && symbol <= 'Z') || symbol==' ' || symbol > 0 || symbol <10){
             return true;
         }else {
             throw new Exception("Cannot be converted to postfix: invalid character: " + String.valueOf(symbol));
@@ -215,7 +218,7 @@ public class InfixConverter {
      *         false otherwise.
      */
     private boolean isOperator(char symbol) {
-        return symbol == '^' || symbol == '*' || symbol == '/' || symbol == '+' || symbol == '-';
+        return symbol == '^' || symbol == '*' || symbol == '/' || symbol == '+' || symbol == '-' || symbol == '=';
     }
 
     /**
