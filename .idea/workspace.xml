@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="add: Note to users of the valid operators in the program">
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/MyProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/MyProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +150,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="671fa601-5a0e-46da-8790-cc1ac2234287" name="Changes" comment="" />
+      <changelist id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram" />
       <created>1696927591970</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -161,6 +160,7 @@
       <workItem from="1697244223007" duration="546000" />
       <workItem from="1697244788330" duration="2964000" />
       <workItem from="1697294166895" duration="1349000" />
+      <workItem from="1697638673233" duration="1936000" />
     </task>
     <task id="LOCAL-00001" summary="add: PostfixEvaluator class, methods todos and algorithm">
       <created>1696943388377</created>
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697633313794</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
+      <created>1697637335992</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1697637335992</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +291,8 @@
     <MESSAGE value="docs: Add Javadoc comments to MyStackInterface&#10;&#10;- Provide descriptions for the interface and its methods to explain their intended functionalities.&#10;- Specify the @param and @throws annotations to clarify input and exception handling." />
     <MESSAGE value="docs: Add multiline comments to StackUnderflowException class&#10;&#10;- Provide a comment explaining the purpose and usage of the StackUnderflowException class.&#10;- Add a constructor comment detailing its purpose and parameter." />
     <MESSAGE value="add: Note to users of the valid operators in the program" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: Note to users of the valid operators in the program" />
+    <MESSAGE value="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

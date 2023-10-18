@@ -58,11 +58,7 @@ public class PostfixEvaluator {
         System.out.println("+--------+----------+----------+-------+-----------------+");
         System.out.println("| Symbol | Operand1 | Operand2 | Value | OperandStack    |");
         System.out.println("+--------+----------+----------+-------+-----------------+");
-
-
-
-        for (int i = 0; i < tokens.length; i++) {
-            String token = tokens[i];
+        for (String token : tokens) {
             symbol = token.charAt(0);
             // If it's an operand, push it onto the stack and print the state.
             if (Character.isDigit(symbol)) {
@@ -91,11 +87,11 @@ public class PostfixEvaluator {
         if (operandStack.size() != 1) {
             throw new IllegalArgumentException("Invalid expression");
         }
-        if (symbol == '=') {
+        if (symbol == '=')
             return operand1 + " = " + operand2;
-        }else
+        else
              // Pop and return the final result from the stack.
-             return String.valueOf(operandStack.pop());
+            return String.valueOf(operandStack.pop());
     }
 
     /**
@@ -104,31 +100,28 @@ public class PostfixEvaluator {
      * @return true if the expression is valid, false otherwise.
      */
     private boolean isValidPostfixExpression(String expression) {
-        char[] tokens = expression.toCharArray();
+        String[] tokens = expression.split("\\s+"); // Split by whitespace
         int operandCount = 0;
         int operatorCount = 0;
 
-        for (int i = 1; i <= tokens.length; i++) {
-            char token = tokens[i-1];
-            if(i%2==0){
-                if(isOperand(String.valueOf(token)) || isOperatorOrAssignment(token)) {
-                    System.out.println("Invalid token: " + token);
-                    return false;
-                }
-            }else {
-                if (Character.isWhitespace(token)) {
-                    continue;
-                }
-                if (isOperand(String.valueOf(token))) {
-                    operandCount++;
-                } else if (isOperatorOrAssignment(token)) {
-                    operatorCount++;
-                }
+        for (String token : tokens) {
+            char symbol = token.charAt(0);
+            System.out.println("token: "+token);
+            if (isOperand(token)) {
+                operandCount++;
+            } else if (isOperatorOrAssignment(symbol)) {
+                System.out.println("symbol: " +symbol);
+                operatorCount++;
+            } else {
+                System.out.println("Invalid token: " + token);
+                return false;
             }
         }
+
         // For a valid postfix expression, the number of operands should be one more than the number of operators
         return operandCount == operatorCount + 1;
     }
+
 
     /**
      * Check if a token is a valid operand (integer in this case).
@@ -160,7 +153,7 @@ public class PostfixEvaluator {
 
     /**
      * Performs the operation and returns the result.
-     * @param operator the operator to apply (one of +, -, *, /, ^).
+     * @param operator the operator to apply (one of +, -, *, /, ^, =).
      * @param op1 the first operand.
      * @param op2 the second operand.
      * @return int the result of applying the operator to op1 and op2.
@@ -180,7 +173,7 @@ public class PostfixEvaluator {
             case '^':
                 return (int) Math.pow(op1, op2);
             case '=':
-                return op1;
+                return op2;
             default:
                 throw new IllegalArgumentException("Invalid operator: " + operator);
         }
