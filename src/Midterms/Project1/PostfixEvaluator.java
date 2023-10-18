@@ -49,18 +49,21 @@ public class PostfixEvaluator {
      *         without enough operands in the stack).
      */
 
-    public int evaluate() throws StackUnderflowException {
+    public String evaluate() throws StackUnderflowException {
         MyStack<Integer> operandStack = new MyStack<>();
         String[] tokens = postfixExpression.split(" ");
-
+        int operand2 = 0, operand1 = 0, value = 0;
+        char symbol = 0;
         System.out.println("Postfix String -> " + postfixExpression);
         System.out.println("+--------+----------+----------+-------+-----------------+");
         System.out.println("| Symbol | Operand1 | Operand2 | Value | OperandStack    |");
         System.out.println("+--------+----------+----------+-------+-----------------+");
 
-        for (String token : tokens) {
-            char symbol = token.charAt(0);
 
+
+        for (int i = 0; i < tokens.length; i++) {
+            String token = tokens[i];
+            symbol = token.charAt(0);
             // If it's an operand, push it onto the stack and print the state.
             if (Character.isDigit(symbol)) {
                 int operand = Integer.parseInt(token);
@@ -69,10 +72,10 @@ public class PostfixEvaluator {
             }
             // If it's an operator, pop the top two operands, perform the operation,
             // push the result back onto the stack, and print the state.
-            else if (isOperator(symbol)) {
-                int operand2 = operandStack.pop();
-                int operand1 = operandStack.pop();
-                int value = performOperation(symbol, operand1, operand2);
+            else if (isOperatorOrAssignment(symbol)) {
+                operand2 = operandStack.pop();
+                operand1 = operandStack.pop();
+                value = performOperation(symbol, operand1, operand2);
                 operandStack.push(value);
                 System.out.printf("| %-6s | %-8d | %-8d | %-5d | %-15s |\n", symbol, operand1, operand2, value, operandStack.toString());
             }
@@ -88,9 +91,11 @@ public class PostfixEvaluator {
         if (operandStack.size() != 1) {
             throw new IllegalArgumentException("Invalid expression");
         }
-
-        // Pop and return the final result from the stack.
-        return operandStack.pop();
+        if (symbol == '=') {
+            return operand1 + " = " + operand2;
+        }else
+             // Pop and return the final result from the stack.
+             return String.valueOf(operandStack.pop());
     }
 
     /**
@@ -106,7 +111,7 @@ public class PostfixEvaluator {
         for (int i = 1; i <= tokens.length; i++) {
             char token = tokens[i-1];
             if(i%2==0){
-                if(isOperand(String.valueOf(token)) || isOperator(token)) {
+                if(isOperand(String.valueOf(token)) || isOperatorOrAssignment(token)) {
                     System.out.println("Invalid token: " + token);
                     return false;
                 }
@@ -116,12 +121,10 @@ public class PostfixEvaluator {
                 }
                 if (isOperand(String.valueOf(token))) {
                     operandCount++;
-                } else if (isOperator(token)) {
+                } else if (isOperatorOrAssignment(token)) {
                     operatorCount++;
                 }
             }
-
-
         }
         // For a valid postfix expression, the number of operands should be one more than the number of operators
         return operandCount == operatorCount + 1;
@@ -146,8 +149,8 @@ public class PostfixEvaluator {
      * @param symbol symbol from the string expression
      * @return boolean the result of determining whether the symbol is an operator or not.
      */
-    private boolean isOperator(char symbol) {
-        char[] arr = { '+', '-', '*', '/', '^', '(', ')' };
+    private boolean isOperatorOrAssignment(char symbol) {
+        char[] arr = { '+', '-', '*', '/', '^', '(', ')' , '=' };
         for (char i : arr) {
             if (symbol == i)
                 return true;
@@ -176,6 +179,8 @@ public class PostfixEvaluator {
                 return op1 / op2;
             case '^':
                 return (int) Math.pow(op1, op2);
+            case '=':
+                return op1;
             default:
                 throw new IllegalArgumentException("Invalid operator: " + operator);
         }
