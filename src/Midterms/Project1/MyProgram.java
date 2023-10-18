@@ -173,12 +173,14 @@ public class MyProgram {
         char repeat;
         switch (choice) {
             case 1 -> {
+                showValidOperatorsForConversion();
                 do {
                     processInfixExpression();
                     repeat = askUserToRepeat();
                 } while (repeat == 'y');
             }
             case 2 -> {
+                showValidOperatorsForEvaluation();
                 do {
                     evaluatePostfixExpression();
                     repeat = askUserToRepeat();
@@ -201,6 +203,35 @@ public class MyProgram {
         System.out.print("CHOICE : ");
     }
 
+    /**
+     * Outputs the valid operators utilized in the program for conversion of infix to postfix expression
+     *
+     */
+    private void showValidOperatorsForConversion(){
+        System.out.println("IMPORTANT NOTE: In this program, you can only use the following operators:");
+        System.out.println("   +   (Addition)");
+        System.out.println("   -   (Subtraction)");
+        System.out.println("   *   (Multiplication)");
+        System.out.println("   /   (Division)");
+        System.out.println("   ^   (Exponentiation)");
+        System.out.println("   =   (Equals)");
+        System.out.print("\nPlease press ENTER to continue...");
+        kbd.nextLine();
+    }
+    /**
+     * Outputs the valid operators utilized in the program for evaluation of postfix expressions
+     *
+     */
+    private void showValidOperatorsForEvaluation(){
+        System.out.println("IMPORTANT NOTE: In this program, you can only use the following operators:");
+        System.out.println("   +   (Addition)");
+        System.out.println("   -   (Subtraction)");
+        System.out.println("   *   (Multiplication)");
+        System.out.println("   /   (Division)");
+        System.out.println("   ^   (Exponentiation)");
+        System.out.print("\nPlease press ENTER to continue...");
+        kbd.nextLine();
+    }
     /**
      * Retrieves an infix expression from the user, converts it to postfix, and outputs the result.
      */
