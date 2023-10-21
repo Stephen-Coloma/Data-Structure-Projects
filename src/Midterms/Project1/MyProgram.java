@@ -173,12 +173,14 @@ public class MyProgram {
         char repeat;
         switch (choice) {
             case 1 -> {
+                showValidOperators();
                 do {
                     processInfixExpression();
                     repeat = askUserToRepeat();
                 } while (repeat == 'y');
             }
             case 2 -> {
+                showValidOperators();
                 do {
                     evaluatePostfixExpression();
                     repeat = askUserToRepeat();
@@ -202,6 +204,21 @@ public class MyProgram {
     }
 
     /**
+     * Outputs the valid operators utilized in the program for conversion of infix to postfix expression
+     *
+     */
+    private void showValidOperators(){
+        System.out.println("IMPORTANT NOTE: In this program, you can only use the following operators:");
+        System.out.println("   +   (Addition)");
+        System.out.println("   -   (Subtraction)");
+        System.out.println("   *   (Multiplication)");
+        System.out.println("   /   (Division)");
+        System.out.println("   ^   (Exponentiation)");
+        System.out.println("   =   (Equals)");
+        System.out.print("\nPlease press ENTER to continue...");
+        kbd.nextLine();
+    }
+    /**
      * Retrieves an infix expression from the user, converts it to postfix, and outputs the result.
      */
     private void processInfixExpression() {
@@ -223,7 +240,7 @@ public class MyProgram {
         String postfix = kbd.nextLine();
         try {
             PostfixEvaluator postfixExpression = new PostfixEvaluator(postfix);
-            int result = postfixExpression.evaluate();
+            String result = postfixExpression.evaluate();
             System.out.println("Result: " + result);
         } catch (Exception e) {
             System.out.println(e.getMessage());
