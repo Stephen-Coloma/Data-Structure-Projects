@@ -1,17 +1,57 @@
 /**
- Group B
- Class Code and Course Number: 9342 - CS 211
- Schedule: TF 9:00 - 10:30 AM
- <p>
- COLOMA, Stephen M.- 2232847@slu.edu.ph
- GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
- NONATO, Marius Glenn M.- 2232731@slu.edu.ph
- RAGUDOS, Hannah T.- 2233361@slu.edu.ph
- RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
- ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
- SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
- </p>
+ *  Group B
+ *  Class Code and Course Number: 9342 - CS 211
+ *  Schedule: TF 9:00 - 10:30 AM
+ *  <p>
+ *      COLOMA, Stephen M.- 2232847@slu.edu.ph
+ *      GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
+ *      NONATO, Marius Glenn M.- 2232731@slu.edu.ph
+ *      RAGUDOS, Hannah T.- 2233361@slu.edu.ph
+ *      RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
+ *      ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
+ *      SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
+ * </p>
+ *
+ *  Algorithm of the PostfixEvaluator class:
+ * 1. Constructor (PostfixEvaluator):
+ *    - Initializes the postfix expression to be evaluated.
+ *    - Checks if the given expression is a valid postfix expression using isValidPostfixExpression method.
+ *    - If the expression is not valid, it throws an IllegalArgumentException.
+ *
+ * 2. evaluate():
+ *    - This is the core method to evaluate the postfix expression.
+ *    - Uses a stack (operandStack) to keep track of operands.
+ *    - Iterates through each token (number or operator) in the expression.
+ *      - If the token is an operand, it is pushed onto the stack.
+ *      - If the token is an operator, two operands are popped from the stack, the operation is performed,
+ *        and the result is pushed back onto the stack.
+ *    - Prints a detailed table of the evaluation process for better understanding.
+ *    - At the end of the iteration, if the expression is valid, the final result should be the only item left in the stack.
+ *    - If the final operator was an assignment (=), it formats the output as an assignment statement.
+ *    - Returns the result as a string.
+ *
+ * 3. isValidPostfixExpression():
+ *    - Validates the given postfix expression.
+ *    - Ensures that the expression has a proper number of operands and operators for a valid postfix expression.
+ *    - Returns true if the expression is valid, false otherwise.
+ *
+ * 4. isOperand():
+ *    - Checks if a given token is a valid integer operand.
+ *    - Returns true if it is an operand, false otherwise.
+ *
+ * 5. isOperatorOrAssignment():
+ *    - Checks if a given symbol is one of the recognized operators or an assignment symbol.
+ *    - Returns true if it is an operator, false otherwise.
+ *
+ * 6. performOperation():
+ *    - Performs the arithmetic operation based on the given operator and operands.
+ *    - Supports addition, subtraction, multiplication, division, exponentiation, and assignment.
+ *    - Returns the result of the operation.
+ *    - Throws an IllegalArgumentException for invalid operators.
+ *    - Handles division by zero with an ArithmeticException.
+ *
  */
+
 package Midterms.Project1;
 
 import Midterms.Project1.stack.MyStack;

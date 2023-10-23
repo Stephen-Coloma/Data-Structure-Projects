@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/InfixConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/InfixConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/MyProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/MyProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="rey" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
