@@ -1,16 +1,44 @@
 /**
- Group B
- Class Code and Course Number: 9342 - CS 211
- Schedule: TF 9:00 - 10:30 AM
- <p>
- COLOMA, Stephen M.- 2232847@slu.edu.ph
- GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
- NONATO, Marius Glenn M.- 2232731@slu.edu.ph
- RAGUDOS, Hannah T.- 2233361@slu.edu.ph
- RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
- ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
- SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
- </p>
+ *  Group B
+ *  Class Code and Course Number: 9342 - CS 211
+ *  Schedule: TF 9:00 - 10:30 AM
+ *  <p>
+ *      COLOMA, Stephen M.- 2232847@slu.edu.ph
+ *      GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
+ *      NONATO, Marius Glenn M.- 2232731@slu.edu.ph
+ *      RAGUDOS, Hannah T.- 2233361@slu.edu.ph
+ *      RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
+ *      ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
+ *      SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
+ * </p>
+ *
+ * Algorithm: Infix to Postfix Conversion CLass:
+ *
+ * 1. Initialize:
+ *    - index to 0 for tracking position in infix expression.
+ *    - postfixExpression as an empty string for the result.
+ *    - operatorStack as an empty stack for operators.
+ *    - lastChar as ' ' to check for consecutive operators or operands.
+ *
+ * 2. Preprocess the infix expression:
+ *    - Remove spaces and convert to uppercase.
+ *
+ * 3. Convert the expression:
+ *    - Loop through each character of the infix expression:
+ *      - If it's an operand, add to postfixExpression.
+ *      - If it's an operator, pop operators from stack to postfixExpression based on precedence, then push current operator to stack.
+ *      - Handle special cases for parentheses and consecutive operators/operands.
+ *    - Pop remaining operators from stack to postfixExpression.
+ *
+ * 4. Handle any errors:
+ *    - Throw IllegalArgumentException for invalid scenarios like consecutive operands or operators, unmatched parentheses, etc.
+ *
+ * 5. Display the conversion process:
+ *    - Use displayTable method to print a table showing each step.
+ *
+ * 6. Return the result:
+ *    - Format postfixExpression with spaces and return.
+ *
  */
 
 package Midterms.Project1;

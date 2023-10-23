@@ -1,16 +1,50 @@
 /**
- Group B
- Class Code and Course Number: 9342 - CS 211
- Schedule: TF 9:00 - 10:30 AM
- <p>
- COLOMA, Stephen M.- 2232847@slu.edu.ph
- GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
- NONATO, Marius Glenn M.- 2232731@slu.edu.ph
- RAGUDOS, Hannah T.- 2233361@slu.edu.ph
- RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
- ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
- SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
- </p>
+ *  Group B
+ *  Class Code and Course Number: 9342 - CS 211
+ *  Schedule: TF 9:00 - 10:30 AM
+ *  <p>
+ *      COLOMA, Stephen M.- 2232847@slu.edu.ph
+ *      GUZMAN, Sanchie Earl M.- 2232886@slu.edu.ph
+ *      NONATO, Marius Glenn M.- 2232731@slu.edu.ph
+ *      RAGUDOS, Hannah T.- 2233361@slu.edu.ph
+ *      RAMOS, Jerwin Kyle R.- 2232862@slu.edu.ph
+ *      ROQUE, Rey Daniel L. - 2233357@slu.edu.ph
+ *      SANTOS, Lourdene Eira C.- 2233120@slu.edu.ph
+ *  </p>
+ *
+ * The program follows the following algorithm and workflow:
+ *
+ * 1. Welcome Message:
+ *    - Display a welcome message introducing the user to the functionalities of the program.
+ *
+ * 2. Main Execution Loop (run method):
+ *    - Prompt the user to press ENTER to continue.
+ *    - Display a menu of options for the user to choose from:
+ *        1. Convert Infix to Postfix
+ *        2. Evaluate Postfix Expression
+ *        3. Exit
+ *    - Based on the user's choice, perform the corresponding action:
+ *        - If the choice is 1 or 2, display valid operators and perform the selected action
+ *        - If the choice is 3, display a thank you message and exit the program.
+ *        - For any other choice, inform the user that it is an invalid choice and prompt again.
+ *    - Repeat the menu prompt until the user chooses to exit (option 3).
+ *
+ * 3. Infix to Postfix Conversion (processInfixExpression method):
+ *    - Prompt the user to enter an infix expression.
+ *    - Convert the infix expression to postfix notation using the InfixConverter class.
+ *    - Display the postfix expression.
+ *
+ * 4. Postfix Expression Evaluation (evaluatePostfixExpression method):
+ *    - Prompt the user to enter a postfix expression.
+ *    - Evaluate the postfix expression using the PostfixEvaluator class.
+ *    - Display the evaluation result.
+ *
+ * 5. Repetition Prompt (askUserToRepeat method):
+ *    - After performing an action (converting or evaluating), ask the user if they want to perform another operation.
+ *    - Ensure the user input is valid ('y' or 'n') and return the response.
+ *
+ * 6. Exit:
+ *    - Close the Scanner and gracefully exit the program.
  */
 
 /* SAMPLE RUN:
