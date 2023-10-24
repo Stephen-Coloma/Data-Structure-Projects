@@ -105,10 +105,11 @@ public class TreeNode implements Comparable<TreeNode> {
     }
 
     /**
-     * Compare this TreeNode to another TreeNode based on their counts.
+     * Compare this TreeNode to another TreeNode based on their symbol.
+     * For special characters, '.' '?' ''' '!' and ',' , they are placed after alphabet character
      *
      * @param other The other TreeNode to compare to.
-     * @return      0 if counts are equal, -1 if this count is less than the other,
+     * @return      0 if symbol are equal, -1 if this less is less than the other,
      *              and 1 if this count is greater than the other.
      */
     @Override
@@ -128,10 +129,14 @@ public class TreeNode implements Comparable<TreeNode> {
         }
     }
 
+    /**Checks if the character is a special character of not.
+     * @param symbol to be checked
+     * @return true if it is a special character, otherwise false*/
     private boolean isSpecialChar(char symbol){
         return (symbol == ' ' || symbol == '.' || symbol == '?' || symbol == '\'' || symbol == '!' || symbol == ',');
     }
 
+    /**String represntation of TreeNode with its count and symbol.*/
     @Override
     public String toString() {
         return symbol + " | " + count;

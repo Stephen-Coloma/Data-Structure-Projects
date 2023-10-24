@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +147,7 @@
       <workItem from="1697244788330" duration="2964000" />
       <workItem from="1697294166895" duration="1349000" />
       <workItem from="1697638673233" duration="1936000" />
-      <workItem from="1698132128363" duration="6698000" />
+      <workItem from="1698132128363" duration="7237000" />
     </task>
     <task id="LOCAL-00001" summary="add: PostfixEvaluator class, methods todos and algorithm">
       <created>1696943388377</created>

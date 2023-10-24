@@ -14,6 +14,14 @@ public class Huffman {
         huffmanTree = null;
     }
 
+    /**Generates a huffman tree from the text of a file.
+     *
+     * @param file contains the texts, sentences or paragraphs.
+     * @return Huffman tree expressed in PriorityQueue data structure
+     * @throws FileNotFoundException when file path is not found
+     * @throws IOException when there is an error in running time
+     * @throws IllegalArgumentException when the paragraph contains characters that is non-valid
+     * */
     private PriorityQueue<TreeNode> createHuffmanTree(File file) throws Exception{
         /*ALGO
         * 1. Read the file and store it in a string text.
@@ -50,11 +58,13 @@ public class Huffman {
         return huffmanTree;
    }
 
-   /*TODO: DITOOOOO*/
-   private static PriorityQueue<TreeNode> convertToHuffmanTree(PriorityQueue<TreeNode> huffmanForest){
-
-   }
-   private static PriorityQueue<TreeNode>  createHuffmanForest(String text){
+   /**--------------------------------HELPER METHODS---------------------------------------*/
+   /**A helper methods that creates huffman forest (i.e. many huffman tree but has no children inside a PriorityQueue)
+    * The huffman forest represents the symbol-frequency table which will be used to calculate storage savings.
+    * @param text the text from which the huffman code will be based.
+    * @return huffman forest expressed in PriorityQueue
+    * */
+   private static PriorityQueue<TreeNode> createHuffmanForest(String text){
        //step 2
        String validCharacters = "abcdefghijklmnopqrstuvwxyz .?'!,";
 
@@ -86,6 +96,9 @@ public class Huffman {
        return huffmanForest;
    }
 
+
+
+    /**THIS MAIN MMETHOD IS FOR TESTING PURPOSES ONLY!*/
     public static void main(String[] args) {
         String filepath = "src/Midterms/midlab2/sample.txt";
 
