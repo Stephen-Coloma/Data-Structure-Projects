@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +48,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "rey",
+    "git-widget-placeholder": "huffman",
     "last_opened_file_path": "C:/Users/dana/IdeaProjects/BSCS 2/src/prelim",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15136719",
     "project.structure.side.proportion": "0.2",
@@ -148,6 +150,7 @@
       <workItem from="1697244788330" duration="2964000" />
       <workItem from="1697294166895" duration="1349000" />
       <workItem from="1697638673233" duration="1936000" />
+      <workItem from="1698132128363" duration="6698000" />
     </task>
     <task id="LOCAL-00001" summary="add: PostfixEvaluator class, methods todos and algorithm">
       <created>1696943388377</created>

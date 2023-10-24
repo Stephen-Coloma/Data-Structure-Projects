@@ -113,13 +113,28 @@ public class TreeNode implements Comparable<TreeNode> {
      */
     @Override
     public int compareTo(TreeNode other) {
-        if (this.getCount() == other.getCount()) {
-            return 0;
-        } else if (this.getCount() < other.getCount()) {
-            return -1;
+        if (isSpecialChar(this.symbol)) { //if invoker is special symbol
+            if (isSpecialChar(other.symbol)) { //both are same special char
+                // Compare special characters based on their custom order
+                String specialCharOrder = " .?'!,";
+                return specialCharOrder.indexOf(this.symbol) - specialCharOrder.indexOf(other.symbol);
+            } else {
+                return 1;  // Special character is greater than non-special character
+            }
+        } else if (isSpecialChar(other.symbol)) { //if invoker is not
+            return -1;  // Non-special character is less than special character
         } else {
-            return 1;
+            return Character.compare(this.symbol, other.symbol);  // Compare non-special characters lexicographically
         }
+    }
+
+    private boolean isSpecialChar(char symbol){
+        return (symbol == ' ' || symbol == '.' || symbol == '?' || symbol == '\'' || symbol == '!' || symbol == ',');
+    }
+
+    @Override
+    public String toString() {
+        return symbol + " | " + count;
     }
 }
 
