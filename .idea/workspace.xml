@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +27,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -147,7 +150,7 @@
       <workItem from="1697244788330" duration="2964000" />
       <workItem from="1697294166895" duration="1349000" />
       <workItem from="1697638673233" duration="1936000" />
-      <workItem from="1698132128363" duration="7237000" />
+      <workItem from="1698132128363" duration="10114000" />
     </task>
     <task id="LOCAL-00001" summary="add: PostfixEvaluator class, methods todos and algorithm">
       <created>1696943388377</created>

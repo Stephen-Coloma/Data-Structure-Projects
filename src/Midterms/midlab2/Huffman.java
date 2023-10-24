@@ -7,11 +7,30 @@ import java.util.HashMap;
 import java.util.PriorityQueue;
 
 public class Huffman {
-    private static PriorityQueue<TreeNode> frequencyTable;
+    private PriorityQueue<TreeNode> frequencyTable;
     private PriorityQueue<TreeNode> huffmanTree;
-    public Huffman(File file){
+    public Huffman(){
         frequencyTable = null;
         huffmanTree = null;
+    }
+
+    /**Returns the frequency table*/
+    public PriorityQueue<TreeNode> getFrequencyTable() {
+        return frequencyTable;
+    }
+
+    /**Returns the frequency table*/
+    public void setFrequencyTable(PriorityQueue<TreeNode> frequencyTable) {
+        frequencyTable = frequencyTable;
+    }
+
+    /**Returns the huffman tree*/
+    public PriorityQueue<TreeNode> getHuffmanTree() {
+        return huffmanTree;
+    }
+
+    public void setHuffmanTree(PriorityQueue<TreeNode> huffmanTree) {
+        this.huffmanTree = huffmanTree;
     }
 
     /**Generates a huffman tree from the text of a file.
@@ -53,18 +72,65 @@ public class Huffman {
 
         //THIS IS INCOMPLETE
         /*TODO: Create a method that converts huffmanForest to single Tree */
-        PriorityQueue<TreeNode> huffmanTree = convertToHuffmanTree(huffmanForest); //dito kayo create ng method
-        this.huffmanTree = huffmanTree;
-        return huffmanTree;
+//        Uncomment this after creating the convertToHuffmanTree() method
+//        PriorityQueue<TreeNode> huffmanTree = convertToHuffmanTree(huffmanForest);
+//        this.huffmanTree = huffmanTree;
+        return huffmanForest; //need to change to "return huffmanTree"
    }
 
+    /*TODO: method that converts Forest(PriorityQueue) to Single tree (Huffman Tree)
+        Returns the huffman code for each character of the input string.
+        The return of this method will be used in generating the output for huffman tree
+        Input: PriorityQueue<TreeNode>
+        Output: PriorityQueue<TreeNode> (i.e a single tree) return type.
+
+        TODO: Generate a helper method that is similar to the printCode() method of sir dale. The purpose is to provide data for huffman code for each character.
+            output: String?? not sure kayo mag decide
+            sample run: Char | Huffman Code
+            -----------------------
+            F | 00000
+            G | 00001
+            H | 0001
+            B | 001
+            A | 01
+            C | 100
+            D | 101
+            E | 11
+     */
+//    UNCOMMENT THIS IF YOU WANT TO WORK IN THIS TASK
+//    private PriorityQueue<TreeNode> convertToHuffmanTree(PriorityQueue<TreeNode> huffmanForest){
+//
+//    }
+
+
+
+
+   /*TODO: Method that accepts a string involving the characters in the set //encrypt
+        Handles error for invalid input text (i.e a text that has a character other than the set of characters.
+        Returns the huffman code for that text based from the huffman code generated from the main input file.
+        Input: String
+        Output: String
+    */
+
+    /*TODO: Method that accepts a huffman code and shows the string corresponding to the huffman code. //decrypt
+        Handles error for invalid input of binary digits. (i.e. input other than 0’s and 1’s).
+        Input: String
+        Output: String
+
+    /*TODO: method that displays the huffman tree.
+        //dont work on this yet
+     */
+
+
    /**--------------------------------HELPER METHODS---------------------------------------*/
+
+
    /**A helper methods that creates huffman forest (i.e. many huffman tree but has no children inside a PriorityQueue)
     * The huffman forest represents the symbol-frequency table which will be used to calculate storage savings.
     * @param text the text from which the huffman code will be based.
     * @return huffman forest expressed in PriorityQueue
     * */
-   private static PriorityQueue<TreeNode> createHuffmanForest(String text){
+   private PriorityQueue<TreeNode> createHuffmanForest(String text){
        //step 2
        String validCharacters = "abcdefghijklmnopqrstuvwxyz .?'!,";
 
@@ -97,11 +163,21 @@ public class Huffman {
    }
 
 
-
-    /**THIS MAIN MMETHOD IS FOR TESTING PURPOSES ONLY!*/
+    /**THIS MAIN METHOD IS FOR TESTING PURPOSES ONLY!*/
     public static void main(String[] args) {
         String filepath = "src/Midterms/midlab2/sample.txt";
+        Huffman test = new Huffman();
 
+        try{
+            test.createHuffmanTree(new File(filepath));
+
+            while (test.getFrequencyTable().size() != 0){
+                System.out.println(test.getFrequencyTable().poll());
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 }
