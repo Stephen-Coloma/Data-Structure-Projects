@@ -5,52 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_10_2023_6_22_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/InfixConverter.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/InfixConverter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/MyProgram.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/MyProgram.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/PostfixEvaluator.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/PostfixEvaluator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/class-use/InfixConverter.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/class-use/InfixConverter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/class-use/MyProgram.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/class-use/MyProgram.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/class-use/PostfixEvaluator.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/class-use/PostfixEvaluator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/MyStack.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/MyStack.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/MyStackInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/MyStackInterface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/Node.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/Node.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/StackUnderflowException.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/StackUnderflowException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/class-use/MyStack.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/class-use/MyStack.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/class-use/MyStackInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/class-use/MyStackInterface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/class-use/Node.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/class-use/Node.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/class-use/StackUnderflowException.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/class-use/StackUnderflowException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/Midterms/Project1/stack/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/MidtermsProject1/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/MidtermsProject1/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/InfixConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab1/InfixConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/MyProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab1/MyProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/PostfixEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab1/PostfixEvaluator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/stack/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab1/stack/MyStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/stack/MyStackInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab1/stack/MyStackInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/stack/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab1/stack/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/Project1/stack/StackUnderflowException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab1/stack/StackUnderflowException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,24 +42,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;rey&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dana/IdeaProjects/BSCS 2/src/prelim&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15136719&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "rey",
+    "last_opened_file_path": "C:/Users/dana/IdeaProjects/BSCS 2/src/prelim",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15136719",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.Midterms.midlab1.MyProgram">
+}]]></component>
+  <component name="RunManager" selected="Application.Huffman">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Prelims.Project1.BubbleSort" />
       <module name="CS211_9342_MixAndMatch" />
@@ -129,12 +86,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InfixConverter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab1.InfixConverter" />
+    <configuration name="Huffman" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.Huffman" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Midterms.midlab1.*" />
+          <option name="PATTERN" value="Midterms.midlab2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,19 +105,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Prelims.Project1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab1.MyProgram" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Midterms.midlab1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -183,9 +127,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Midterms.midlab1.MyProgram" />
-        <item itemvalue="Application.Midterms.midlab1.InfixConverter" />
-        <item itemvalue="Application.Midterms.Project1.PostfixEvaluatorTester" />
+        <item itemvalue="Application.Huffman" />
+        <item itemvalue="Application.BubbleSort" />
         <item itemvalue="Application.InsertionSort" />
         <item itemvalue="Application.GoogleClassroomApp" />
       </list>
@@ -349,6 +292,11 @@
           <properties class="Midterms.Project1.stack.StackUnderflowException" package="Midterms.Project1.stack" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.jdks/corretto-20.0.2.1/lib/src.zip!/java.base/java/util/HashMap.java</url>
+          <line>360</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
