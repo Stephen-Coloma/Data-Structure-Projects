@@ -130,7 +130,7 @@ Thank you for using the program.
 
 Process finished with exit code 0*/
 
-package Midterms.Project1;
+package Midterms.midlab1;
 
 import java.util.Scanner;
 

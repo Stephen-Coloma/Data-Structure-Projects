@@ -52,10 +52,10 @@
  *
  */
 
-package Midterms.Project1;
+package Midterms.midlab1;
 
-import Midterms.Project1.stack.MyStack;
-import Midterms.Project1.stack.StackUnderflowException;
+import Midterms.midlab1.stack.MyStack;
+import Midterms.midlab1.stack.StackUnderflowException;
 
 /**
  * The PostfixEvaluator class represents a postfix expression evaluator that

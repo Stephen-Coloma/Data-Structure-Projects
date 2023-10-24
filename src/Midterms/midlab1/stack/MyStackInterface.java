@@ -14,7 +14,7 @@
  * </p>
  */
 
-package Midterms.Project1.stack;
+package Midterms.midlab1.stack;
 
 /**
  * MyStackInterface defines the generic stack operations that

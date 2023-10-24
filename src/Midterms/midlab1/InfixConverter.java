@@ -41,9 +41,9 @@
  *
  */
 
-package Midterms.Project1;
+package Midterms.midlab1;
 
-import Midterms.Project1.stack.MyStack;
+import Midterms.midlab1.stack.MyStack;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 

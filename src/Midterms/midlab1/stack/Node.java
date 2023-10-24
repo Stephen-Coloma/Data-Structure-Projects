@@ -14,7 +14,7 @@
  * </p>
  */
 
-package Midterms.Project1.stack;
+package Midterms.midlab1.stack;
 
 /**
  * The Node class represents a node in a linked list, which can store a data item

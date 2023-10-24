@@ -14,7 +14,7 @@
  * </p>
  */
 
-package Midterms.Project1.stack;
+package Midterms.midlab1.stack;
 
 /**
  * The StackUnderflowException class represents a customized exception that is thrown

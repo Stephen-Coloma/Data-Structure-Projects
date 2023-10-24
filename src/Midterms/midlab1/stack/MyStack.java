@@ -14,7 +14,7 @@
  * </p>
  */
 
-package Midterms.Project1.stack;
+package Midterms.midlab1.stack;
 
 /**
  * MyStack is a generic stack implementation that provides
