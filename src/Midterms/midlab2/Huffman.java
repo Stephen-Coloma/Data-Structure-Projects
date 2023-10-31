@@ -1,27 +1,18 @@
 package Midterms.midlab2;
 
 import Midterms.midlab2.tree.TreeNode;
-
 import java.io.*;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
 public class Huffman {
-    private PriorityQueue<TreeNode> frequencyTable;
+    private PriorityQueue<TreeNode> characterFrequencies;
     private PriorityQueue<TreeNode> huffmanTree;
+    private HashMap<Character, String> huffmanCode = new HashMap<>(); //this stores the huffman code for each character
+
     public Huffman(){
-        frequencyTable = null;
+        characterFrequencies = null;
         huffmanTree = null;
-    }
-
-    /**Returns the frequency table*/
-    public PriorityQueue<TreeNode> getFrequencyTable() {
-        return frequencyTable;
-    }
-
-    /**Returns the frequency table*/
-    public void setFrequencyTable(PriorityQueue<TreeNode> frequencyTable) {
-        frequencyTable = frequencyTable;
     }
 
     /**Returns the huffman tree*/
@@ -29,8 +20,15 @@ public class Huffman {
         return huffmanTree;
     }
 
+    /*Set a huffman tree.
+    * @param huffmanTree to be set*/
     public void setHuffmanTree(PriorityQueue<TreeNode> huffmanTree) {
         this.huffmanTree = huffmanTree;
+    }
+
+    /*TO BE REMOVED:*/
+    public HashMap<Character, String> getHuffmanCode() {
+        return huffmanCode;
     }
 
     /**Generates a huffman tree from the text of a file.
@@ -41,7 +39,7 @@ public class Huffman {
      * @throws IOException when there is an error in running time
      * @throws IllegalArgumentException when the paragraph contains characters that is non-valid
      * */
-    private PriorityQueue<TreeNode> createHuffmanTree(File file) throws Exception{
+    public void createHuffmanTree(File file) throws Exception{
         /*ALGO
         * 1. Read the file and store it in a string text.
         * 2. Create a string template that holds the valid characters
@@ -69,44 +67,79 @@ public class Huffman {
         }
 
         PriorityQueue<TreeNode> huffmanForest = createHuffmanForest(text);
-
         /*TODO: Create a method that converts huffmanForest to single Tree */
-        PriorityQueue<TreeNode> huffmanTree = convertToHuffmanTree(huffmanForest);
-        this.huffmanTree = huffmanTree;
-        return huffmanTree; //need to change to "return huffmanTree"
+        characterFrequencies = new PriorityQueue<>(huffmanForest);
+        huffmanTree = convertToHuffmanTree(huffmanForest);
    }
 
-    /*TODO: method that converts Forest(PriorityQueue) to Single tree (Huffman Tree)
-        Returns the huffman code for each character of the input string.
-        The return of this method will be used in generating the output for huffman tree
-        Input: PriorityQueue<TreeNode>
-        Output: PriorityQueue<TreeNode> (i.e a single tree) return type.
+    /**A helper method that creates huffman forest (i.e. many huffman tree but has no children inside a PriorityQueue)
+     * The huffman forest represents the symbol-frequency table which will be used to calculate storage savings.
+     * @param text the text from which the huffman code will be based.
+     * @return huffman forest expressed in PriorityQueue
+     * */
+    private PriorityQueue<TreeNode> createHuffmanForest(String text){
+        //step 2
+        String validCharacters = "abcdefghijklmnopqrstuvwxyz .?'!,";
 
-        TODO: Generate a helper method that is similar to the printCode() method of sir dale. The purpose is to provide data for huffman code for each character.
-            output: String?? not sure kayo mag decide
-            sample run: Char | Huffman Code
-            -----------------------
-            F | 00000
-            G | 00001
-            H | 0001
-            B | 001
-            A | 01
-            C | 100
-            D | 101
-            E | 11
-     */
-//    UNCOMMENT THIS IF YOU WANT TO WORK IN THIS TASK
+        //step 3
+        HashMap<Character, Integer> huffmanMap = new HashMap<>();
 
-    private PriorityQueue<TreeNode> convertToHuffmanTree(PriorityQueue<TreeNode> huffmanForest){
-        while (huffmanForest.size() > 1) {
+        //step 4
+        for (char token : text.toCharArray()) {
+            if (validCharacters.indexOf(token) >= 0) { // pag token is valid
+                if (huffmanMap.containsKey(token)) { //step 5
+                    huffmanMap.replace(token, (huffmanMap.get(token) + 1)); //replaces the value of the token by 1
+                } else //step 6
+                    huffmanMap.put(token, 1);
+            }else //step 7
+                throw new IllegalArgumentException("Invalid character is found: " + token);
+        }
 
-            TreeNode l = huffmanForest.poll();
-            TreeNode r = huffmanForest.poll();
-            TreeNode p = new TreeNode(l.getCount() + r.getCount(), '\0', l, r);
-            huffmanForest.add(p);
+        //step 8
+        PriorityQueue<TreeNode> huffmanForest = new PriorityQueue<>(); //this sorts also the queue
+        for (char key : huffmanMap.keySet()) {
+            int count = huffmanMap.get(key);
+            char symbol = key;
+            TreeNode current = new TreeNode(count, symbol, null, null);
+
+            huffmanForest.add(current);
         }
         return huffmanForest;
     }
+
+
+    private PriorityQueue<TreeNode> convertToHuffmanTree(PriorityQueue<TreeNode> huffmanForest){
+        TreeNode root = null;
+        while (huffmanForest.size() > 1) {
+            TreeNode l = huffmanForest.poll();
+            TreeNode r = huffmanForest.poll();
+            TreeNode p = new TreeNode(l.getCount() + r.getCount(), '\0', l, r);
+            root=p;
+            huffmanForest.add(p);
+        }
+        generateHuffmanCode(root,""); //this generates the huffman code
+        return huffmanForest;
+    }
+
+
+    private void generateHuffmanCode(TreeNode root, String s){
+        //base case (i.e. current node is the leaf)
+        if (root.getLeft() == null && root.getRight() == null){
+            huffmanCode.put(root.getSymbol(), s);
+        }else {
+            generateHuffmanCode(root.getLeft(), s+"0");
+            generateHuffmanCode(root.getRight(), s+"1");
+        }
+    }
+
+
+    /*======================================================================================*/
+    /*TODO: Method that accepts a string involving the characters in the set //encrypt
+        Handles error for invalid input text (i.e a text that has a character other than the set of characters.
+        Returns the huffman code for that text based from the huffman code generated from the main input file.
+        Input: String
+        Output: String
+    */
 
     public String encrypt(String text){
         StringBuilder encryptedText = new StringBuilder();
@@ -134,15 +167,8 @@ public class Huffman {
         }
     }
 
+    /*======================================================================================*/
 
-
-
-   /*TODO: Method that accepts a string involving the characters in the set //encrypt
-        Handles error for invalid input text (i.e a text that has a character other than the set of characters.
-        Returns the huffman code for that text based from the huffman code generated from the main input file.
-        Input: String
-        Output: String
-    */
 
     /*TODO: Method that accepts a huffman code and shows the string corresponding to the huffman code. //decrypt
         Handles error for invalid input of binary digits. (i.e. input other than 0’s and 1’s).
@@ -154,63 +180,22 @@ public class Huffman {
      */
 
 
-   /**--------------------------------HELPER METHODS---------------------------------------*/
 
-
-   /**A helper methods that creates huffman forest (i.e. many huffman tree but has no children inside a PriorityQueue)
-    * The huffman forest represents the symbol-frequency table which will be used to calculate storage savings.
-    * @param text the text from which the huffman code will be based.
-    * @return huffman forest expressed in PriorityQueue
-    * */
-   private PriorityQueue<TreeNode> createHuffmanForest(String text){
-       //step 2
-       String validCharacters = "abcdefghijklmnopqrstuvwxyz .?'!,";
-
-       //step 3
-       HashMap<Character, Integer> huffmanMap = new HashMap<>();
-
-       //step 4
-       for (char token : text.toCharArray()) {
-           if (validCharacters.indexOf(token) >= 0) { // pag token is valid
-               if (huffmanMap.containsKey(token)) { //step 5
-                   huffmanMap.replace(token, (huffmanMap.get(token) + 1)); //replaces the value of the token by 1
-               } else //step 6
-                   huffmanMap.put(token, 1);
-           }else //step 7
-               throw new IllegalArgumentException("Invalid character is found: " + token);
-       }
-
-       //step 8
-       PriorityQueue<TreeNode> huffmanForest = new PriorityQueue<>(); //this sorts also the queue
-       for (char key : huffmanMap.keySet()) {
-           int count = huffmanMap.get(key);
-           char symbol = key;
-           TreeNode current = new TreeNode(count, symbol, null, null);
-
-           huffmanForest.add(current);
-       }
-
-       frequencyTable = huffmanForest; //the huffman forest should represent the frequency table;
-       return huffmanForest;
-   }
 
 
     /**THIS MAIN METHOD IS FOR TESTING PURPOSES ONLY!*/
     public static void main(String[] args) {
         String filepath = "src/Midterms/midlab2/sample.txt";
         Huffman test = new Huffman();
-
-        try{
+        try {
             test.createHuffmanTree(new File(filepath));
-
-            while (test.getFrequencyTable().size() != 0){
-                System.out.println(test.getFrequencyTable().poll());
-                test.encrypt(String.valueOf(test.getFrequencyTable().poll()));
+            System.out.println("Char | Huffman Code");
+            System.out.println("-----------------------");
+            for (char key: test.getHuffmanCode().keySet()) {
+                System.out.println(key + " | " + test.getHuffmanCode().get(key));
             }
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 }

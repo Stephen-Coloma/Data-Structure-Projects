@@ -116,20 +116,29 @@ public class TreeNode extends PriorityQueue<TreeNode> implements Comparable<Tree
      */
     @Override
     public int compareTo(TreeNode other) {
-        if (isSpecialChar(this.symbol)) { //if invoker is special symbol
-            if (isSpecialChar(other.symbol)) { //both are same special char
-                // Compare special characters based on their custom order
-                String specialCharOrder = " .?'!,";
-                return specialCharOrder.indexOf(this.symbol) - specialCharOrder.indexOf(other.symbol);
-            } else {
-                return 1;  // Special character is greater than non-special character
-            }
-        } else if (isSpecialChar(other.symbol)) { //if invoker is not
-            return -1;  // Non-special character is less than special character
+        if (this.getCount() == other.getCount()) {
+            return 0;
+        } else if (this.getCount() < other.getCount()) {
+            return -1;
         } else {
-            return Character.compare(this.symbol, other.symbol);  // Compare non-special characters lexicographically
+            return 1;
         }
     }
+//    public int compareTo(TreeNode other) {
+//        if (isSpecialChar(this.symbol)) { //if invoker is special symbol
+//            if (isSpecialChar(other.symbol)) { //both are same special char
+//                // Compare special characters based on their custom order
+//                String specialCharOrder = " .?'!,";
+//                return specialCharOrder.indexOf(this.symbol) - specialCharOrder.indexOf(other.symbol);
+//            } else {
+//                return 1;  // Special character is greater than non-special character
+//            }
+//        } else if (isSpecialChar(other.symbol)) { //if invoker is not
+//            return -1;  // Non-special character is less than special character
+//        } else {
+//            return Character.compare(this.symbol, other.symbol);  // Compare non-special characters lexicographically
+//        }
+//    }
 
     /**Checks if the character is a special character of not.
      * @param symbol to be checked
