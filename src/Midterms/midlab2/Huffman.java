@@ -2,6 +2,8 @@ package Midterms.midlab2;
 
 import Midterms.midlab2.tree.TreeNode;
 import java.io.*;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
@@ -192,6 +194,57 @@ public class Huffman {
         Input: String
         Output: String
 
+
+    /*======================================================================================*/
+
+    /**
+     * Calculates and returns the savings achieved by comparing the storage usage of ASCII encoding
+     * with the storage usage of Huffman coding in percentage format.
+     * @return A formatted String representing the percentage savings achieved.
+     */
+    public String calculateSavings(){
+        /*ALGO
+        * 1. Calculate the storage used for ASCII encoding. of the hashmap
+            * 1.1. Total the number of characters based on the value on the characterFrequency
+            * 1.2. Multiply the total to 7 (for ascii) then store it in a variable
+        * 2. Calculate the storage used for huffman coding.
+            * 2.1. For each character's frequency in the characterFrequency table,
+            *       multiply it to the length of the huffman code for that character in huffmanCode
+            * 2.2. Store it in a variable
+        * 3. Divide and multiply the huffman coding to ascii coding
+        * 4. Append the percentage sign then return the String*/
+
+        //step 1.1
+        int totalCharacters = 0;
+        //step 2.2
+        double huffmanStorageUsage=0.0;
+
+        ArrayList<TreeNode> characterFrequencyArrayList = new ArrayList<>(characterFrequencies);
+
+        for (TreeNode token : characterFrequencyArrayList) {
+            totalCharacters += token.getCount(); //step 1.1
+            int length = huffmanCode.get(token.getSymbol()).length(); //step 2.1
+            int count = token.getCount(); //step 2.1
+            huffmanStorageUsage+=(length*count);//step 2.2
+        }
+
+        //step 1.2
+        double asciiStorageUsage=totalCharacters*7;
+
+        //step 3
+        double savings = ((asciiStorageUsage-huffmanStorageUsage)/asciiStorageUsage)*100;
+
+        // Create a DecimalFormat object with the desired format
+        DecimalFormat df = new DecimalFormat("#.00");
+
+        // Format the result to two decimal places
+        String formattedResult = df.format(savings);
+
+        return formattedResult+"%";
+    }
+    /*======================================================================================*/
+
+
     /*TODO: method that displays the huffman tree.
         //dont work on this yet
      */
@@ -215,7 +268,10 @@ public class Huffman {
             System.out.println("=====================================");
 
             String text = "abc";
-            System.out.println(test.encrypt(text));
+            System.out.println("TEXT: " + text);
+            System.out.println("HUFFMAN EQUIVALENT: " + test.encrypt(text));
+            System.out.println();
+            System.out.println("PERCENTAGE SAVINGS: " + test.calculateSavings());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
