@@ -1,6 +1,8 @@
 package Midterms.midlab2.tree;
 
-public class TreeNode implements Comparable<TreeNode> {
+import java.util.PriorityQueue;
+
+public class TreeNode extends PriorityQueue<TreeNode> implements Comparable<TreeNode> {
     int count;
     char symbol;
     TreeNode left;

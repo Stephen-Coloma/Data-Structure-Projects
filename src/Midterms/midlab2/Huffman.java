@@ -73,8 +73,8 @@ public class Huffman {
         //THIS IS INCOMPLETE
         /*TODO: Create a method that converts huffmanForest to single Tree */
 //        Uncomment this after creating the convertToHuffmanTree() method
-//        PriorityQueue<TreeNode> huffmanTree = convertToHuffmanTree(huffmanForest);
-//        this.huffmanTree = huffmanTree;
+        PriorityQueue<TreeNode> huffmanTree = convertToHuffmanTree(huffmanForest);
+        this.huffmanTree = huffmanTree;
         return huffmanForest; //need to change to "return huffmanTree"
    }
 
@@ -98,9 +98,19 @@ public class Huffman {
             E | 11
      */
 //    UNCOMMENT THIS IF YOU WANT TO WORK IN THIS TASK
-//    private PriorityQueue<TreeNode> convertToHuffmanTree(PriorityQueue<TreeNode> huffmanForest){
-//
-//    }
+
+    private PriorityQueue<TreeNode> convertToHuffmanTree(PriorityQueue<TreeNode> huffmanForest){
+        while (huffmanForest.size() > 1) {
+
+            TreeNode l = huffmanForest.poll();
+            TreeNode r = huffmanForest.poll();
+
+            TreeNode p = new TreeNode(l.getCount() + r.getCount(), '\0', l, r);
+
+            huffmanForest.add(p);
+        }
+        return huffmanForest;
+    }
 
 
 
