@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" afterDir="false" />
@@ -46,24 +45,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "stephen",
-    "last_opened_file_path": "C:/Users/dana/IdeaProjects/BSCS 2/src/prelim",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15136719",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;stephen&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dana/IdeaProjects/BSCS 2/src/prelim&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15136719&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2" />
+      <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Huffman">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Prelims.Project1.BubbleSort" />
@@ -154,6 +159,7 @@
       <workItem from="1697294166895" duration="1349000" />
       <workItem from="1697638673233" duration="1936000" />
       <workItem from="1698132128363" duration="10114000" />
+      <workItem from="1698762775890" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="add: PostfixEvaluator class, methods todos and algorithm">
       <created>1696943388377</created>
@@ -261,7 +267,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="EvaluatePostfix" />
+                        <option value="stephen" />
                       </list>
                     </value>
                   </entry>

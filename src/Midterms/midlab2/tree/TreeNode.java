@@ -107,12 +107,14 @@ public class TreeNode extends PriorityQueue<TreeNode> implements Comparable<Tree
     }
 
     /**
-     * Compare this TreeNode to another TreeNode based on their symbol.
-     * For special characters, '.' '?' ''' '!' and ',' , they are placed after alphabet character
+     * Compares this TreeNode's count with another TreeNode's count for the purpose of sorting.
+     * <p>
+     * This method is used for ordering TreeNodes in a PriorityQueue. It compares the count of
+     * this TreeNode with the count of another TreeNode.
      *
-     * @param other The other TreeNode to compare to.
-     * @return      0 if symbol are equal, -1 if this less is less than the other,
-     *              and 1 if this count is greater than the other.
+     * @param other The TreeNode to be compared with this TreeNode.
+     * @return 0 if counts are equal, a negative value if this count is less than the other count,
+     *         or a positive value if this count is greater than the other count.
      */
     @Override
     public int compareTo(TreeNode other) {
@@ -124,21 +126,6 @@ public class TreeNode extends PriorityQueue<TreeNode> implements Comparable<Tree
             return 1;
         }
     }
-//    public int compareTo(TreeNode other) {
-//        if (isSpecialChar(this.symbol)) { //if invoker is special symbol
-//            if (isSpecialChar(other.symbol)) { //both are same special char
-//                // Compare special characters based on their custom order
-//                String specialCharOrder = " .?'!,";
-//                return specialCharOrder.indexOf(this.symbol) - specialCharOrder.indexOf(other.symbol);
-//            } else {
-//                return 1;  // Special character is greater than non-special character
-//            }
-//        } else if (isSpecialChar(other.symbol)) { //if invoker is not
-//            return -1;  // Non-special character is less than special character
-//        } else {
-//            return Character.compare(this.symbol, other.symbol);  // Compare non-special characters lexicographically
-//        }
-//    }
 
     /**Checks if the character is a special character of not.
      * @param symbol to be checked
@@ -147,7 +134,7 @@ public class TreeNode extends PriorityQueue<TreeNode> implements Comparable<Tree
         return (symbol == ' ' || symbol == '.' || symbol == '?' || symbol == '\'' || symbol == '!' || symbol == ',');
     }
 
-    /**String represntation of TreeNode with its count and symbol.*/
+    /**String representation of TreeNode with its count and symbol.*/
     @Override
     public String toString() {
         return symbol + " | " + count;

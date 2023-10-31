@@ -152,38 +152,37 @@ public class Huffman {
 
 
     /*======================================================================================*/
-    /*TODO: Method that accepts a string involving the characters in the set //encrypt
-        Handles error for invalid input text (i.e a text that has a character other than the set of characters.
-        Returns the huffman code for that text based from the huffman code generated from the main input file.
-        Input: String
-        Output: String
-    */
 
+    /**
+     * Encrypts the input text using Huffman coding.
+     *
+     * @param text The input text to be encrypted.
+     * @return The encrypted text in the form of Huffman codes.
+     * @throws IllegalArgumentException If an invalid character is encountered in the input text.
+     */
     public String encrypt(String text){
-        StringBuilder encryptedText = new StringBuilder();
+        /*ALGO
+        * 1. Declare a string variable
+        * 2. For each character in text, validate if it is a valid character
+        * 2.2. If it is not a valid character, return an error message
+        * 2.3. Else, get its huffman code into the huffmanCode map
+        * 3. Append each code onto the string
+        * 4. Return the string*/
 
-        PriorityQueue<TreeNode> huffmanTree = getHuffmanTree();
+        //step 1
+        String huffmanEquivalent = "";
 
-        for(char c : text.toCharArray()){
-            String textHuffmanCode = encodeCharacter(c, huffmanTree.peek(), "");
-            encryptedText.append(textHuffmanCode);
+        //step 2
+        for (char token:text.toCharArray()) {
+            //step 2.2
+            if (!huffmanCode.containsKey(token)){
+                throw new IllegalArgumentException("Huffman Code cannot be generated: Invalid Character " + token);
+            }else //step 2.3
+                huffmanEquivalent+=huffmanCode.get(token); //step 4
         }
-        return encryptedText.toString();
+        return huffmanEquivalent;
     }
 
-    private String encodeCharacter(char character, TreeNode currentNode, String currentCode) {
-        if (currentNode == null) {
-            // Character not found in the Huffman tree, which is unexpected
-            throw new IllegalArgumentException("Character not found in the Huffman tree: " + character);
-        }
-        if (currentNode.getSymbol() == character) {
-            // The character is found in the Huffman tree, return the accumulated code
-            return currentCode;
-        } else {
-            // This should not happen in a valid Huffman tree
-            throw new IllegalStateException("Invalid Huffman tree");
-        }
-    }
 
     /*======================================================================================*/
 
@@ -212,6 +211,11 @@ public class Huffman {
             for (char key: test.getHuffmanCode().keySet()) {
                 System.out.println(key + " | " + test.getHuffmanCode().get(key));
             }
+
+            System.out.println("=====================================");
+
+            String text = "abc";
+            System.out.println(test.encrypt(text));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
