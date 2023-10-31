@@ -67,7 +67,6 @@ public class Huffman {
         }
 
         PriorityQueue<TreeNode> huffmanForest = createHuffmanForest(text);
-        /*TODO: Create a method that converts huffmanForest to single Tree */
         characterFrequencies = new PriorityQueue<>(huffmanForest);
         huffmanTree = convertToHuffmanTree(huffmanForest);
    }
@@ -108,6 +107,17 @@ public class Huffman {
     }
 
 
+    /**
+     * Converts a forest of Huffman trees into a single Huffman tree.
+     * This method takes a PriorityQueue of TreeNode objects, where each node
+     * represents a Huffman tree. It repeatedly combines the two trees with
+     * the lowest frequencies until only one tree remains, which is the Huffman tree.
+     * Additionally, it generates Huffman codes for each character based on the
+     * Huffman tree.
+     *
+     * @param huffmanForest The PriorityQueue of TreeNode objects representing a forest of Huffman trees.
+     * @return The PriorityQueue of TreeNode representing a single Huffman tree.
+     */
     private PriorityQueue<TreeNode> convertToHuffmanTree(PriorityQueue<TreeNode> huffmanForest){
         TreeNode root = null;
         while (huffmanForest.size() > 1) {
@@ -122,6 +132,14 @@ public class Huffman {
     }
 
 
+    /**
+     * Recursively generates Huffman codes for characters based on the Huffman tree.
+     * This method traverses the Huffman tree and assigns binary codes to each character
+     * based on their position in the tree.
+     *
+     * @param root The current TreeNode in the traversal, initially the root of the Huffman tree.
+     * @param s The binary code accumulated during traversal, initially an empty string.
+     */
     private void generateHuffmanCode(TreeNode root, String s){
         //base case (i.e. current node is the leaf)
         if (root.getLeft() == null && root.getRight() == null){
