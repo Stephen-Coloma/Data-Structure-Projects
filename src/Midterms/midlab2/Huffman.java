@@ -70,12 +70,10 @@ public class Huffman {
 
         PriorityQueue<TreeNode> huffmanForest = createHuffmanForest(text);
 
-        //THIS IS INCOMPLETE
         /*TODO: Create a method that converts huffmanForest to single Tree */
-//        Uncomment this after creating the convertToHuffmanTree() method
         PriorityQueue<TreeNode> huffmanTree = convertToHuffmanTree(huffmanForest);
         this.huffmanTree = huffmanTree;
-        return huffmanForest; //need to change to "return huffmanTree"
+        return huffmanTree; //need to change to "return huffmanTree"
    }
 
     /*TODO: method that converts Forest(PriorityQueue) to Single tree (Huffman Tree)
@@ -104,12 +102,36 @@ public class Huffman {
 
             TreeNode l = huffmanForest.poll();
             TreeNode r = huffmanForest.poll();
-
             TreeNode p = new TreeNode(l.getCount() + r.getCount(), '\0', l, r);
-
             huffmanForest.add(p);
         }
         return huffmanForest;
+    }
+
+    public String encrypt(String text){
+        StringBuilder encryptedText = new StringBuilder();
+
+        PriorityQueue<TreeNode> huffmanTree = getHuffmanTree();
+
+        for(char c : text.toCharArray()){
+            String textHuffmanCode = encodeCharacter(c, huffmanTree.peek(), "");
+            encryptedText.append(textHuffmanCode);
+        }
+        return encryptedText.toString();
+    }
+
+    private String encodeCharacter(char character, TreeNode currentNode, String currentCode) {
+        if (currentNode == null) {
+            // Character not found in the Huffman tree, which is unexpected
+            throw new IllegalArgumentException("Character not found in the Huffman tree: " + character);
+        }
+        if (currentNode.getSymbol() == character) {
+            // The character is found in the Huffman tree, return the accumulated code
+            return currentCode;
+        } else {
+            // This should not happen in a valid Huffman tree
+            throw new IllegalStateException("Invalid Huffman tree");
+        }
     }
 
 
@@ -183,6 +205,7 @@ public class Huffman {
 
             while (test.getFrequencyTable().size() != 0){
                 System.out.println(test.getFrequencyTable().poll());
+                test.encrypt(String.valueOf(test.getFrequencyTable().poll()));
             }
 
         } catch (Exception e) {

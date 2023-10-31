@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/tree/TreeNode.java" afterDir="false" />
     </list>
@@ -297,7 +299,7 @@
           <option name="timeStamp" value="2" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.jdks/corretto-20.0.2.1/lib/src.zip!/java.base/java/util/HashMap.java</url>
+          <url>jar://$PROJECT_DIR$/../.jdks/corretto-20.0.2.1/lib/src.zip!/java.base/java/util/HashMap.java</url>
           <line>360</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
