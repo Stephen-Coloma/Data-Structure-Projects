@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: Implement initial GUI for Huffman Code Decryption page">
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: Resize the panels, adjusted Jcomponents sizes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/DecryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/DecryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,48 +69,9 @@
       <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DecryptionHuffmanCode">
-    <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Prelims.Project1.BubbleSort" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Prelims.Project1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Midterms.midlab2.GUI.EncryptionHuffmanCode">
     <configuration name="DecryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.DecryptionHuffmanCode" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Midterms.midlab2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EncryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.EncryptionHuffmanCode" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Midterms.midlab2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Huffman" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.Huffman" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
@@ -134,13 +96,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InputFilePage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.InputFilePage" />
+      <module name="CS211_9342_MixAndMatch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Midterms.midlab2.GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Midterms.midlab2.GUI.DecryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.DecryptionHuffmanCode" />
+      <module name="CS211_9342_MixAndMatch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Midterms.midlab2.GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Midterms.midlab2.GUI.EncryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.EncryptionHuffmanCode" />
+      <module name="CS211_9342_MixAndMatch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Midterms.midlab2.GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DecryptionHuffmanCode" />
-        <item itemvalue="Application.EncryptionHuffmanCode" />
+        <item itemvalue="Application.Midterms.midlab2.GUI.EncryptionHuffmanCode" />
+        <item itemvalue="Application.Midterms.midlab2.GUI.DecryptionHuffmanCode" />
+        <item itemvalue="Application.InputFilePage" />
         <item itemvalue="Application.HuffmanGUI" />
-        <item itemvalue="Application.Huffman" />
-        <item itemvalue="Application.BubbleSort" />
+        <item itemvalue="Application.DecryptionHuffmanCode" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698821405267</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: Resize the panels, adjusted Jcomponents sizes">
+      <created>1698830589698</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698830589698</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +315,8 @@
     <MESSAGE value="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram" />
     <MESSAGE value="add: Added GUI for Huffman Encoding/Decoding&quot;" />
     <MESSAGE value="feat: Implement initial GUI for Huffman Code Decryption page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Implement initial GUI for Huffman Code Decryption page" />
+    <MESSAGE value="feat: Resize the panels, adjusted Jcomponents sizes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Resize the panels, adjusted Jcomponents sizes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

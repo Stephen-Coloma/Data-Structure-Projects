@@ -63,24 +63,24 @@ public class DecryptionHuffmanCode extends JPanel {
     }
 
     private void setComponentBounds() {
-        TextToHuffmanLabel.setBounds (860, 15, 250, 30);
-        homeButton.setBounds (35, 40, 260, 90);
-        inputFileButton.setBounds (35, 165, 260, 90);
-        textToHuffmanButton.setBounds (40, 300, 260, 90);
-        huffmanToText.setBounds (35, 415, 260, 90);
-        storageSavingsButton.setBounds (35, 540, 260, 90);
-        showTreeButton.setBounds (35, 665, 260, 90);
+        TextToHuffmanLabel.setBounds (840, 25, 250, 30);
+        homeButton.setBounds (35, 25, 260, 90);
+        inputFileButton.setBounds (35, 160, 260, 90);
+        textToHuffmanButton.setBounds (35, 295, 260, 90);
+        huffmanToText.setBounds (35, 430, 265, 90);
+        storageSavingsButton.setBounds (35, 565, 260, 90);
+        showTreeButton.setBounds (35, 700, 260, 90);
         huffmanCodeInputTextLabel.setBounds (335, 65, 250, 35);
         huffmanCodeINputTExtField.setBounds (335, 95, 1150, 50);
         huffmanCodeTextLabel.setBounds (335, 145, 250, 35);
         huffmanCodeINputTextField.setBounds (335, 175, 1150, 50);
         decodeToHuffmanButton.setBounds (770, 250, 260, 60);
-        huffmanCodeTableList.setBounds (335, 325, 1150, 460);
-        huffmanCodeTableLabel.setBounds (860, 790, 150, 35);
+        huffmanCodeTableList.setBounds (335, 325, 1150, 465);
+        huffmanCodeTableLabel.setBounds (840, 790, 150, 35);
     }
 
     public static void main (String[] args) {
-        JFrame frame = new JFrame ("MyPanel");
+        JFrame frame = new JFrame ("Huffman Code Decryption");
         frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add (new DecryptionHuffmanCode());
         frame.pack();

@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class EncryptionHuffmanCode extends JPanel {
     private JButton inputFileButton;
-    private JLabel huffmanCodeConverterLabel;
+    private JLabel TextToHuffmanLabel;
     private JButton homeButton;
     private JButton textToHuffmanButton;
     private JButton huffmanToText;
@@ -17,15 +17,13 @@ public class EncryptionHuffmanCode extends JPanel {
     private JLabel huffmanCodeInputTextLabel;
     private JLabel huffmanCodeTextLabel;
     private JTextField huffmanCodeINputTextField;
-    private JButton encodeToHuffmanButton;
+    private JButton decodeToHuffmanButton;
 
     public EncryptionHuffmanCode() {
-        //construct preComponents
         String[] huffmanCodeTableListItems = {"Item 1", "Item 2", "Item 3"};
 
-        //construct components
         inputFileButton = new JButton ("INPUT FILE");
-        huffmanCodeConverterLabel = new JLabel ("HUFFMAN CODE CONVERTER");
+        TextToHuffmanLabel = new JLabel ("HUFFMAN TO TEXT");
         homeButton = new JButton ("HOME");
         textToHuffmanButton = new JButton ("TEXT TO HUFFMAN");
         huffmanToText = new JButton ("HUFFMAN TO TEXT");
@@ -37,15 +35,19 @@ public class EncryptionHuffmanCode extends JPanel {
         huffmanCodeInputTextLabel = new JLabel ("Enter a text:");
         huffmanCodeTextLabel = new JLabel ("Huffman Code:");
         huffmanCodeINputTextField = new JTextField (5);
-        encodeToHuffmanButton = new JButton ("Encode to Huffman Code");
+        decodeToHuffmanButton = new JButton ("Encode to Huffman Code");
 
-        //adjust size and set layout
-        setPreferredSize (new Dimension (901, 579));
+        setPreferredSize (new Dimension (1600, 900));
         setLayout (null);
 
-        //add components
+        addComponents();
+
+        setComponentBounds();
+    }
+
+    private void addComponents() {
         add (inputFileButton);
-        add (huffmanCodeConverterLabel);
+        add (TextToHuffmanLabel);
         add (homeButton);
         add (textToHuffmanButton);
         add (huffmanToText);
@@ -57,27 +59,28 @@ public class EncryptionHuffmanCode extends JPanel {
         add (huffmanCodeInputTextLabel);
         add (huffmanCodeTextLabel);
         add (huffmanCodeINputTextField);
-        add (encodeToHuffmanButton);
-
-        inputFileButton.setBounds (25, 150, 155, 60);
-        huffmanCodeConverterLabel.setBounds (25, 15, 880, 30);
-        homeButton.setBounds (25, 65, 155, 60);
-        textToHuffmanButton.setBounds (25, 235, 155, 60);
-        huffmanToText.setBounds (25, 320, 155, 60);
-        storageSavingsButton.setBounds (25, 405, 155, 60);
-        showTreeButton.setBounds (25, 490, 155, 55);
-        huffmanCodeTableList.setBounds (205, 250, 670, 295);
-        huffmanCodeTableLabel.setBounds (490, 540, 150, 35);
-        huffmanCodeINputTExtField.setBounds (425, 70, 450, 40);
-        huffmanCodeInputTextLabel.setBounds (275, 75, 230, 35);
-        huffmanCodeTextLabel.setBounds (280, 140, 100, 25);
-        huffmanCodeINputTextField.setBounds (425, 130, 450, 40);
-        encodeToHuffmanButton.setBounds (535, 190, 255, 40);
+        add (decodeToHuffmanButton);
     }
 
+    private void setComponentBounds() {
+        TextToHuffmanLabel.setBounds (840, 25, 250, 30);
+        homeButton.setBounds (35, 25, 260, 90);
+        inputFileButton.setBounds (35, 160, 260, 90);
+        textToHuffmanButton.setBounds (35, 295, 260, 90);
+        huffmanToText.setBounds (35, 430, 265, 90);
+        storageSavingsButton.setBounds (35, 565, 260, 90);
+        showTreeButton.setBounds (35, 700, 260, 90);
+        huffmanCodeInputTextLabel.setBounds (335, 65, 250, 35);
+        huffmanCodeINputTExtField.setBounds (335, 95, 1150, 50);
+        huffmanCodeTextLabel.setBounds (335, 145, 250, 35);
+        huffmanCodeINputTextField.setBounds (335, 175, 1150, 50);
+        decodeToHuffmanButton.setBounds (770, 250, 260, 60);
+        huffmanCodeTableList.setBounds (335, 325, 1150, 465);
+        huffmanCodeTableLabel.setBounds (840, 790, 150, 35);
+    }
 
     public static void main (String[] args) {
-        JFrame frame = new JFrame ("MyPanel");
+        JFrame frame = new JFrame ("Huffman Code Decryption");
         frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add (new EncryptionHuffmanCode());
         frame.pack();
