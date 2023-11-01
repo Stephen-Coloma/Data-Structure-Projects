@@ -1,10 +1,8 @@
-package Midterms.midlab2;
+package Midterms.midlab2.GUI;
 
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 public class DecryptionHuffmanCode extends JPanel {
     private JButton inputFileButton;

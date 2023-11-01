@@ -1,4 +1,4 @@
-package Midterms.midlab2;
+package Midterms.midlab2.GUI;
 
 import java.awt.*;
 import javax.swing.*;

@@ -1,4 +1,4 @@
-package Midterms.midlab2;
+package Midterms.midlab2.GUI;
 
 import Midterms.midlab2.tree.TreeNode;
 import java.io.*;
