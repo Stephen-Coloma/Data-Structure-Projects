@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="add: Added GUI for Huffman Encoding/Decoding&quot;">
-      <change afterPath="$PROJECT_DIR$/src/Midterms/midlab2/DecryptionHuffmanCode.java" afterDir="false" />
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: Implement initial GUI for Huffman Code Decryption page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/EncryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/EncryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/DecryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/DecryptionHuffmanCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698806614149</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: Implement initial GUI for Huffman Code Decryption page">
+      <created>1698821405267</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1698821405267</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +306,8 @@
     <MESSAGE value="add: Note to users of the valid operators in the program" />
     <MESSAGE value="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram" />
     <MESSAGE value="add: Added GUI for Huffman Encoding/Decoding&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: Added GUI for Huffman Encoding/Decoding&quot;" />
+    <MESSAGE value="feat: Implement initial GUI for Huffman Code Decryption page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Implement initial GUI for Huffman Code Decryption page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -324,5 +331,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MyStack_java$DecryptionHuffmanCode.ic" NAME="DecryptionHuffmanCode Coverage Results" MODIFIED="1698824265345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Midterms.midlab2.*</FILTER>
+    </SUITE>
   </component>
 </project>
