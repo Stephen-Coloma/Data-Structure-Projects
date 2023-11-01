@@ -1,6 +1,8 @@
 package Midterms.midlab2.tree;
 
-public class TreeNode implements Comparable<TreeNode> {
+import java.util.PriorityQueue;
+
+public class TreeNode extends PriorityQueue<TreeNode> implements Comparable<TreeNode> {
     int count;
     char symbol;
     TreeNode left;
@@ -105,11 +107,14 @@ public class TreeNode implements Comparable<TreeNode> {
     }
 
     /**
-     * Compare this TreeNode to another TreeNode based on their counts.
+     * Compares this TreeNode's count with another TreeNode's count for the purpose of sorting.
+     * <p>
+     * This method is used for ordering TreeNodes in a PriorityQueue. It compares the count of
+     * this TreeNode with the count of another TreeNode.
      *
-     * @param other The other TreeNode to compare to.
-     * @return      0 if counts are equal, -1 if this count is less than the other,
-     *              and 1 if this count is greater than the other.
+     * @param other The TreeNode to be compared with this TreeNode.
+     * @return 0 if counts are equal, a negative value if this count is less than the other count,
+     *         or a positive value if this count is greater than the other count.
      */
     @Override
     public int compareTo(TreeNode other) {
@@ -120,6 +125,19 @@ public class TreeNode implements Comparable<TreeNode> {
         } else {
             return 1;
         }
+    }
+
+    /**Checks if the character is a special character of not.
+     * @param symbol to be checked
+     * @return true if it is a special character, otherwise false*/
+    private boolean isSpecialChar(char symbol){
+        return (symbol == ' ' || symbol == '.' || symbol == '?' || symbol == '\'' || symbol == '!' || symbol == ',');
+    }
+
+    /**String representation of TreeNode with its count and symbol.*/
+    @Override
+    public String toString() {
+        return symbol + " | " + count;
     }
 }
 
