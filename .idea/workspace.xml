@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="add: Added GUI for Huffman Encoding/Decoding&quot;">
-      <change afterPath="$PROJECT_DIR$/src/Midterms/midlab2/EncryptionHuffmanCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Midterms/midlab2/DecryptionHuffmanCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/EncryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/EncryptionHuffmanCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +69,7 @@
       <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HuffmanGUI">
+  <component name="RunManager" selected="Application.DecryptionHuffmanCode">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Prelims.Project1.BubbleSort" />
       <module name="CS211_9342_MixAndMatch" />
@@ -82,12 +83,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GoogleClassroomApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Prelims.Project2.GoogleClassroomApp" />
+    <configuration name="DecryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.DecryptionHuffmanCode" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Prelims.Project2.*" />
+          <option name="PATTERN" value="Midterms.midlab2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EncryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.EncryptionHuffmanCode" />
+      <module name="CS211_9342_MixAndMatch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Midterms.midlab2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,26 +135,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Prelims.Project1.InsertionSort" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Prelims.Project1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DecryptionHuffmanCode" />
+        <item itemvalue="Application.EncryptionHuffmanCode" />
         <item itemvalue="Application.HuffmanGUI" />
         <item itemvalue="Application.Huffman" />
         <item itemvalue="Application.BubbleSort" />
-        <item itemvalue="Application.InsertionSort" />
-        <item itemvalue="Application.GoogleClassroomApp" />
       </list>
     </recent_temporary>
   </component>

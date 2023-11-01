@@ -1,11 +1,12 @@
 package Midterms.midlab2;
 
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class EncryptionHuffmanCode extends JPanel {
+public class DecryptionHuffmanCode extends JPanel {
     private JButton inputFileButton;
     private JLabel huffmanCodeConverterLabel;
     private JButton homeButton;
@@ -21,7 +22,7 @@ public class EncryptionHuffmanCode extends JPanel {
     private JTextField huffmanCodeINputTextField;
     private JButton encodeToHuffmanButton;
 
-    public EncryptionHuffmanCode() {
+    public DecryptionHuffmanCode() {
         //construct preComponents
         String[] huffmanCodeTableListItems = {"Item 1", "Item 2", "Item 3"};
 
@@ -36,10 +37,10 @@ public class EncryptionHuffmanCode extends JPanel {
         huffmanCodeTableList = new JList (huffmanCodeTableListItems);
         huffmanCodeTableLabel = new JLabel ("Huffman Code Table");
         huffmanCodeINputTExtField = new JTextField (5);
-        huffmanCodeInputTextLabel = new JLabel ("Enter a text:");
-        huffmanCodeTextLabel = new JLabel ("Huffman Code:");
+        huffmanCodeInputTextLabel = new JLabel ("Enter Huffman Code:");
+        huffmanCodeTextLabel = new JLabel ("Decoded Text:");
         huffmanCodeINputTextField = new JTextField (5);
-        encodeToHuffmanButton = new JButton ("Encode to Huffman Code");
+        encodeToHuffmanButton = new JButton ("Decode to text");
 
         //adjust size and set layout
         setPreferredSize (new Dimension (901, 579));
@@ -81,7 +82,7 @@ public class EncryptionHuffmanCode extends JPanel {
     public static void main (String[] args) {
         JFrame frame = new JFrame ("MyPanel");
         frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add (new EncryptionHuffmanCode());
+        frame.getContentPane().add (new DecryptionHuffmanCode());
         frame.pack();
         frame.setVisible (true);
     }
