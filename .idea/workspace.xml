@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: Resize the panels, adjusted Jcomponents sizes">
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: Resize the panels, adjust Jcomponents sizes of EncryptionHuffmanCode Page, fix errors on DecryptionHuffmanCode.java Page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,8 +137,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Midterms.midlab2.GUI.EncryptionHuffmanCode" />
-        <item itemvalue="Application.Midterms.midlab2.GUI.DecryptionHuffmanCode" />
         <item itemvalue="Application.InputFilePage" />
+        <item itemvalue="Application.Midterms.midlab2.GUI.DecryptionHuffmanCode" />
         <item itemvalue="Application.HuffmanGUI" />
         <item itemvalue="Application.DecryptionHuffmanCode" />
       </list>
@@ -267,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698830589698</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: Resize the panels, adjust Jcomponents sizes of EncryptionHuffmanCode Page, fix errors on DecryptionHuffmanCode.java Page">
+      <created>1698839285445</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1698839285445</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +322,8 @@
     <MESSAGE value="add: Added GUI for Huffman Encoding/Decoding&quot;" />
     <MESSAGE value="feat: Implement initial GUI for Huffman Code Decryption page" />
     <MESSAGE value="feat: Resize the panels, adjusted Jcomponents sizes" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Resize the panels, adjusted Jcomponents sizes" />
+    <MESSAGE value="feat: Resize the panels, adjust Jcomponents sizes of EncryptionHuffmanCode Page, fix errors on DecryptionHuffmanCode.java Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Resize the panels, adjust Jcomponents sizes of EncryptionHuffmanCode Page, fix errors on DecryptionHuffmanCode.java Page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
