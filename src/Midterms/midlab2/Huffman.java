@@ -195,7 +195,7 @@ public class Huffman {
      * @return The decrypted original text.
      * @throws IllegalArgumentException If an invalid binary digit is encountered in the input text.
      */
-    public String decrypt(String huffmanEncodedText, HashMap<Character, String> huffmanCode) {
+    public String decrypt(String huffmanEncodedText) {
         /* ALGO
          * 1. Declare a string variable to store the decrypted text.
          * 2. Initialize an empty StringBuilder to accumulate binary digits.
@@ -295,13 +295,6 @@ public class Huffman {
     /*======================================================================================*/
 
 
-    /*TODO: method that displays the huffman tree.
-        //dont work on this yet
-     */
-
-
-
-
 
     /**THIS MAIN METHOD IS FOR TESTING PURPOSES ONLY!*/
     public static void main(String[] args) {
@@ -323,7 +316,7 @@ public class Huffman {
             System.out.println();
             System.out.println("PERCENTAGE SAVINGS: " + test.calculateSavings());
             String encryptedText = "10000111111000011101110000111010111111100111100011100000010111111101";
-            String decryptedText = test.decrypt(encryptedText, test.getHuffmanCode());
+            String decryptedText = test.decrypt(encryptedText);
             System.out.println("Decrypted Text: " + decryptedText);
 
         } catch (Exception e) {
