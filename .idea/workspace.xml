@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="add: Added GUI for Huffman Encoding/Decoding&quot;">
+      <change afterPath="$PROJECT_DIR$/src/Midterms/midlab2/EncryptionHuffmanCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697637335992</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add: Added GUI for Huffman Encoding/Decoding&quot;">
+      <created>1698806614149</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1698806614149</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +298,8 @@
     <MESSAGE value="docs: Add multiline comments to StackUnderflowException class&#10;&#10;- Provide a comment explaining the purpose and usage of the StackUnderflowException class.&#10;- Add a constructor comment detailing its purpose and parameter." />
     <MESSAGE value="add: Note to users of the valid operators in the program" />
     <MESSAGE value="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram" />
+    <MESSAGE value="add: Added GUI for Huffman Encoding/Decoding&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: Added GUI for Huffman Encoding/Decoding&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
