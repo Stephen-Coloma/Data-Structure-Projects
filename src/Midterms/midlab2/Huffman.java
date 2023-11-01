@@ -188,11 +188,61 @@ public class Huffman {
 
     /*======================================================================================*/
 
+    /**
+     * Decrypts a Huffman-encoded text into the original text.
+     *
+     * @param huffmanEncodedText The input Huffman-encoded text to be decrypted.
+     * @return The decrypted original text.
+     * @throws IllegalArgumentException If an invalid binary digit is encountered in the input text.
+     */
+    public String decrypt(String huffmanEncodedText, HashMap<Character, String> huffmanCode) {
+        /* ALGO
+         * 1. Declare a string variable to store the decrypted text.
+         * 2. Initialize an empty StringBuilder to accumulate binary digits.
+         * 3. Iterate through the Huffman-encoded text:
+         *    3.1. Append the current character to the StringBuilder.
+         *    3.2. Check if the accumulated binary digits match any Huffman code.
+         *    3.3. If a match is found, add the corresponding character to the decrypted text,
+         *         reset the StringBuilder, and continue searching for the next code.
+         *    3.4. If no match is found, continue accumulating binary digits.
+         *    3.5. Handle the case where invalid binary digits (other than '0' and '1') are encountered.
+         * 4. Return the decrypted text.
+         */
 
-    /*TODO: Method that accepts a huffman code and shows the string corresponding to the huffman code. //decrypt
-        Handles error for invalid input of binary digits. (i.e. input other than 0’s and 1’s).
-        Input: String
-        Output: String
+        // Step 1
+        StringBuilder binaryDigits = new StringBuilder();
+        StringBuilder decryptedText = new StringBuilder();
+
+        // Step 3
+        for (char token : huffmanEncodedText.toCharArray()) {
+            // Step 3.1
+            binaryDigits.append(token);
+
+            // Step 3.2
+            boolean matchFound = false;
+            for (char key : huffmanCode.keySet()) {
+                String huffmanCodeValue = huffmanCode.get(key);
+                if (binaryDigits.toString().equals(huffmanCodeValue)) {
+                    // Step 3.3
+                    decryptedText.append(key);
+                    binaryDigits.setLength(0); // Reset the StringBuilder
+                    matchFound = true;
+                    break; // Continue searching for the next code
+                }
+            }
+
+            // Step 3.4
+            if (!matchFound) {
+                // Step 3.5 - Handle invalid binary digits
+                if (!binaryDigits.toString().matches("[01]+")) {
+                    throw new IllegalArgumentException("Invalid binary digit found in Huffman-encoded text: " + binaryDigits.toString());
+                }
+            }
+        }
+
+        // Step 4
+        return decryptedText.toString();
+    }
 
 
     /*======================================================================================*/
@@ -267,11 +317,15 @@ public class Huffman {
 
             System.out.println("=====================================");
 
-            String text = "abc";
+            String text = "this is huffman";
             System.out.println("TEXT: " + text);
             System.out.println("HUFFMAN EQUIVALENT: " + test.encrypt(text));
             System.out.println();
             System.out.println("PERCENTAGE SAVINGS: " + test.calculateSavings());
+            String encryptedText = "10000111111000011101110000111010111111100111100011100000010111111101";
+            String decryptedText = test.decrypt(encryptedText, test.getHuffmanCode());
+            System.out.println("Decrypted Text: " + decryptedText);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
