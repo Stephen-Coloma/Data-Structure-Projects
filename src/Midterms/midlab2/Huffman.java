@@ -23,7 +23,7 @@ public class Huffman {
     }
 
     /*Set a huffman tree.
-    * @param huffmanTree to be set*/
+     * @param huffmanTree to be set*/
     public void setHuffmanTree(PriorityQueue<TreeNode> huffmanTree) {
         this.huffmanTree = huffmanTree;
     }
@@ -43,24 +43,24 @@ public class Huffman {
      * */
     public void createHuffmanTree(File file) throws Exception{
         /*ALGO
-        * 1. Read the file and store it in a string text.
-        * 2. Create a string template that holds the valid characters
-        * 3. Create an empty hashmap<Character, Integer> that stores a key value pair
-        * 4. for each token of the text, check if it is included in the valid characters.
-        * 5. If yes, then check if the hashmap has a key of that token,
-            * 5.1. If it is present, then increment the value
-            * 5.2 If not, then add the new token to the hashmap.
-        * 6. If no, then throw an exception called invalid argument exception
-        * 7. Convert the hashmap to PriorityQueue<TreeNode>, this is the forest.
-        * 8. Create a single tree from the forest.
-        * 8. Return the PriorityQueue<TreeNode> huffmanTree>*/
+         * 1. Read the file and store it in a string text.
+         * 2. Create a string template that holds the valid characters
+         * 3. Create an empty hashmap<Character, Integer> that stores a key value pair
+         * 4. for each token of the text, check if it is included in the valid characters.
+         * 5. If yes, then check if the hashmap has a key of that token,
+         * 5.1. If it is present, then increment the value
+         * 5.2 If not, then add the new token to the hashmap.
+         * 6. If no, then throw an exception called invalid argument exception
+         * 7. Convert the hashmap to PriorityQueue<TreeNode>, this is the forest.
+         * 8. Create a single tree from the forest.
+         * 8. Return the PriorityQueue<TreeNode> huffmanTree>*/
 
         //step 1
         String text="";
         try (BufferedReader reader = new BufferedReader(new FileReader(file))){
             String currentLine;
             while ((currentLine = reader.readLine()) != null){
-                 text+=currentLine;
+                text+=currentLine;
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -71,7 +71,7 @@ public class Huffman {
         PriorityQueue<TreeNode> huffmanForest = createHuffmanForest(text);
         characterFrequencies = new PriorityQueue<>(huffmanForest);
         huffmanTree = convertToHuffmanTree(huffmanForest);
-   }
+    }
 
     /**A helper method that creates huffman forest (i.e. many huffman tree but has no children inside a PriorityQueue)
      * The huffman forest represents the symbol-frequency table which will be used to calculate storage savings.
@@ -164,12 +164,12 @@ public class Huffman {
      */
     public String encrypt(String text){
         /*ALGO
-        * 1. Declare a string variable
-        * 2. For each character in text, validate if it is a valid character
-        * 2.2. If it is not a valid character, return an error message
-        * 2.3. Else, get its huffman code into the huffmanCode map
-        * 3. Append each code onto the string
-        * 4. Return the string*/
+         * 1. Declare a string variable
+         * 2. For each character in text, validate if it is a valid character
+         * 2.2. If it is not a valid character, return an error message
+         * 2.3. Else, get its huffman code into the huffmanCode map
+         * 3. Append each code onto the string
+         * 4. Return the string*/
 
         //step 1
         String huffmanEquivalent = "";
@@ -254,15 +254,15 @@ public class Huffman {
      */
     public String calculateSavings(){
         /*ALGO
-        * 1. Calculate the storage used for ASCII encoding. of the hashmap
-            * 1.1. Total the number of characters based on the value on the characterFrequency
-            * 1.2. Multiply the total to 7 (for ascii) then store it in a variable
-        * 2. Calculate the storage used for huffman coding.
-            * 2.1. For each character's frequency in the characterFrequency table,
-            *       multiply it to the length of the huffman code for that character in huffmanCode
-            * 2.2. Store it in a variable
-        * 3. Divide and multiply the huffman coding to ascii coding
-        * 4. Append the percentage sign then return the String*/
+         * 1. Calculate the storage used for ASCII encoding. of the hashmap
+         * 1.1. Total the number of characters based on the value on the characterFrequency
+         * 1.2. Multiply the total to 7 (for ascii) then store it in a variable
+         * 2. Calculate the storage used for huffman coding.
+         * 2.1. For each character's frequency in the characterFrequency table,
+         *       multiply it to the length of the huffman code for that character in huffmanCode
+         * 2.2. Store it in a variable
+         * 3. Divide and multiply the huffman coding to ascii coding
+         * 4. Append the percentage sign then return the String*/
 
         //step 1.1
         int totalCharacters = 0;
