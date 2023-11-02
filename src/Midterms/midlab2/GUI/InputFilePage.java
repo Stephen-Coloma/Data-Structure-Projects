@@ -23,7 +23,7 @@ public class InputFilePage extends JPanel {
 
         //construct components
         inputFileButton = new JButton ("INPUT FILE");
-        inputFileLabel = new JLabel ("                                                                        INPUT FILE ");
+        inputFileLabel = new JLabel ("INPUT FILE ");
         homeButton = new JButton ("HOME");
         textToHuffman = new JButton ("TEXT TO HUFFMAN");
         huffmanToText = new JButton ("HUFFMAN TO TEXT");
@@ -36,7 +36,7 @@ public class InputFilePage extends JPanel {
         saveAndShowButton = new JButton ("Save and Show Table of Values");
 
         //adjust size and set layout
-        setPreferredSize (new Dimension (917, 587));
+        setPreferredSize(new Dimension(1600, 900));
         setLayout (null);
 
         //add components
@@ -54,18 +54,18 @@ public class InputFilePage extends JPanel {
         add (saveAndShowButton);
 
         //set component bounds (only needed by Absolute Positioning)
-        inputFileButton.setBounds (25, 105, 155, 60);
-        inputFileLabel.setBounds (285, 20, 500, 30);
-        homeButton.setBounds (25, 20, 155, 60);
-        textToHuffman.setBounds (25, 195, 155, 60);
-        huffmanToText.setBounds (25, 285, 155, 60);
-        storageSavingsButton.setBounds (25, 375, 155, 60);
-        showTreeButton.setBounds (25, 465, 155, 60);
-        huffmanCodeTableList.setBounds (205, 275, 670, 275);
-        tableOfValuesLabel.setBounds (485, 550, 150, 35);
-        huffmanCodeInputTextField.setBounds (205, 95, 670, 110);
-        charactersUserInputLabel.setBounds (205, 60, 400, 35);
-        saveAndShowButton.setBounds (410, 220, 255, 40);
+        inputFileLabel.setBounds(840, 25, 250, 30);
+        homeButton.setBounds(35, 25, 260, 90);
+        inputFileButton.setBounds(35, 160, 260, 90);
+        textToHuffman.setBounds(35, 295, 260, 90);
+        huffmanToText.setBounds(35, 430, 265, 90);
+        storageSavingsButton.setBounds(35, 565, 260, 90);
+        showTreeButton.setBounds(35, 700, 260, 90);
+        charactersUserInputLabel.setBounds(335, 65, 400, 35);
+        huffmanCodeInputTextField.setBounds(335, 95, 1150, 140);
+        saveAndShowButton.setBounds(770, 250, 260, 60);
+        huffmanCodeTableList.setBounds(335, 325, 1150, 465);
+        tableOfValuesLabel.setBounds(840, 790, 150, 35);
     }
 
 

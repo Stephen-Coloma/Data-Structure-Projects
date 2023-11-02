@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: Resize the panels, adjust Jcomponents sizes of EncryptionHuffmanCode Page, fix errors on DecryptionHuffmanCode.java Page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/InputFilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/InputFilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/StorageSavingsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/StorageSavingsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,33 +70,7 @@
       <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Midterms.midlab2.GUI.EncryptionHuffmanCode">
-    <configuration name="DecryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.DecryptionHuffmanCode" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Midterms.midlab2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HuffmanGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.tree.HuffmanGUI" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Midterms.midlab2.tree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.StorageSavingsPage (1)">
     <configuration name="InputFilePage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.InputFilePage" />
       <module name="CS211_9342_MixAndMatch" />
@@ -135,13 +110,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StorageSavingsPage (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StorageSavingsPage" />
+      <module name="CS211_9342_MixAndMatch" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StorageSavingsPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.StorageSavingsPage" />
+      <module name="CS211_9342_MixAndMatch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Midterms.midlab2.GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Midterms.midlab2.GUI.EncryptionHuffmanCode" />
+        <item itemvalue="Application.StorageSavingsPage (1)" />
+        <item itemvalue="Application.StorageSavingsPage" />
         <item itemvalue="Application.InputFilePage" />
+        <item itemvalue="Application.Midterms.midlab2.GUI.EncryptionHuffmanCode" />
         <item itemvalue="Application.Midterms.midlab2.GUI.DecryptionHuffmanCode" />
-        <item itemvalue="Application.HuffmanGUI" />
-        <item itemvalue="Application.DecryptionHuffmanCode" />
       </list>
     </recent_temporary>
   </component>
