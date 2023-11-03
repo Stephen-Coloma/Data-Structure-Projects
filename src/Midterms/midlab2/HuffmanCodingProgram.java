@@ -1,9 +1,7 @@
 package Midterms.midlab2;
 
-import Midterms.midlab2.GUI.HomePage;
-import Midterms.midlab2.GUI.InputFilePage;
-import Midterms.midlab2.GUI.ShowTreePage;
-import Midterms.midlab2.GUI.StorageSavingsPage;
+import Midterms.midlab2.GUI.*;
+
 import javax.swing.*;
 
 public class HuffmanCodingProgram extends javax.swing.JFrame {
@@ -83,16 +81,23 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
         textToHuffmanButton.setBackground(new java.awt.Color(255, 219, 87));
         textToHuffmanButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         textToHuffmanButton.setText("Text to Huffman Code");
+
         textToHuffmanButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textToHuffmanButtonMouseClicked(evt);
+            }
+
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 textToHuffmanButtonMousePressed(evt);
             }
         });
+
         textToHuffmanButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textToHuffmanButtonActionPerformed(evt);
             }
         });
+
 
         huffmanToTextButton.setBackground(new java.awt.Color(255, 219, 87));
         huffmanToTextButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -248,6 +253,10 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
     private void textToHuffmanButtonMousePressed(java.awt.event.MouseEvent evt) {
         // Handling code
         PageLabel.setText("TEXT TO HUFFMAN CODE CONVERTER");
+        DecryptionHuffmanCode decryptionHuffmanCode = new DecryptionHuffmanCode();
+        contentPanel.removeAll();
+        contentPanel.add(decryptionHuffmanCode).setVisible(true);
+
     }
 
     private void huffmanToTextButtonMousePressed(java.awt.event.MouseEvent evt) {
@@ -275,6 +284,14 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
         contentPanel.removeAll();
         contentPanel.add(inputFilePage).setVisible(true);
     }
+
+    private void textToHuffmanButtonMouseClicked (java.awt.event.MouseEvent evt) {
+        // Handling code
+        DecryptionHuffmanCode decryptionHuffmanCode = new DecryptionHuffmanCode();
+        contentPanel.removeAll();
+        contentPanel.add(decryptionHuffmanCode).setVisible(true);
+    }
+
 
     private void storageSavingsButtonMouseClicked(java.awt.event.MouseEvent evt) {
         // Handling code
