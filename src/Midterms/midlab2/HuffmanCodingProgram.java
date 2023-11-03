@@ -1,8 +1,10 @@
 package Midterms.midlab2;
 
 import Midterms.midlab2.GUI.HomePage;
-
+import Midterms.midlab2.GUI.InputFilePage;
+import Midterms.midlab2.GUI.StorageSavingsPage;
 import javax.swing.*;
+
 
 /**
  *
@@ -25,6 +27,7 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
+
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -63,6 +66,9 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setText("Input File");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton2MousePressed(evt);
             }
@@ -100,6 +106,9 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton5.setText("Storage Savings");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton5MousePressed(evt);
             }
@@ -160,9 +169,9 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(459, 459, 459)
+                                .addGap(394, 394, 394)
                                 .addComponent(PageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(928, Short.MAX_VALUE))
+                                .addContainerGap(993, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,9 +199,7 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1740, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(0, 0, 0)
-                                                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,6 +261,20 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+    }
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {
+        // TODO add your handling code here:
+        InputFilePage inputFilePage = new InputFilePage();
+        contentPanel.removeAll();
+        contentPanel.add(inputFilePage).setVisible(true);
+    }
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {
+        // TODO add your handling code here:
+        StorageSavingsPage storageSavingsPage = new StorageSavingsPage();
+        contentPanel.removeAll();
+        contentPanel.add(storageSavingsPage).setVisible(true);
     }
 
     /**
