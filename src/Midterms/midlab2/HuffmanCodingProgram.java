@@ -2,6 +2,10 @@ package Midterms.midlab2;
 
 import Midterms.midlab2.GUI.*;
 
+import Midterms.midlab2.GUI.EncryptionHuffmanCode;
+import Midterms.midlab2.GUI.DecryptionHuffmanCode;
+
+
 import javax.swing.*;
 
 /**

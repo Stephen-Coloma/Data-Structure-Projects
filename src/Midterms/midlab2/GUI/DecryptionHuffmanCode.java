@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package Midterms.midlab2.GUI;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -37,6 +33,7 @@ public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
         decodeToTextButton = new javax.swing.JButton();
         tableScrollPane = new javax.swing.JScrollPane();
         tableOfValuesScrollPane = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -68,16 +65,17 @@ public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
 
         tableOfValuesScrollPane.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null}
+                        {null, null},
+                        {null, null}
                 },
                 new String [] {
-                        "Title 1", "Title 2", "Title 3", "Title 4"
+                        "Title 1", "Title 2"
                 }
         ));
         tableScrollPane.setViewportView(tableOfValuesScrollPane);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setText("Table Of Values");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,17 +84,20 @@ public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(558, 558, 558)
+                                                .addGap(575, 575, 575)
                                                 .addComponent(decodeToTextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(73, 73, 73)
+                                                .addGap(70, 70, 70)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(decodedTextScrollText)
+                                                        .addComponent(huffmanCodeLabel)
                                                         .addComponent(decodedTextLabel)
                                                         .addComponent(huffmanCodeTextScroll)
-                                                        .addComponent(huffmanCodeLabel)
-                                                        .addComponent(tableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1001, Short.MAX_VALUE))))
-                                .addContainerGap(15182, Short.MAX_VALUE))
+                                                        .addComponent(decodedTextScrollText)
+                                                        .addComponent(tableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1193, Short.MAX_VALUE)))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(616, 616, 616)
+                                                .addComponent(jLabel1)))
+                                .addContainerGap(14993, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,16 +105,18 @@ public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
                                 .addGap(23, 23, 23)
                                 .addComponent(huffmanCodeLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(huffmanCodeTextScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
+                                .addComponent(huffmanCodeTextScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
                                 .addComponent(decodedTextLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(decodedTextScrollText, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(decodeToTextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(tableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(tableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(295, Short.MAX_VALUE))
+                                .addComponent(jLabel1)
+                                .addContainerGap(231, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,6 +146,7 @@ public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
     private javax.swing.JLabel huffmanCodeLabel;
     private javax.swing.JTextArea huffmanCodeTextArea;
     private javax.swing.JScrollPane huffmanCodeTextScroll;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTable tableOfValuesScrollPane;
     private javax.swing.JScrollPane tableScrollPane;

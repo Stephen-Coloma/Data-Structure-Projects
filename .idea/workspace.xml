@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: Create the EncryptionHuffmanCode Inner frame for the HuffmanCodingProgram">
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="refactor: change the placements of labels">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/InputFilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/InputFilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/ShowTreePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/ShowTreePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/StorageSavingsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/StorageSavingsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/HuffmanCodingProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/HuffmanCodingProgram.java" afterDir="false" />
     </list>
@@ -283,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699014137589</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="refactor: change the placements of labels">
+      <created>1699015603467</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1699015603467</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +347,8 @@
     <MESSAGE value="feat: Create the DecryptionHuffmanCode Inner frame and added it on the HuffmanCodingProgram" />
     <MESSAGE value="feat: Create the DecryptionHuffmanCode Inner frame and add it on the HuffmanCodingProgram" />
     <MESSAGE value="feat: Create the EncryptionHuffmanCode Inner frame for the HuffmanCodingProgram" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Create the EncryptionHuffmanCode Inner frame for the HuffmanCodingProgram" />
+    <MESSAGE value="refactor: change the placements of labels" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: change the placements of labels" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
