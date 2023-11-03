@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: Create the DecryptionHuffmanCode Inner frame and add it on the HuffmanCodingProgram">
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: Create the EncryptionHuffmanCode Inner frame for the HuffmanCodingProgram">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/HuffmanCodingProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/HuffmanCodingProgram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,7 @@
       <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DecryptionHuffmanCode">
+  <component name="RunManager" selected="Application.HuffmanCodingProgram">
     <configuration name="DecryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.DecryptionHuffmanCode" />
       <module name="CS211_9342_MixAndMatch" />
@@ -132,8 +132,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DecryptionHuffmanCode" />
         <item itemvalue="Application.HuffmanCodingProgram" />
+        <item itemvalue="Application.DecryptionHuffmanCode" />
         <item itemvalue="Application.EncryptionHuffmanCode" />
         <item itemvalue="Application.StorageSavingsPage (1)" />
         <item itemvalue="Application.StorageSavingsPage" />
@@ -276,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699012378792</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: Create the EncryptionHuffmanCode Inner frame for the HuffmanCodingProgram">
+      <created>1699014137589</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1699014137589</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +335,8 @@
     <MESSAGE value="feat: Resize the panels, adjust Jcomponents sizes of EncryptionHuffmanCode Page, fix errors on DecryptionHuffmanCode.java Page" />
     <MESSAGE value="feat: Create the DecryptionHuffmanCode Inner frame and added it on the HuffmanCodingProgram" />
     <MESSAGE value="feat: Create the DecryptionHuffmanCode Inner frame and add it on the HuffmanCodingProgram" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Create the DecryptionHuffmanCode Inner frame and add it on the HuffmanCodingProgram" />
+    <MESSAGE value="feat: Create the EncryptionHuffmanCode Inner frame for the HuffmanCodingProgram" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Create the EncryptionHuffmanCode Inner frame for the HuffmanCodingProgram" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
