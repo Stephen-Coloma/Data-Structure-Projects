@@ -63,15 +63,25 @@ public class EncryptionHuffmanCode extends javax.swing.JInternalFrame {
             }
         });
 
+        tableOfValuesScrollPane.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tableOfValuesScrollPane.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
                         {null, null},
                         {null, null}
                 },
                 new String [] {
-                        "Title 1", "Title 2"
+                        "Characters", "Number of occurrence of the character in the text"
                 }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                    java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tableOfValuesScrollPane.getTableHeader().setReorderingAllowed(false);
         tableScrollPane.setViewportView(tableOfValuesScrollPane);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
