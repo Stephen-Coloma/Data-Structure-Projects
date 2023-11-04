@@ -342,6 +342,7 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 HuffmanCodingProgram myProgram = new HuffmanCodingProgram();
+                myProgram.setTitle("Huffman Coding Program");
                 myProgram.setVisible(true);
                 myProgram.setExtendedState(JFrame.MAXIMIZED_BOTH);
             }
