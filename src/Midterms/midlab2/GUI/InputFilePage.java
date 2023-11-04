@@ -1,6 +1,20 @@
 package Midterms.midlab2.GUI;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Map;
+import java.util.HashMap;
 
 public class InputFilePage extends javax.swing.JInternalFrame {
 
@@ -12,6 +26,13 @@ public class InputFilePage extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI ui=(BasicInternalFrameUI)this.getUI();
         ui.setNorthPane(null);
+
+        saveAndShowButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveAndShowButtonActionPerformed(evt);
+            }
+        });
+
     }
 
     /**
@@ -125,6 +146,59 @@ public class InputFilePage extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>
+
+
+    private void saveAndShowButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // First get the text from inputTextArea
+        String inputText = inputTextArea.getText();
+        // Then calculate the frequency of each character
+        Map<Character, Integer> frequencies = calculateFrequency(inputText);
+        // Now save the frequencies to a file
+        saveFrequenciesToFile(frequencies);
+        // And finally, update the table
+        updateTable(frequencies);
+    }
+
+    private Map<Character, Integer> calculateFrequency(String inputText) {
+        Map<Character, Integer> frequencyMap = new HashMap<>();
+        // Convert all characters to lowercase to treat uppercase and lowercase as the same
+        inputText = inputText.toLowerCase(); // or use toUpperCase() if you prefer
+        for (char ch : inputText.toCharArray()) {
+            if(Character.isLetter(ch)) { // Only count letters, ignore digits and punctuations
+                frequencyMap.put(ch, frequencyMap.getOrDefault(ch, 0) + 1);
+            }
+        }
+        return frequencyMap;
+    }
+
+    private void saveFrequenciesToFile(Map<Character, Integer> frequencies) {
+        // Choose where to save the file
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");
+        int userSelection = fileChooser.showSaveDialog(this);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            java.io.File fileToSave = fileChooser.getSelectedFile();
+            // Write the frequencies to the file
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileToSave))) {
+                for (Map.Entry<Character, Integer> entry : frequencies.entrySet()) {
+                    writer.write(entry.getKey() + ": " + entry.getValue());
+                    writer.newLine();
+                }
+                JOptionPane.showMessageDialog(this, "Data saved to file successfully!",
+                        "Success", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error saving to file: " + e.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+
+    private void updateTable(Map<Character, Integer> frequencies) {
+        DefaultTableModel model = (DefaultTableModel) tableOfValues.getModel();
+        model.setRowCount(0); // Clear the existing data
+        frequencies.forEach((character, frequency) -> model.addRow(new Object[]{character, frequency}));
+    }
 
 
     // Variables declaration - do not modify
