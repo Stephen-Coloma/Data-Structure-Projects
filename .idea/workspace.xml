@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: make the InputFilePage saves the input as file and show values on table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/InputFilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/InputFilePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/Huffman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/HuffmanCodingProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/HuffmanCodingProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/sample.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +270,35 @@
       <option name="project" value="LOCAL" />
       <updated>1698839285445</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat: Create the DecryptionHuffmanCode Inner frame and add it on the HuffmanCodingProgram">
+      <created>1699012378792</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699012378792</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: Create the EncryptionHuffmanCode Inner frame for the HuffmanCodingProgram">
+      <created>1699014137589</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1699014137589</updated>
+    </task>
+    <task id="LOCAL-00019" summary="refactor: change the placements of labels">
+      <created>1699015603467</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1699015603467</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: make the InputFilePage saves the input as file and show values on table">
+      <created>1699082875508</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699082875508</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +348,12 @@
     <MESSAGE value="feat: Implement initial GUI for Huffman Code Decryption page" />
     <MESSAGE value="feat: Resize the panels, adjusted Jcomponents sizes" />
     <MESSAGE value="feat: Resize the panels, adjust Jcomponents sizes of EncryptionHuffmanCode Page, fix errors on DecryptionHuffmanCode.java Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Resize the panels, adjust Jcomponents sizes of EncryptionHuffmanCode Page, fix errors on DecryptionHuffmanCode.java Page" />
+    <MESSAGE value="feat: Create the DecryptionHuffmanCode Inner frame and added it on the HuffmanCodingProgram" />
+    <MESSAGE value="feat: Create the DecryptionHuffmanCode Inner frame and add it on the HuffmanCodingProgram" />
+    <MESSAGE value="feat: Create the EncryptionHuffmanCode Inner frame for the HuffmanCodingProgram" />
+    <MESSAGE value="refactor: change the placements of labels" />
+    <MESSAGE value="feat: make the InputFilePage saves the input as file and show values on table" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: make the InputFilePage saves the input as file and show values on table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
