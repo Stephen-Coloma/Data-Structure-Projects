@@ -277,8 +277,8 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
     }
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {
+        mainHuffman = new Huffman(); //----------------------------------------------->> INSTANCE OF THE HUFFMAN
         // TODO add your handling code here:
-        mainHuffman = new Huffman();
         InputFilePage inputFilePage = new InputFilePage(mainHuffman);
         contentPanel.removeAll();
         contentPanel.add(inputFilePage).setVisible(true);
@@ -286,14 +286,14 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
-//        StorageSavingsPage storageSavingsPage = new StorageSavingsPage();
-//        contentPanel.removeAll();
-//        contentPanel.add(storageSavingsPage).setVisible(true);
+        StorageSavingsPage storageSavingsPage = new StorageSavingsPage(mainHuffman);
+        contentPanel.removeAll();
+        contentPanel.add(storageSavingsPage).setVisible(true);
     }
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
-        ShowTreePage showTreePage = new ShowTreePage();
+        ShowTreePage showTreePage = new ShowTreePage(mainHuffman);
         contentPanel.removeAll();
         contentPanel.add(showTreePage).setVisible(true);
     }
@@ -307,9 +307,9 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
-//        DecryptionHuffmanCode decryptionHuffmanCode = new DecryptionHuffmanCode();
-//        contentPanel.removeAll();
-//        contentPanel.add(decryptionHuffmanCode).setVisible(true);
+        DecryptionHuffmanCode decryptionHuffmanCode = new DecryptionHuffmanCode(mainHuffman);
+        contentPanel.removeAll();
+        contentPanel.add(decryptionHuffmanCode).setVisible(true);
     }
 
     /**

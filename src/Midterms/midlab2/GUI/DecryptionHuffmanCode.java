@@ -2,7 +2,10 @@ package Midterms.midlab2.GUI;
 
 import Midterms.midlab2.Huffman;
 
+import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.DefaultTableModel;
+import java.util.Map;
 
 public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
     private Huffman huffman;
@@ -167,7 +170,39 @@ public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
     }// </editor-fold>
 
     private void decodeToTextButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        // Get the entered text
+        String inputText = huffmanCodeTextArea.getText();
+
+        try {
+
+            // Encode the input text into Huffman code
+            String huffmanCode = huffman.decrypt(inputText);
+            decodedTextResultLabel.setText(huffmanCode);
+
+            // Update the table of values with characters and their Huffman codes
+            updateTable();
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, "Invalid Huffman code: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "An error occurred while creating the Huffman tree: " + ex.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void updateTable() {
+        DefaultTableModel model = (DefaultTableModel) tableOfValuesScrollPane.getModel();
+        model.setRowCount(0); // Clear the table
+
+        // Get the Huffman code map
+        Map<Character, String> huffmanCodeMap = huffman.getHuffmanCode();
+
+        // Iterate through the Huffman code map and add rows to the table
+        for (Map.Entry<Character, String> entry : huffmanCodeMap.entrySet()) {
+            char character = entry.getKey();
+            String huffmanCode = entry.getValue();
+            model.addRow(new Object[]{character, huffmanCode});
+        }
     }
 
 

@@ -20,6 +20,11 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI ui=(BasicInternalFrameUI)this.getUI();
         ui.setNorthPane(null);
+
+        //dito puro setTexts lang sa label. gaya neto  ->>STEPHEN
+        percentageLabel.setText(huffman.calculateSavings());
+
+        //and many more
     }
 
     /**

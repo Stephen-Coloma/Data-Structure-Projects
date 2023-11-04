@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="feat: make the InputFilePage saves the input as file and show values on table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/DecryptionHuffmanCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/EncryptionHuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/ShowTreePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/ShowTreePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/StorageSavingsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/GUI/StorageSavingsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/HuffmanCodingProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/HuffmanCodingProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Midterms/midlab2/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Midterms/midlab2/sample.txt" afterDir="false" />
@@ -72,33 +71,7 @@
       <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HuffmanCodingProgram">
-    <configuration name="DecryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.DecryptionHuffmanCode" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Midterms.midlab2.GUI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EncryptionHuffmanCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.EncryptionHuffmanCode" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Midterms.midlab2.GUI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.HuffmanTreePanel">
     <configuration name="HuffmanCodingProgram (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.HuffmanCodingProgram" />
       <module name="CS211_9342_MixAndMatch" />
@@ -125,6 +98,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HuffmanCodingProgram (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.HuffmanCodingProgram" />
+      <module name="CS211_9342_MixAndMatch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Midterms.midlab2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HuffmanCodingProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.HuffmanCodingProgram" />
       <module name="CS211_9342_MixAndMatch" />
@@ -138,13 +124,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HuffmanTreePanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.HuffmanTreePanel" />
+      <module name="CS211_9342_MixAndMatch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Midterms.midlab2.GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HuffmanTreePanel" />
         <item itemvalue="Application.HuffmanCodingProgram" />
+        <item itemvalue="Application.HuffmanCodingProgram (3)" />
         <item itemvalue="Application.HuffmanCodingProgram (2)" />
         <item itemvalue="Application.HuffmanCodingProgram (1)" />
-        <item itemvalue="Application.DecryptionHuffmanCode" />
-        <item itemvalue="Application.EncryptionHuffmanCode" />
       </list>
     </recent_temporary>
   </component>

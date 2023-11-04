@@ -4,14 +4,18 @@
  */
 package Midterms.midlab2.GUI;
 
+import Midterms.midlab2.Huffman;
+
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class ShowTreePage extends javax.swing.JInternalFrame {
+    private Huffman huffman;
 
     /**
      * Creates new form HomePage
      */
-    public ShowTreePage() {
+    public ShowTreePage(Huffman huffman) {
+        this.huffman=huffman;
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI ui=(BasicInternalFrameUI)this.getUI();
