@@ -5,6 +5,7 @@
 package Midterms.midlab2.GUI;
 
 import Midterms.midlab2.Huffman;
+import Midterms.midlab2.tree.TreeNode;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -21,10 +22,17 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
         BasicInternalFrameUI ui=(BasicInternalFrameUI)this.getUI();
         ui.setNorthPane(null);
 
-        //dito puro setTexts lang sa label. gaya neto  ->>STEPHEN
-        percentageLabel.setText(huffman.calculateSavings());
+        // Calculate and fill up the labels based on available methods in Huffman
+        int huffmanTotalBitsUsed = calculateHuffmanTotalBitsUsed();
+        int totalCharacters = calculateTotalCharacters();
+        double bitsPerCharacter = calculateBitsPerCharacter(huffmanTotalBitsUsed, totalCharacters);
+        int totalBitsConsumed = calculateTotalBitsConsumed(totalCharacters);
 
-        //and many more
+        percentageLabel.setText(huffman.calculateSavings());
+        huffmanTotalBitsUsedLabel.setText("Total bits used: " + huffmanTotalBitsUsed);
+        totalCharactersLabel.setText("Total characters: " + totalCharacters);
+        bitsPerCharacterLabel.setText("Bits per character: " + String.format("%.2f", bitsPerCharacter));
+        totalBitsConsumedLabel.setText("Total bits consumed: " + totalBitsConsumed);
     }
 
     /**
@@ -42,9 +50,11 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
         computationLabel1 = new javax.swing.JLabel();
         computationLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        huffmanComputationLabel = new javax.swing.JLabel();
+        huffmanTotalBitsUsedLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        asciiComputationLabel1 = new javax.swing.JLabel();
+        totalCharactersLabel = new javax.swing.JLabel();
+        bitsPerCharacterLabel = new javax.swing.JLabel();
+        totalBitsConsumedLabel = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         storageSavingsLabel = new javax.swing.JLabel();
         percentageLabel = new javax.swing.JLabel();
@@ -70,9 +80,9 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(237, 237, 237));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(17, 41, 107)));
 
-        huffmanComputationLabel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        huffmanComputationLabel.setText("<format computation>");
-        huffmanComputationLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        huffmanTotalBitsUsedLabel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        huffmanTotalBitsUsedLabel.setText("<format computation>");
+        huffmanTotalBitsUsedLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -80,24 +90,32 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
-                                .addComponent(huffmanComputationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(huffmanTotalBitsUsedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
-                                .addComponent(huffmanComputationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(huffmanTotalBitsUsedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(237, 237, 237));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(17, 41, 107)));
         jPanel3.setPreferredSize(new java.awt.Dimension(587, 509));
 
-        asciiComputationLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        asciiComputationLabel1.setText("<format computation>");
-        asciiComputationLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        totalCharactersLabel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        totalCharactersLabel.setText("<format computation>");
+        totalCharactersLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        bitsPerCharacterLabel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        bitsPerCharacterLabel.setText("<format computation>");
+        bitsPerCharacterLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        totalBitsConsumedLabel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        totalBitsConsumedLabel.setText("<format computation>");
+        totalBitsConsumedLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -105,15 +123,22 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
-                                .addComponent(asciiComputationLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(totalCharactersLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bitsPerCharacterLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(totalBitsConsumedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
-                                .addComponent(asciiComputationLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(24, Short.MAX_VALUE))
+                                .addComponent(totalCharactersLabel)
+                                .addGap(16, 16, 16)
+                                .addComponent(bitsPerCharacterLabel)
+                                .addGap(16, 16, 16)
+                                .addComponent(totalBitsConsumedLabel)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 219, 87));
@@ -123,8 +148,9 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
         storageSavingsLabel.setForeground(new java.awt.Color(0, 80, 157));
         storageSavingsLabel.setText("Storage Savings (%):");
 
-        percentageLabel.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        percentageLabel.setFont(new java.awt.Font("Arial", 1, 35)); // NOI18N
         percentageLabel.setForeground(new java.awt.Color(255, 255, 255));
+        percentageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         percentageLabel.setText("<format percentage>");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -135,10 +161,7 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
                                 .addGap(60, 60, 60)
                                 .addComponent(storageSavingsLabel)
                                 .addContainerGap(60, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(percentageLabel)
-                                .addGap(35, 35, 35))
+                        .addComponent(percentageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
                 jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,7 +217,7 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
                                         .addComponent(computationLabel2))
                                 .addGap(18, 18, 18)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(419, Short.MAX_VALUE))
+                                .addContainerGap(425, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -217,19 +240,43 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>
 
+    private int calculateHuffmanTotalBitsUsed() {
+        int huffmanTotalBitsUsed = 0;
+        for (TreeNode node : huffman.getCharacterFrequencies()) {
+            huffmanTotalBitsUsed += node.getCount() * huffman.getHuffmanCode().get(node.getSymbol()).length();
+        }
+        return huffmanTotalBitsUsed;
+    }
+
+    private int calculateTotalCharacters() {
+        int totalCharacters = 0;
+        for (TreeNode node : huffman.getCharacterFrequencies())
+            totalCharacters += node.getCount();
+        return totalCharacters;
+    }
+
+    private double calculateBitsPerCharacter(int huffmanTotalBitsUsed, int totalCharacters) {
+        return (double) huffmanTotalBitsUsed / totalCharacters;
+    }
+
+    private int calculateTotalBitsConsumed(int totalCharacters) {
+        return totalCharacters * 7;
+    }
 
     // Variables declaration - do not modify
     private javax.swing.JLabel asciiCodingLabel;
-    private javax.swing.JLabel asciiComputationLabel1;
+    private javax.swing.JLabel bitsPerCharacterLabel;
     private javax.swing.JLabel computationLabel1;
     private javax.swing.JLabel computationLabel2;
     private javax.swing.JLabel huffmanCodingLabel;
-    private javax.swing.JLabel huffmanComputationLabel;
+    private javax.swing.JLabel huffmanTotalBitsUsedLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel percentageLabel;
     private javax.swing.JLabel storageSavingsLabel;
+    private javax.swing.JLabel totalBitsConsumedLabel;
+    private javax.swing.JLabel totalCharactersLabel;
     // End of variables declaration
 }
