@@ -4,18 +4,74 @@
  */
 package Midterms.midlab2.GUI;
 
+import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.DefaultTableModel;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Comparator;
+import java.util.BitSet;
+import java.util.LinkedList;
+import java.util.List;
+
+import Midterms.midlab2.Huffman; // Import the Huffman class
 
 public class EncryptionHuffmanCode extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form DecryptionHuffmanCode
-     */
-    public EncryptionHuffmanCode() {
+    private Huffman huffman;
+
+
+    public EncryptionHuffmanCode(Huffman huffman) {
+        this.huffman=huffman;
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        BasicInternalFrameUI ui=(BasicInternalFrameUI)this.getUI();
+        BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
+
+        encodeToHuffmanCodeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                encodeToHuffmanCodeButtonActionPerformed(evt);
+            }
+        });
+    }
+
+    private void encodeToHuffmanCodeButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // Get the entered text
+        String inputText = huffmanCodeTextArea.getText();
+
+        try {
+
+            // Encode the input text into Huffman code
+            String huffmanCode = huffman.encrypt(inputText);
+            huffmanCodeResultLabel.setText(huffmanCode);
+
+            // Update the table of values with characters and their Huffman codes
+            updateTable();
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, "Invalid Huffman code: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "An error occurred while creating the Huffman tree: " + ex.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void updateTable() {
+        DefaultTableModel model = (DefaultTableModel) tableOfValuesScrollPane.getModel();
+        model.setRowCount(0); // Clear the table
+
+        // Get the Huffman code map
+        Map<Character, String> huffmanCodeMap = huffman.getHuffmanCode();
+
+        // Iterate through the Huffman code map and add rows to the table
+        for (Map.Entry<Character, String> entry : huffmanCodeMap.entrySet()) {
+            char character = entry.getKey();
+            String huffmanCode = entry.getValue();
+            model.addRow(new Object[]{character, huffmanCode});
+        }
     }
 
     /**
@@ -70,7 +126,7 @@ public class EncryptionHuffmanCode extends javax.swing.JInternalFrame {
                         {null, null}
                 },
                 new String [] {
-                        "Characters", "Number of occurrence of the character in the text"
+                        "Characters", "Huffman Code"
                 }
         ) {
             Class[] types = new Class [] {
@@ -166,9 +222,6 @@ public class EncryptionHuffmanCode extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>
 
-    private void encodeToHuffmanCodeButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
 
 
     // Variables declaration - do not modify

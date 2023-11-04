@@ -1,13 +1,17 @@
 package Midterms.midlab2.GUI;
 
+import Midterms.midlab2.Huffman;
+
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
+    private Huffman huffman;
 
     /**
      * Creates new form DecryptionHuffmanCode
      */
-    public DecryptionHuffmanCode() {
+    public DecryptionHuffmanCode(Huffman huffman) {
+        this.huffman=huffman;
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI ui=(BasicInternalFrameUI)this.getUI();
