@@ -153,12 +153,30 @@ public class InputFilePage extends javax.swing.JInternalFrame {
     private void saveAndShowButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // First get the text from inputTextArea
         String inputText = inputTextArea.getText();
+        // Now save the input text to the specified file path
+        saveInputTextToFile(inputText);
         // Then calculate the frequency of each character
         Map<Character, Integer> frequencies = calculateFrequency(inputText);
-        // Now save the frequencies to a file
-        saveFrequenciesToFile(frequencies);
-        // And finally, update the table
+        // Finally, update the table
         updateTable(frequencies);
+    }
+
+    private void saveInputTextToFile(String inputText) {
+        // Specify the desired file path for saving the input text
+        String filePath = "src\\Midterms\\midlab2\\sample.txt";
+
+        // Convert the input text to lowercase
+        inputText = inputText.toLowerCase();
+
+        // Write the lowercase input text to the file
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            writer.write(inputText);
+            JOptionPane.showMessageDialog(this, "Input text saved to file successfully!",
+                    "Success", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error saving input text to file: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private Map<Character, Integer> calculateFrequency(String inputText) {
@@ -173,35 +191,11 @@ public class InputFilePage extends javax.swing.JInternalFrame {
         return frequencyMap;
     }
 
-    private void saveFrequenciesToFile(Map<Character, Integer> frequencies) {
-        // Choose where to save the file
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Specify a file to save");
-        int userSelection = fileChooser.showSaveDialog(this);
-
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            java.io.File fileToSave = fileChooser.getSelectedFile();
-            // Write the frequencies to the file
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileToSave))) {
-                for (Map.Entry<Character, Integer> entry : frequencies.entrySet()) {
-                    writer.write(entry.getKey() + ": " + entry.getValue());
-                    writer.newLine();
-                }
-                JOptionPane.showMessageDialog(this, "Data saved to file successfully!",
-                        "Success", JOptionPane.INFORMATION_MESSAGE);
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(this, "Error saving to file: " + e.getMessage(),
-                        "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }
-
     private void updateTable(Map<Character, Integer> frequencies) {
         DefaultTableModel model = (DefaultTableModel) tableOfValues.getModel();
         model.setRowCount(0); // Clear the existing data
         frequencies.forEach((character, frequency) -> model.addRow(new Object[]{character, frequency}));
     }
-
 
     // Variables declaration - do not modify
     private javax.swing.JLabel inputLabel;
