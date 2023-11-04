@@ -9,6 +9,7 @@ import Midterms.midlab2.GUI.DecryptionHuffmanCode;
 import javax.swing.*;
 
 public class HuffmanCodingProgram extends javax.swing.JFrame {
+    private Huffman mainHuffman;
 
     /**public class HuffmanCodingProgram extends javax.swing.JFrame {
 
@@ -16,6 +17,7 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
      * Creates new form MenuDashboard
      */
     public HuffmanCodingProgram() {
+        mainHuffman = new Huffman();
         initComponents();
     }
 
@@ -277,7 +279,7 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
-        InputFilePage inputFilePage = new InputFilePage();
+        InputFilePage inputFilePage = new InputFilePage(mainHuffman);
         contentPanel.removeAll();
         contentPanel.add(inputFilePage).setVisible(true);
     }

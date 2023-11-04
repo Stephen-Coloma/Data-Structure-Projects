@@ -1,11 +1,14 @@
 package Midterms.midlab2.GUI;
 
+import Midterms.midlab2.Huffman;
+import Midterms.midlab2.tree.TreeNode;
+
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.File;
+import java.util.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -13,15 +16,18 @@ import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
 public class InputFilePage extends javax.swing.JInternalFrame {
+    private Huffman huffman;
 
     /**
      * Creates new form InputFilePage
      */
-    public InputFilePage() {
+    public InputFilePage(Huffman huffman) {
+        this.huffman = huffman;
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI ui=(BasicInternalFrameUI)this.getUI();
@@ -29,7 +35,11 @@ public class InputFilePage extends javax.swing.JInternalFrame {
 
         saveAndShowButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveAndShowButtonActionPerformed(evt);
+                try {
+                    saveAndShowButtonActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -150,15 +160,11 @@ public class InputFilePage extends javax.swing.JInternalFrame {
     }// </editor-fold>
 
 
-    private void saveAndShowButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void saveAndShowButtonActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
         // First get the text from inputTextArea
         String inputText = inputTextArea.getText();
         // Now save the input text to the specified file path
         saveInputTextToFile(inputText);
-        // Then calculate the frequency of each character
-        Map<Character, Integer> frequencies = calculateFrequency(inputText);
-        // Finally, update the table
-        updateTable(frequencies);
     }
 
     private void saveInputTextToFile(String inputText) {
@@ -177,25 +183,32 @@ public class InputFilePage extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Error saving input text to file: " + e.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
 
-    private Map<Character, Integer> calculateFrequency(String inputText) {
-        Map<Character, Integer> frequencyMap = new HashMap<>();
-        // Convert all characters to lowercase to treat uppercase and lowercase as the same
-        inputText = inputText.toLowerCase(); // or use toUpperCase() if you prefer
-        for (char ch : inputText.toCharArray()) {
-            if(Character.isLetter(ch)) { // Only count letters, ignore digits and punctuations
-                frequencyMap.put(ch, frequencyMap.getOrDefault(ch, 0) + 1);
-            }
+        try {
+            huffman.createHuffmanTree(new File(filePath));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"Huffman Cannot be Generated: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
         }
-        return frequencyMap;
+
+        // Finally, update the table
+        updateTable(huffman.getCharacterFrequencies());
     }
 
-    private void updateTable(Map<Character, Integer> frequencies) {
+
+    private void updateTable(PriorityQueue<TreeNode> characterFrequencies) {
         DefaultTableModel model = (DefaultTableModel) tableOfValues.getModel();
+
+        // Convert the PriorityQueue to a sorted list
+        List<TreeNode> sortedFrequencies = new ArrayList<>(characterFrequencies);
+        Collections.sort(sortedFrequencies, Comparator.comparing(TreeNode::getSymbol));
+
         model.setRowCount(0); // Clear the existing data
-        frequencies.forEach((character, frequency) -> model.addRow(new Object[]{character, frequency}));
+
+        // Populate the table with the sorted data
+        sortedFrequencies.forEach(element -> model.addRow(new Object[]{element.getSymbol(), element.getCount()}));
     }
+
 
     // Variables declaration - do not modify
     private javax.swing.JLabel inputLabel;
