@@ -47,7 +47,7 @@ public class InputFilePage extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         inputLabel = new javax.swing.JLabel();
         saveAndShowButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        tableOfValuesScrollPane = new javax.swing.JScrollPane();
         tableOfValues = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         inputTextArea = new javax.swing.JTextArea();
@@ -61,9 +61,11 @@ public class InputFilePage extends javax.swing.JInternalFrame {
         saveAndShowButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         saveAndShowButton.setText("Save and Show Table of Values");
         saveAndShowButton.setToolTipText("");
+        saveAndShowButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         saveAndShowButton.setPreferredSize(new java.awt.Dimension(94, 24));
 
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        tableOfValuesScrollPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tableOfValuesScrollPane.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         tableOfValues.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tableOfValues.setModel(new javax.swing.table.DefaultTableModel(
@@ -72,7 +74,7 @@ public class InputFilePage extends javax.swing.JInternalFrame {
                         {null, null}
                 },
                 new String [] {
-                        "Title 1", "Title 2"
+                        "Character", "Number of occurrence of the character in the text"
                 }
         ) {
             Class[] types = new Class [] {
@@ -91,12 +93,12 @@ public class InputFilePage extends javax.swing.JInternalFrame {
             }
         });
         tableOfValues.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tableOfValues);
+        tableOfValuesScrollPane.setViewportView(tableOfValues);
 
         inputTextArea.setColumns(10);
         inputTextArea.setRows(5);
         inputTextArea.setTabSize(3);
-        inputTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        inputTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane2.setViewportView(inputTextArea);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -110,7 +112,7 @@ public class InputFilePage extends javax.swing.JInternalFrame {
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(inputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addComponent(tableOfValuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(536, 536, 536)
                                                 .addComponent(saveAndShowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -126,7 +128,7 @@ public class InputFilePage extends javax.swing.JInternalFrame {
                                 .addGap(24, 24, 24)
                                 .addComponent(saveAndShowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tableOfValuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(303, Short.MAX_VALUE))
         );
 
@@ -205,9 +207,9 @@ public class InputFilePage extends javax.swing.JInternalFrame {
     private javax.swing.JLabel inputLabel;
     private javax.swing.JTextArea inputTextArea;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton saveAndShowButton;
     private javax.swing.JTable tableOfValues;
+    private javax.swing.JScrollPane tableOfValuesScrollPane;
     // End of variables declaration
 }
