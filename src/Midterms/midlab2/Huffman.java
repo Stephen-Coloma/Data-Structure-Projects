@@ -28,10 +28,25 @@ public class Huffman {
         this.huffmanTree = huffmanTree;
     }
 
-    /*TO BE REMOVED:*/
+
+    /**
+     * Gets the Huffman code, which is a mapping of characters to their corresponding Huffman codes.
+     *
+     * @return A HashMap containing character-to-code mappings.
+     */
     public HashMap<Character, String> getHuffmanCode() {
         return huffmanCode;
     }
+
+    /**
+     * Gets the character frequencies, represented as a PriorityQueue of TreeNodes.
+     *
+     * @return A PriorityQueue containing TreeNode objects representing character frequencies.
+     */
+    public PriorityQueue<TreeNode> getCharacterFrequencies() {
+        return characterFrequencies;
+    }
+
 
     /**Generates a huffman tree from the text of a file.
      *
@@ -77,8 +92,8 @@ public class Huffman {
      * The huffman forest represents the symbol-frequency table which will be used to calculate storage savings.
      * @param text the text from which the huffman code will be based.
      * @return huffman forest expressed in PriorityQueue
-     * */
-    private PriorityQueue<TreeNode> createHuffmanForest(String text){
+     * @exception IllegalArgumentException when an input character is not valid*/
+    private PriorityQueue<TreeNode> createHuffmanForest(String text) throws IllegalArgumentException{
         //step 2
         String validCharacters = "abcdefghijklmnopqrstuvwxyz .?'!,";
 
