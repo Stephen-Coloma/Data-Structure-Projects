@@ -30,51 +30,114 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         huffmanCodingLabel = new javax.swing.JLabel();
         asciiCodingLabel = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        huffmanCodingComputationTextArea = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        asciiCodingComputationTextArea = new javax.swing.JTextArea();
         computationLabel1 = new javax.swing.JLabel();
         computationLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        huffmanComputationLabel = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        asciiComputationLabel1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         storageSavingsLabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        storageSavingsResultTextArea = new javax.swing.JTextArea();
+        percentageLabel = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        huffmanCodingLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        huffmanCodingLabel.setText("HUFFMAN CODING");
+        huffmanCodingLabel.setFont(new java.awt.Font("Arial", 1, 34)); // NOI18N
+        huffmanCodingLabel.setForeground(new java.awt.Color(16, 16, 16));
+        huffmanCodingLabel.setText("HUFFMAN ENCODING");
 
-        asciiCodingLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        asciiCodingLabel.setText("ASCII CODING");
+        asciiCodingLabel.setFont(new java.awt.Font("Arial", 1, 34)); // NOI18N
+        asciiCodingLabel.setForeground(new java.awt.Color(16, 16, 16));
+        asciiCodingLabel.setText("ASCII ENCODING");
 
-        huffmanCodingComputationTextArea.setColumns(20);
-        huffmanCodingComputationTextArea.setRows(5);
-        huffmanCodingComputationTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(null));
-        huffmanCodingComputationTextArea.setSelectionColor(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setViewportView(huffmanCodingComputationTextArea);
-
-        asciiCodingComputationTextArea.setColumns(20);
-        asciiCodingComputationTextArea.setRows(5);
-        asciiCodingComputationTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(null));
-        jScrollPane3.setViewportView(asciiCodingComputationTextArea);
-
-        computationLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        computationLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        computationLabel1.setForeground(new java.awt.Color(16, 16, 16));
         computationLabel1.setText("Computation");
 
-        computationLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        computationLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        computationLabel2.setForeground(new java.awt.Color(16, 16, 16));
         computationLabel2.setText("Computation");
+
+        jPanel2.setBackground(new java.awt.Color(237, 237, 237));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(17, 41, 107), 2));
+
+        huffmanComputationLabel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        huffmanComputationLabel.setText("<format computation>");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(huffmanComputationLabel)
+                                .addContainerGap(392, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(huffmanComputationLabel)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(237, 237, 237));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(17, 41, 107), 2));
+        jPanel3.setPreferredSize(new java.awt.Dimension(587, 509));
+
+        asciiComputationLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        asciiComputationLabel1.setText("<format computation>");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(asciiComputationLabel1)
+                                .addContainerGap(392, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(asciiComputationLabel1)
+                                .addContainerGap(467, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBackground(new java.awt.Color(255, 219, 87));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 0), 3, true));
 
         storageSavingsLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         storageSavingsLabel.setForeground(new java.awt.Color(0, 80, 157));
         storageSavingsLabel.setText("Storage Savings (%):");
 
-        storageSavingsResultTextArea.setColumns(5);
-        storageSavingsResultTextArea.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        storageSavingsResultTextArea.setRows(1);
-        storageSavingsResultTextArea.setTabSize(3);
-        storageSavingsResultTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(null));
-        jScrollPane1.setViewportView(storageSavingsResultTextArea);
+        percentageLabel.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        percentageLabel.setForeground(new java.awt.Color(255, 255, 255));
+        percentageLabel.setText("<format percentage>");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(storageSavingsLabel)
+                                .addContainerGap(60, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(percentageLabel)
+                                .addGap(35, 35, 35))
+        );
+        jPanel4Layout.setVerticalGroup(
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(storageSavingsLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(percentageLabel)
+                                .addContainerGap(29, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,28 +146,28 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(73, 73, 73)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(huffmanCodingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(156, 156, 156)
-                                                                .addComponent(asciiCodingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGap(73, 73, 73)
+                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(huffmanCodingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(54, 54, 54)
-                                                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                .addGap(302, 302, 302)
+                                                                .addComponent(computationLabel1)))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGap(37, 37, 37)
+                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(asciiCodingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addGap(267, 267, 267)
+                                                                .addComponent(computationLabel2))))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(549, 549, 549)
-                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(564, 564, 564)
-                                                .addComponent(storageSavingsLabel))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(311, 311, 311)
-                                                .addComponent(computationLabel1)
-                                                .addGap(539, 539, 539)
-                                                .addComponent(computationLabel2)))
-                                .addContainerGap(13758, Short.MAX_VALUE))
+                                                .addGap(522, 522, 522)
+                                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(13733, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,17 +178,15 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
                                         .addComponent(asciiCodingLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane3))
+                                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(computationLabel1)
                                         .addComponent(computationLabel2))
-                                .addGap(56, 56, 56)
-                                .addComponent(storageSavingsLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(307, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(264, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,17 +207,17 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify
-    private javax.swing.JTextArea asciiCodingComputationTextArea;
     private javax.swing.JLabel asciiCodingLabel;
+    private javax.swing.JLabel asciiComputationLabel1;
     private javax.swing.JLabel computationLabel1;
     private javax.swing.JLabel computationLabel2;
-    private javax.swing.JTextArea huffmanCodingComputationTextArea;
     private javax.swing.JLabel huffmanCodingLabel;
+    private javax.swing.JLabel huffmanComputationLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel percentageLabel;
     private javax.swing.JLabel storageSavingsLabel;
-    private javax.swing.JTextArea storageSavingsResultTextArea;
     // End of variables declaration
 }

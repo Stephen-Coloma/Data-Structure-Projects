@@ -9,7 +9,7 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class EncryptionHuffmanCode extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form EncryptionHuffmanCode
+     * Creates new form DecryptionHuffmanCode
      */
     public EncryptionHuffmanCode() {
         initComponents();
@@ -28,40 +28,42 @@ public class EncryptionHuffmanCode extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        textInput = new javax.swing.JLabel();
-        huffmanCodeLabel = new javax.swing.JLabel();
-        EncodeButton = new javax.swing.JButton();
-        TableScrollPane = new javax.swing.JScrollPane();
-        TtableOfValues = new javax.swing.JTable();
-        textInputScrollPane = new javax.swing.JScrollPane();
-        textInputTextArea = new javax.swing.JTextArea();
-        huffmanCodePane = new javax.swing.JScrollPane();
+        inputTextLabel = new javax.swing.JLabel();
+        huffmanCodeTextScroll = new javax.swing.JScrollPane();
         huffmanCodeTextArea = new javax.swing.JTextArea();
+        huffmanCodeLabel = new javax.swing.JLabel();
+        encodeToHuffmanCodeButton = new javax.swing.JButton();
+        tableScrollPane = new javax.swing.JScrollPane();
+        tableOfValuesScrollPane = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        huffmanCodeResultLabel = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        textInput.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        textInput.setText("Enter a text: ");
+        inputTextLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        inputTextLabel.setText("Enter a text:");
+
+        huffmanCodeTextScroll.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        huffmanCodeTextArea.setColumns(20);
+        huffmanCodeTextArea.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        huffmanCodeTextArea.setRows(1);
+        huffmanCodeTextScroll.setViewportView(huffmanCodeTextArea);
 
         huffmanCodeLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         huffmanCodeLabel.setText("Huffman Code:");
 
-        EncodeButton.setBackground(new java.awt.Color(255, 219, 87));
-        EncodeButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        EncodeButton.setText("Encode to Huffman");
-        EncodeButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                EncodeButtonMouseEntered(evt);
-            }
-        });
-        EncodeButton.addActionListener(new java.awt.event.ActionListener() {
+        encodeToHuffmanCodeButton.setBackground(new java.awt.Color(255, 219, 87));
+        encodeToHuffmanCodeButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        encodeToHuffmanCodeButton.setText("Encode to Huffman Code");
+        encodeToHuffmanCodeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EncodeButtonActionPerformed(evt);
+                encodeToHuffmanCodeButtonActionPerformed(evt);
             }
         });
 
-        TtableOfValues.setModel(new javax.swing.table.DefaultTableModel(
+        tableOfValuesScrollPane.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
                         {null, null},
                         {null, null}
@@ -70,18 +72,33 @@ public class EncryptionHuffmanCode extends javax.swing.JInternalFrame {
                         "Title 1", "Title 2"
                 }
         ));
-        TableScrollPane.setViewportView(TtableOfValues);
-
-        textInputTextArea.setColumns(20);
-        textInputTextArea.setRows(5);
-        textInputScrollPane.setViewportView(textInputTextArea);
-
-        huffmanCodeTextArea.setColumns(20);
-        huffmanCodeTextArea.setRows(5);
-        huffmanCodePane.setViewportView(huffmanCodeTextArea);
+        tableScrollPane.setViewportView(tableOfValuesScrollPane);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel1.setText("Table of Values");
+        jLabel1.setText("Table Of Values");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setPreferredSize(new java.awt.Dimension(232, 52));
+
+        huffmanCodeResultLabel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        huffmanCodeResultLabel.setText("<format huffman code result>");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(huffmanCodeResultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(huffmanCodeResultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,84 +106,72 @@ public class EncryptionHuffmanCode extends javax.swing.JInternalFrame {
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(textInputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGap(64, 64, 64)
-                                                        .addComponent(textInput)
-                                                        .addGap(1103, 1103, 1103))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(616, 616, 616)
+                                                .addComponent(jLabel1))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(70, 70, 70)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(inputTextLabel)
                                                         .addComponent(huffmanCodeLabel)
-                                                        .addComponent(huffmanCodePane)
-                                                        .addComponent(TableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1194, Short.MAX_VALUE)))
+                                                        .addComponent(tableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1193, Short.MAX_VALUE)
+                                                        .addComponent(huffmanCodeTextScroll, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1193, Short.MAX_VALUE)))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(565, 565, 565)
-                                                .addComponent(EncodeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(596, 596, 596)
-                                                .addComponent(jLabel1)))
-                                .addContainerGap(14905, Short.MAX_VALUE))
+                                                .addComponent(encodeToHuffmanCodeButton)))
+                                .addContainerGap(14993, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(textInput)
+                                .addGap(23, 23, 23)
+                                .addComponent(inputTextLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textInputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(huffmanCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(huffmanCodeTextScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(huffmanCodeLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(huffmanCodePane, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(EncodeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(TableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
+                                .addComponent(encodeToHuffmanCodeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(tableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel1)
-                                .addContainerGap(236, Short.MAX_VALUE))
+                                .addContainerGap(225, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(88, 88, 88))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap())
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>
 
-    private void EncodeButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void EncodeButtonMouseEntered(java.awt.event.MouseEvent evt) {
+    private void encodeToHuffmanCodeButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
 
     // Variables declaration - do not modify
-    private javax.swing.JButton EncodeButton;
-    private javax.swing.JScrollPane TableScrollPane;
-    private javax.swing.JTable TtableOfValues;
+    private javax.swing.JButton encodeToHuffmanCodeButton;
     private javax.swing.JLabel huffmanCodeLabel;
-    private javax.swing.JScrollPane huffmanCodePane;
+    private javax.swing.JLabel huffmanCodeResultLabel;
     private javax.swing.JTextArea huffmanCodeTextArea;
+    private javax.swing.JScrollPane huffmanCodeTextScroll;
+    private javax.swing.JLabel inputTextLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel textInput;
-    private javax.swing.JScrollPane textInputScrollPane;
-    private javax.swing.JTextArea textInputTextArea;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTable tableOfValuesScrollPane;
+    private javax.swing.JScrollPane tableScrollPane;
     // End of variables declaration
 }
