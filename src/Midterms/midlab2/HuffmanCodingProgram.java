@@ -11,12 +11,15 @@ import javax.swing.*;
 public class HuffmanCodingProgram extends javax.swing.JFrame {
     private Huffman mainHuffman;
 
+
     /**public class HuffmanCodingProgram extends javax.swing.JFrame {
 
      /**
      * Creates new form MenuDashboard
      */
     public HuffmanCodingProgram() {
+
+        mainHuffman = new Huffman();
         initComponents();
     }
 
@@ -292,11 +295,20 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
     }
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {
-        // TODO add your handling code here:
+        System.out.println("Show Tree button clicked");
+        if (mainHuffman == null || mainHuffman.getHuffmanTree() == null) {
+            JOptionPane.showMessageDialog(this, "The Huffman tree has not been created yet.");
+            return;
+        }
+        System.out.println("Huffman tree exists. Proceeding to show tree.");
         ShowTreePage showTreePage = new ShowTreePage(mainHuffman);
         contentPanel.removeAll();
-        contentPanel.add(showTreePage).setVisible(true);
+        contentPanel.add(showTreePage);
+        contentPanel.revalidate();
+        contentPanel.repaint();
     }
+
+
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
