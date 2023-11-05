@@ -25,13 +25,12 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
         // Calculate and fill up the labels based on available methods in Huffman
         int huffmanTotalBitsUsed = calculateHuffmanTotalBitsUsed();
         int totalCharacters = calculateTotalCharacters();
-        double bitsPerCharacter = calculateBitsPerCharacter(huffmanTotalBitsUsed, totalCharacters);
         int totalBitsConsumed = calculateTotalBitsConsumed(totalCharacters);
 
         percentageLabel.setText(huffman.calculateSavings());
         huffmanTotalBitsUsedLabel.setText("Total bits used: " + huffmanTotalBitsUsed);
         totalCharactersLabel.setText("Total characters: " + totalCharacters);
-        bitsPerCharacterLabel.setText("Bits per character: " + String.format("%.2f", bitsPerCharacter));
+        bitsPerCharacterLabel.setText("Bits per character: 7");
         totalBitsConsumedLabel.setText("Total bits consumed: " + totalBitsConsumed);
     }
 
@@ -253,10 +252,6 @@ public class StorageSavingsPage extends javax.swing.JInternalFrame {
         for (TreeNode node : huffman.getCharacterFrequencies())
             totalCharacters += node.getCount();
         return totalCharacters;
-    }
-
-    private double calculateBitsPerCharacter(int huffmanTotalBitsUsed, int totalCharacters) {
-        return (double) huffmanTotalBitsUsed / totalCharacters;
     }
 
     private int calculateTotalBitsConsumed(int totalCharacters) {
