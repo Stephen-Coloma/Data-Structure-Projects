@@ -5,6 +5,9 @@ import Midterms.midlab2.Huffman;
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 
 public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
@@ -197,13 +200,18 @@ public class DecryptionHuffmanCode extends javax.swing.JInternalFrame {
         // Get the Huffman code map
         Map<Character, String> huffmanCodeMap = huffman.getHuffmanCode();
 
-        // Iterate through the Huffman code map and add rows to the table
-        for (Map.Entry<Character, String> entry : huffmanCodeMap.entrySet()) {
+        // Sort the Huffman code map by character (lexicographical order)
+        List<Map.Entry<Character, String>> sortedEntries = new ArrayList<>(huffmanCodeMap.entrySet());
+        sortedEntries.sort(Comparator.comparing(Map.Entry::getKey));
+
+        // Iterate through the sorted entries and add rows to the table
+        for (Map.Entry<Character, String> entry : sortedEntries) {
             char character = entry.getKey();
             String huffmanCode = entry.getValue();
             model.addRow(new Object[]{character, huffmanCode});
         }
     }
+
 
 
     // Variables declaration - do not modify

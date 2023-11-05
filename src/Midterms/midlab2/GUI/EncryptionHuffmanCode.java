@@ -9,13 +9,7 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Comparator;
-import java.util.BitSet;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import Midterms.midlab2.Huffman; // Import the Huffman class
 
@@ -66,13 +60,18 @@ public class EncryptionHuffmanCode extends javax.swing.JInternalFrame {
         // Get the Huffman code map
         Map<Character, String> huffmanCodeMap = huffman.getHuffmanCode();
 
-        // Iterate through the Huffman code map and add rows to the table
-        for (Map.Entry<Character, String> entry : huffmanCodeMap.entrySet()) {
+        // Sort the Huffman code map by character (lexicographical order)
+        List<Map.Entry<Character, String>> sortedEntries = new ArrayList<>(huffmanCodeMap.entrySet());
+        sortedEntries.sort(Comparator.comparing(Map.Entry::getKey));
+
+        // Iterate through the sorted entries and add rows to the table
+        for (Map.Entry<Character, String> entry : sortedEntries) {
             char character = entry.getKey();
             String huffmanCode = entry.getValue();
             model.addRow(new Object[]{character, huffmanCode});
         }
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -7,6 +7,7 @@ import Midterms.midlab2.GUI.DecryptionHuffmanCode;
 
 
 import javax.swing.*;
+import java.awt.*;
 
 public class HuffmanCodingProgram extends javax.swing.JFrame {
     private Huffman mainHuffman;
@@ -295,17 +296,32 @@ public class HuffmanCodingProgram extends javax.swing.JFrame {
     }
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {
-        System.out.println("Show Tree button clicked");
-        if (mainHuffman == null || mainHuffman.getHuffmanTree() == null) {
-            JOptionPane.showMessageDialog(this, "The Huffman tree has not been created yet.");
-            return;
-        }
-        System.out.println("Huffman tree exists. Proceeding to show tree.");
-        ShowTreePage showTreePage = new ShowTreePage(mainHuffman);
-        contentPanel.removeAll();
-        contentPanel.add(showTreePage);
-        contentPanel.revalidate();
-        contentPanel.repaint();
+        // Create a new JFrame for the pop-up window
+        JFrame popUpFrame = new JFrame("HUFFMAN TREE");
+
+        // Create a JPanel to hold the title and the ShowTreePage
+        JPanel popUpContentPanel = new JPanel(new BorderLayout());
+
+        // Create a title label
+        JLabel titleLabel = new JLabel("HUFFMAN TREE");
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 40)); // Customize font and size as needed
+        titleLabel.setHorizontalAlignment(JLabel.CENTER);
+
+        // Add the title label to the top of the content panel
+        popUpContentPanel.add(titleLabel, BorderLayout.NORTH);
+
+        // Add your content (ShowTreePage) below the title
+        ShowTreePage showTreePage = new ShowTreePage(mainHuffman.getHuffmanTree().peek());
+        popUpContentPanel.add(showTreePage, BorderLayout.CENTER);
+
+        // Add the content panel to the pop-up frame
+        popUpFrame.add(popUpContentPanel);
+
+        // Maximize the pop-up frame
+        popUpFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        // Make the pop-up frame visible
+        popUpFrame.setVisible(true);
     }
 
 

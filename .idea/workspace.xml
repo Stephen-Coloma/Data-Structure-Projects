@@ -72,19 +72,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.HuffmanCodingProgram">
-    <configuration name="HuffmanCodingProgram (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.HuffmanCodingProgram" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Midterms.midlab2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HuffmanCodingProgram (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.HuffmanCodingProgram" />
       <module name="CS211_9342_MixAndMatch" />
@@ -99,6 +86,19 @@
       </method>
     </configuration>
     <configuration name="HuffmanCodingProgram (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.HuffmanCodingProgram" />
+      <module name="CS211_9342_MixAndMatch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Midterms.midlab2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HuffmanCodingProgram (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.HuffmanCodingProgram" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
@@ -140,10 +140,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HuffmanCodingProgram" />
+        <item itemvalue="Application.HuffmanCodingProgram (4)" />
         <item itemvalue="Application.HuffmanTreePanel" />
         <item itemvalue="Application.HuffmanCodingProgram (3)" />
         <item itemvalue="Application.HuffmanCodingProgram (2)" />
-        <item itemvalue="Application.HuffmanCodingProgram (1)" />
       </list>
     </recent_temporary>
   </component>
