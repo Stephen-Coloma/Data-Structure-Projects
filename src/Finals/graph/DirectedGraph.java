@@ -71,8 +71,34 @@ public class DirectedGraph {
     public String toString(){
         String temp="";
         for (Edge edge:edges) {
-            temp+=edge.getFirstNode() + "--->" +edge.getSecondNode() + "\n";
+            temp+=edge.getFirstNode() + " ---> " +edge.getSecondNode() + "\n";
         }
         return temp;
+    }
+
+    /**TESTING PURPOSES ONLY*/
+    public static void main(String[] args) {
+        DirectedGraph graph = new DirectedGraph();
+
+        Node node1 = new Node("La Union");
+        Node node2 = new Node("Baguio");
+        Node node3 = new Node("Pangasinan");
+
+        graph.addNode(node1);
+        graph.addNode(node2);
+        graph.addNode(node3);
+
+        System.out.println(graph.getNodes()); // [La Union, Baguio, Pangasinan]
+
+        graph.addEdge(node1,node2); //La Union ---> Baguio
+        graph.addEdge(node2,node3); //Baguio ---> Pangasinan
+
+        System.out.println(graph.toString());
+        /*
+        La Union ---> Baguio
+        Baguio ---> Pangasinan
+        */
+
+        System.out.println(node2.getNeighbors()); //[Pangasinan]
     }
 }

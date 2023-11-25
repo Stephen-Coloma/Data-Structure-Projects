@@ -72,8 +72,34 @@ public class UndirectedGraph {
     public String toString() {
         String temp = "";
         for (Edge edge : edges) {
-            temp += edge.getFirstNode() + "----" + edge.getSecondNode() + "\n";
+            temp += edge.getFirstNode() + " ---- " + edge.getSecondNode() + "\n";
         }
         return temp;
+    }
+
+    /**TESTING PURPOSES ONLY*/
+    public static void main(String[] args) {
+        UndirectedGraph graph = new UndirectedGraph();
+
+        Node node1 = new Node("Stephen");
+        Node node2 = new Node("Alliah");
+        Node node3 = new Node("Sugo");
+
+        graph.addNode(node1);
+        graph.addNode(node2);
+        graph.addNode(node3);
+
+        System.out.println(graph.getNodes()); // [Stephen, Alliah, Sugo]
+
+        graph.addEdge(node1,node2); //Stephen ---- Alliah
+        graph.addEdge(node2,node3); //Alliah ---- Sugo
+
+        System.out.println(graph.toString());
+        /*
+        Stephen ---- Alliah
+        Alliah ---- Sugo
+        */
+
+        System.out.println(node2.getNeighbors()); //[Stephen, Sugo]
     }
 }
