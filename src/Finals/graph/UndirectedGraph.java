@@ -46,8 +46,10 @@ public class UndirectedGraph {
      * @param node The node to be added.
      */
     public void addNode(Node node) {
-        nodes.add(node);
-        nodeCount++;
+        if (!nodes.contains(node)) {
+            nodes.add(node);
+            nodeCount++;
+        }
     }
 
     /**
@@ -57,8 +59,8 @@ public class UndirectedGraph {
      * @param firstNode  The first node of the undirected edge.
      * @param secondNode The second node of the undirected edge.
      */
-    public void addEdge(Node firstNode, Node secondNode) {
-        Edge edge = new Edge(firstNode, secondNode);
+    public void addEdge(Node firstNode, Node secondNode, int weight) {
+        Edge edge = new Edge(firstNode, secondNode,weight);
         firstNode.getNeighbors().add(secondNode); // Adding the secondNode as the neighbor of the firstNode
         secondNode.getNeighbors().add(firstNode); // Adding the firstNode as the neighbor of the secondNode
         edges.add(edge);
@@ -72,7 +74,7 @@ public class UndirectedGraph {
     public String toString() {
         String temp = "";
         for (Edge edge : edges) {
-            temp += edge.getFirstNode() + " ---- " + edge.getSecondNode() + "\n";
+            temp += edge.getFirstNode() + " ---- " + edge.getSecondNode() + " " + edge.getWeight() + "\n";
         }
         return temp;
     }
@@ -91,8 +93,8 @@ public class UndirectedGraph {
 
         System.out.println(graph.getNodes()); // [Stephen, Alliah, Sugo]
 
-        graph.addEdge(node1,node2); //Stephen ---- Alliah
-        graph.addEdge(node2,node3); //Alliah ---- Sugo
+        graph.addEdge(node1,node2,2); //Stephen ---- Alliah
+        graph.addEdge(node2,node3,3); //Alliah ---- Sugo
 
         System.out.println(graph.toString());
         /*

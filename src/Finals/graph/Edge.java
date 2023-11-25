@@ -16,16 +16,28 @@ public class Edge {
      */
     private Node secondNode;
 
+    public int getWeight() {
+        return weight;
+    }
+
     /**
      * Constructs a new Edge connecting the specified nodes.
      *
      * @param firstNode The first node connected by the edge.
      * @param secondNode The second node connected by the edge.
      */
-    public Edge(Node firstNode, Node secondNode) {
+    public Edge(Node firstNode, Node secondNode, int weight) {
         this.firstNode = firstNode;
         this.secondNode = secondNode;
+        this.weight=weight;
     }
+
+    /**
+     * Gets the weight of the edge.
+     *
+     * @return The weight
+     */
+    private int weight;
 
     /**
      * Gets the first node connected by the edge.

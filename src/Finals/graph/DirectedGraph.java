@@ -46,8 +46,10 @@ public class DirectedGraph {
      * @param node The node to be added.
      */
     public void addNode(Node node) {
-        nodes.add(node);
-        nodeCount++;
+        if (!nodes.contains(node)) {
+            nodes.add(node);
+            nodeCount++;
+        }
     }
 
     /**
@@ -57,8 +59,8 @@ public class DirectedGraph {
      * @param start The starting node of the directed edge.
      * @param end   The ending node of the directed edge.
      */
-    public void addEdge(Node start, Node end) {
-        Edge edge = new Edge(start, end);
+    public void addEdge(Node start, Node end, int weight) {
+        Edge edge = new Edge(start, end,weight);
         start.getNeighbors().add(end); // Adding the end as the neighbor of the start node
         edges.add(edge);
     }
@@ -71,7 +73,7 @@ public class DirectedGraph {
     public String toString(){
         String temp="";
         for (Edge edge:edges) {
-            temp+=edge.getFirstNode() + " ---> " +edge.getSecondNode() + "\n";
+            temp+=edge.getFirstNode() + " ---> " +edge.getSecondNode() + " " + edge.getWeight() + "\n";
         }
         return temp;
     }
@@ -90,8 +92,8 @@ public class DirectedGraph {
 
         System.out.println(graph.getNodes()); // [La Union, Baguio, Pangasinan]
 
-        graph.addEdge(node1,node2); //La Union ---> Baguio
-        graph.addEdge(node2,node3); //Baguio ---> Pangasinan
+        graph.addEdge(node1,node2,3); //La Union ---> Baguio
+        graph.addEdge(node2,node3,4); //Baguio ---> Pangasinan
 
         System.out.println(graph.toString());
         /*

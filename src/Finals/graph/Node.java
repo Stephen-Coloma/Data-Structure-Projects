@@ -2,6 +2,7 @@ package Finals.graph;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * The Node class represents a node in a graph.
@@ -72,6 +73,18 @@ public class Node {
     @Override
     public String toString() {
         return this.data;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Node otherNode = (Node) obj;
+        return Objects.equals(data, otherNode.data);
     }
 }
 

@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
+      <change afterPath="$PROJECT_DIR$/src/Finals/MyProgram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Finals/util/GraphLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Finals/util/data_directed.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Finals/util/data_undirected.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Finals/graph/DirectedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/DirectedGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Finals/graph/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Finals/graph/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Finals/graph/UndirectedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/UndirectedGraph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,13 +75,26 @@
       <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DirectedGraph">
+  <component name="RunManager" selected="Application.GraphLoader">
     <configuration name="DirectedGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Finals.graph.DirectedGraph" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Finals.graph.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Finals.util.GraphLoader" />
+      <module name="CS211_9342_MixAndMatch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Finals.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,19 +128,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HuffmanTreePanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.GUI.HuffmanTreePanel" />
-      <module name="CS211_9342_MixAndMatch" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Midterms.midlab2.GUI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UndirectedGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Finals.graph.UndirectedGraph" />
       <module name="CS211_9342_MixAndMatch" />
@@ -137,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DirectedGraph" />
+        <item itemvalue="Application.GraphLoader" />
         <item itemvalue="Application.UndirectedGraph" />
+        <item itemvalue="Application.DirectedGraph" />
         <item itemvalue="Application.HuffmanCodingProgram" />
         <item itemvalue="Application.HuffmanCodingProgram (4)" />
-        <item itemvalue="Application.HuffmanTreePanel" />
       </list>
     </recent_temporary>
   </component>
