@@ -85,6 +85,30 @@ public class Graph {
         return temp;
     }
 
+    /**TODO: BREADTH FIRST SEARCH
+     * Lourdene Sanchie*/
+    public void breadthFirstSearch(){
+        //yung graph na ibre breadth first search nyo is yung "this"
+
+    }
+
+    /**TODO: DEPTH FIRST SEARCH
+     * Marius Jerwin*/
+    public void depthFirstSearch(){
+        //yung graph na ide depth first search nyo is yung "this"
+
+    }
+
+    /**TODO: DIJKSTRA'S SHORTEST PATH ALGORITHM
+     * Stephen, Hannah, Rey*/
+    public void shortestPath(){
+
+    }
+
+
+
+
+
     /**TESTING PURPOSES ONLY*/
     public static void main(String[] args) {
         Graph graph = new Graph();
