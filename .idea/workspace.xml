@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
-      <change afterPath="$PROJECT_DIR$/src/Finals/MyProgram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Finals/util/GraphLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Finals/util/data_directed.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Finals/util/data_undirected.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Finals/graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/graph/DirectedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/DirectedGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/graph/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/graph/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/graph/UndirectedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/UndirectedGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Finals/util/GraphLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/util/GraphLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "stephen",
+    "git-widget-placeholder": "test",
     "last_opened_file_path": "C:/Users/dana/IdeaProjects/BSCS 2/src/prelim",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,12 +83,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Finals.util.GraphLoader" />
+    <configuration name="Graph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Finals.graph.Graph" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Finals.util.*" />
+          <option name="PATTERN" value="Finals.graph.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,12 +96,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HuffmanCodingProgram (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Midterms.midlab2.HuffmanCodingProgram" />
+    <configuration name="GraphLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Finals.util.GraphLoader" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Midterms.midlab2.*" />
+          <option name="PATTERN" value="Finals.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,9 +139,9 @@
       <list>
         <item itemvalue="Application.GraphLoader" />
         <item itemvalue="Application.UndirectedGraph" />
+        <item itemvalue="Application.Graph" />
         <item itemvalue="Application.DirectedGraph" />
         <item itemvalue="Application.HuffmanCodingProgram" />
-        <item itemvalue="Application.HuffmanCodingProgram (4)" />
       </list>
     </recent_temporary>
   </component>
