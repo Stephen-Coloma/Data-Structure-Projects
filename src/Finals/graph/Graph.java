@@ -96,6 +96,16 @@ public class Graph {
         boolean[] visited = new boolean[nodeCount];
     }
 
+    private void DFSUtil(Node currentNode, boolean[] visited) {
+        if(currentNode == null){
+            return;
+        }
+        // Mark the current node as visited and print it
+        System.out.print(currentNode.getData() + " ");
+        visited[nodes.indexOf(currentNode)] = true;
+
+    }
+
 
     /**TODO: DIJKSTRA'S SHORTEST PATH ALGORITHM
      * Stephen, Hannah, Rey*/
