@@ -1,7 +1,10 @@
 package Finals.graph;
 
-import java.util.ArrayList;
-import java.util.List;
+import Finals.util.GraphLoader;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.io.File;
+import java.util.*;
 
 /**
  * The DirectedGraph class represents a directed graph, consisting of nodes and directed edges.
@@ -101,58 +104,98 @@ public class Graph {
 
     /**TODO: DIJKSTRA'S SHORTEST PATH ALGORITHM
      * Stephen, Hannah, Rey*/
-    public void shortestPath(){
+    public HashMap<String, Integer> shortestPath(Node startingNode) throws Exception{
+        //validation if the startingNOde is on the nodes
+        if (!nodes.contains(startingNode)){
+            throw new Exception("Starting Node Not Found!");
+        }
 
+        HashMap<String,Integer> pathWeightTable = new HashMap<>(); //stores the path  as well as the weights
+        List<Node> visitedNodes = new LinkedList<>();
+        List<Node> unvisitedNodes = new LinkedList<>();
+
+        //putting all nodes in the table and on the unvisitedNode
+        for (Node node: nodes) {
+            pathWeightTable.put(node.getData(),Integer.MAX_VALUE);
+            unvisitedNodes.add(node);
+        }
+
+        // Set the distance of the starting node to 0
+        pathWeightTable.put(startingNode.getData(), 0);
+
+        while (!unvisitedNodes.isEmpty()){
+            Node current = getMinimumDistanceNode(unvisitedNodes, pathWeightTable);
+            unvisitedNodes.remove(current);
+            visitedNodes.add(current);
+
+            for (Node neighborNode: current.getNeighbors()) {
+                if (!visitedNodes.contains(neighborNode)) {
+                    int tentativeDistance = pathWeightTable.get(current.getData()) + getEdgeWeight(current, neighborNode);
+                    if (tentativeDistance < pathWeightTable.get(neighborNode.getData())) {
+                        pathWeightTable.put(neighborNode.getData(), tentativeDistance);
+                    }
+                }
+            }
+        }
+        return pathWeightTable;
     }
 
+    private Integer getEdgeWeight(Node current, Node neighborNode) {
+        for (Edge edge:edges) {
+            if ((edge.getFirstNode().equals(current) && edge.getSecondNode().equals(neighborNode) ) || (edge.getFirstNode().equals(neighborNode) && edge.getSecondNode().equals(current) )){
+                return edge.getWeight();
+            }
+        }
+        throw new NoSuchElementException("An edge does not exist");
+    }
 
+    private Node getMinimumDistanceNode(List<Node> unvisitedNodes, HashMap<String, Integer> pathWeightTable) {
+        Node minDistanceNode = null;
+        int minDistance = Integer.MAX_VALUE;
+
+        for (Node node : unvisitedNodes) {
+            int nodeDistance = pathWeightTable.get(node.getData());
+            if (nodeDistance < minDistance) {
+                minDistanceNode = node;
+                minDistance = nodeDistance;
+            }
+        }
+
+        return minDistanceNode;
+    }
 
 
 
     /**TESTING PURPOSES ONLY*/
     public static void main(String[] args) {
-        Graph graph = new Graph();
-//
-//        Node node1 = new Node("La Union");
-//        Node node2 = new Node("Baguio");
-//        Node node3 = new Node("Pangasinan");
-//
-//        graph.addNode(node1);
-//        graph.addNode(node2);
-//        graph.addNode(node3);
-//
-//        System.out.println(graph.getNodes()); // [La Union, Baguio, Pangasinan]
-//
-//        graph.addEdgeToDirectedGraph(node1,node2,3); //La Union ---> Baguio
-//        graph.addEdgeToUndirectedGraph(node2,node3,4); //Baguio ---> Pangasinan
-//
-//        System.out.println(graph.toString());
-//        /*
-//        La Union ---> Baguio
-//        Baguio ---> Pangasinan
-//        */
-//
-//        System.out.println(node2.getNeighbors()); //[Pangasinan]
+        /*SAMPLE RUN:
+        SHORTEST PATH FOR DIRECTED STARTING FROM NODE E:
+        {A=7, B=39, C=19, D=51, E=0}
 
-        Node node1 = new Node("Stephen");
-        Node node2 = new Node("Alliah");
-        Node node3 = new Node("Sugo");
+        --------------------------
 
-        graph.addNode(node1);
-        graph.addNode(node2);
-        graph.addNode(node3);
-
-        System.out.println(graph.getNodes()); // [Stephen, Alliah, Sugo]
-
-        graph.addEdgeToUndirectedGraph(node1,node2,2); //Stephen ---- Alliah
-        graph.addEdgeToUndirectedGraph(node2,node3,3); //Alliah ---- Sugo
-
-        System.out.println(graph.toString());
-        /*
-        Stephen ---- Alliah
-        Alliah ---- Sugo
+        SHORTEST PATH FOR UNDIRECTED STARTING FROM NODE E:
+        {A=8, B=6, C=5, D=2, E=0}
         */
 
-        System.out.println(node2.getNeighbors()); //[Stephen, Sugo]
+        Graph graphDirected;
+        Graph graphUndirected;
+        try {
+            graphDirected = GraphLoader.loadGraphFromFile(new File("src/Finals/util/data_directed.csv"));
+            System.out.println("SHORTEST PATH FOR DIRECTED STARTING FROM NODE E: ");
+            System.out.println(graphDirected.shortestPath(new Node("E"))); //specified starting vertex
+
+            System.out.println("\n--------------------------\n");
+
+
+            graphUndirected = GraphLoader.loadGraphFromFile(new File("src/Finals/util/data_undirected.csv"));
+            System.out.println("SHORTEST PATH FOR UNDIRECTED STARTING FROM NODE E: ");
+            System.out.println(graphUndirected.shortestPath(new Node("E"))); //specified starting vertex
+
+        } catch (NullPointerException npe) {
+            System.out.println("Not all vertex is connected to chosen node");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }

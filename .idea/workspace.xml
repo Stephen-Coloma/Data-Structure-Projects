@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram">
-      <change afterPath="$PROJECT_DIR$/src/Finals/graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/util/GraphLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/util/GraphLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Finals/graph/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Finals/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Finals/util/data_undirected.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/util/data_undirected.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +51,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "test",
+    "git-widget-placeholder": "shortest",
     "last_opened_file_path": "C:/Users/dana/IdeaProjects/BSCS 2/src/prelim",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,7 +70,7 @@
       <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GraphLoader">
+  <component name="RunManager" selected="Application.Graph">
     <configuration name="DirectedGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Finals.graph.DirectedGraph" />
       <module name="CS211_9342_MixAndMatch" />
@@ -137,9 +138,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Graph" />
         <item itemvalue="Application.GraphLoader" />
         <item itemvalue="Application.UndirectedGraph" />
-        <item itemvalue="Application.Graph" />
         <item itemvalue="Application.DirectedGraph" />
         <item itemvalue="Application.HuffmanCodingProgram" />
       </list>
@@ -370,13 +371,27 @@
           <properties class="Midterms.Project1.stack.StackUnderflowException" package="Midterms.Project1.stack" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$PROJECT_DIR$/../.jdks/corretto-20.0.2.1/lib/src.zip!/java.base/java/util/HashMap.java</url>
           <line>360</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Finals/graph/Graph.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

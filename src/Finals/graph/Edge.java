@@ -74,5 +74,10 @@ public class Edge {
     public void setSecondNode(Node secondNode) {
         this.secondNode = secondNode;
     }
+
+    @Override
+    public String toString() {
+        return firstNode.toString() + " --- " + secondNode.toString();
+    }
 }
 
