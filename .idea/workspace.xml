@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="merge: merged branch BFS and shortest into branch stephen">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Finals/MyProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/MyProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Finals/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Graph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging hannahmain",
+    "git-widget-placeholder": "stephen",
     "last_opened_file_path": "C:/Users/dana/IdeaProjects/BSCS 2/src/prelim",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -140,9 +140,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MyProgram" />
+        <item itemvalue="Application.Graph" />
         <item itemvalue="Application.GraphLoader" />
         <item itemvalue="Application.UndirectedGraph" />
-        <item itemvalue="Application.Graph" />
         <item itemvalue="Application.DirectedGraph" />
       </list>
     </recent_temporary>

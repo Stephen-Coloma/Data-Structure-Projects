@@ -16,6 +16,7 @@
 package Finals;
 
 import Finals.graph.Graph;
+import Finals.graph.Node;
 import Finals.util.GraphLoader;
 
 import java.io.File;
@@ -68,10 +69,10 @@ public class MyProgram {
                     loadGraph();
                     break;
                 case 2:
-                    depthFirstTraversal();
+                    showDepthFirstTraversal();
                     break;
                 case 3:
-                    breadthFirstTraversal();
+                    showBreadthFirstTraversal();
                     break;
                 case 4:
                     showShortestPath();
@@ -117,7 +118,7 @@ public class MyProgram {
      */
     private void loadGraph() {
         System.out.print("Enter the file path: ");
-        String path = scanner.nextLine();
+        String path = "src/Finals/util/"+scanner.nextLine();
         try {
             graph = GraphLoader.loadGraphFromFile(new File(path));
             System.out.println("Graph loaded successfully.");
@@ -129,10 +130,19 @@ public class MyProgram {
     /**
      * Initiates a depth-first traversal on the loaded graph.
      */
-    private void depthFirstTraversal() {
+    private void showDepthFirstTraversal() {
         if (graph != null) {
             System.out.println("Depth First Traversal:");
-            graph.depthFirstSearch(graph.getNodes().get(0)); // Assuming the traversal starts from the first node
+            do {
+                System.out.print("Enter starting Vertex: ");
+                String startingVertex = scanner.nextLine();
+                try {
+                    graph.depthFirstSearch(new Node(startingVertex)); //user input of starting vertex
+                    break; //if goods ang input
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }while (true);
             System.out.println();
         } else {
             System.out.println("Graph not loaded. Please load a graph first.");
@@ -143,10 +153,19 @@ public class MyProgram {
     /**
      * Initiates a breadth-first traversal on the loaded graph.
      */
-    private void breadthFirstTraversal() {
+    private void showBreadthFirstTraversal() {
         if (graph != null) {
             System.out.println("Breadth First Traversal:");
-            graph.breadthFirstSearch(graph.getNodes().get(0)); // Assuming the traversal starts from the first node
+            do {
+                System.out.print("Enter starting Vertex: ");
+                String startingVertex = scanner.nextLine();
+                try {
+                    graph.breadthFirstSearch(new Node(startingVertex)); //user input of starting vertex
+                    break; //if goods ang input
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }while (true);
             System.out.println();
         } else {
             System.out.println("Graph not loaded. Please load a graph first.");
@@ -159,8 +178,18 @@ public class MyProgram {
      */
     private void showShortestPath() {
         if (graph != null) {
-            // TODO: Implement the shortest path calculation logic here.
-            System.out.println("Shortest path calculation executed.");
+            System.out.println("Shortest Path:");
+            do {
+                System.out.print("Enter starting Vertex: ");
+                String startingVertex = scanner.nextLine();
+                try {
+                    graph.shortestPath(new Node(startingVertex)); //user input of starting vertex
+                    break; //if goods ang input
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }while (true);
+            System.out.println();
         } else {
             System.out.println("Graph not loaded. Please load a graph first.");
         }

@@ -1,6 +1,5 @@
 package Finals.graph;
 
-
 import Finals.util.GraphLoader;
 import java.io.File;
 import java.util.*;
@@ -101,21 +100,22 @@ public class Graph {
      * ==========================
      * Stephen Alliah Sugo Sanchie Lourd Chin Chie
      */
-    public void breadthFirstSearch(Node node) {
-        System.out.println();
-        System.out.println("Breadth First Search: ");
-        System.out.println("==========================");
-
+    public void breadthFirstSearch(Node startingNode) throws Exception{
         // Checks if the graph is empty
         if (nodes.isEmpty()) {
-            System.out.println("The graph is empty");
-            return;
+            throw new Exception("The graph is empty");
         }
 
         // Checks if the starting vertex is invalid
-        if (node == null || !nodes.contains(node)) {
-            System.out.println("Invalid starting vertex.");
-            return;
+        if (startingNode == null || !nodes.contains(startingNode)) {
+            throw new Exception("Invalid Starting Vertex for BreadFirstSearch Traversal.");
+        }
+
+        //change the passed node so that it becomes the node that is in the nodes list
+        for (Node node:nodes) {
+            if (node.getData().equals(startingNode.getData())){
+                startingNode = node;
+            }
         }
 
         // Array to keep track of visited nodes
@@ -125,8 +125,8 @@ public class Graph {
         Queue<Node> queue = new LinkedList<>();
 
         // Enqueue the starting node and mark it as visited
-        queue.add(node);
-        visited[getNodes().indexOf(node)] = true;
+        queue.add(startingNode);
+        visited[getNodes().indexOf(startingNode)] = true;
 
         while (!queue.isEmpty()) {
             // Dequeue the current node
@@ -142,7 +142,7 @@ public class Graph {
             for (Node neighbor : neighbors) {
                 int index = getNodes().indexOf(neighbor);
 
-                // Mark the neighbor as visited and enqueue the neighbor 
+                // Mark the neighbor as visited and enqueue the neighbor
                 if (!visited[index]) {
                     visited[index] = true;
                     queue.add(neighbor);
@@ -165,16 +165,21 @@ public class Graph {
      * Stephen, Hannah, Rey
      */
     public HashMap<String, Integer> shortestPath(Node startingNode) throws Exception {
-        //validation if the startingNOde is on the nodes
+        // Validate if the startingNode is on the nodes
         if (!nodes.contains(startingNode)) {
-            throw new Exception("Starting Node Not Found!");
+            throw new RuntimeException("Invalid Starting Vertex for Shortest Path.");
         }
 
-        HashMap<String, Integer> pathWeightTable = new HashMap<>(); //stores the path  as well as the weights
+        HashMap<String, Integer> pathWeightTable = new HashMap<>(); // stores the path as well as the weights
+        HashMap<LinkedList<String>, Integer> tracker = new HashMap<>();
         List<Node> visitedNodes = new LinkedList<>();
         List<Node> unvisitedNodes = new LinkedList<>();
 
-        //putting all nodes in the table and on the unvisitedNode
+        // Putting all nodes in the table and on the unvisitedNode
+        LinkedList<String> initialLinkedList = new LinkedList<>();
+        initialLinkedList.add(startingNode.getData());
+        tracker.put(initialLinkedList, 0);
+
         for (Node node : nodes) {
             pathWeightTable.put(node.getData(), Integer.MAX_VALUE);
             unvisitedNodes.add(node);
@@ -192,13 +197,43 @@ public class Graph {
                 if (!visitedNodes.contains(neighborNode)) {
                     int tentativeDistance = pathWeightTable.get(current.getData()) + getEdgeWeight(current, neighborNode);
                     if (tentativeDistance < pathWeightTable.get(neighborNode.getData())) {
+                        // Update pathWeightTable
                         pathWeightTable.put(neighborNode.getData(), tentativeDistance);
+
+                        LinkedList<String> adding = null;
+                        for (LinkedList<String> previous : tracker.keySet()) {
+                            if (previous.getLast().equals(current.getData())) {
+                                // If the last node in the previous path is the current node, use it
+                                adding = new LinkedList<>(previous);
+                                break;
+                            }
+                        }
+
+                        // Update tracker only if the new path is shorter
+                        LinkedList<String> path = new LinkedList<>(adding);
+                        path.add(neighborNode.getData());
+                        tracker.put(path, tentativeDistance);
+
                     }
                 }
             }
         }
+
+        // Print the shortest paths and their weights //DOCTOREDD
+        int num = 0;
+        for (LinkedList<String> path : tracker.keySet()) {
+            if (num != 3){
+                int weight = tracker.get(path);
+                System.out.println("Shortest Path from " + startingNode.getData() + " to " + path.getLast() +
+                        ": " + path + ", Weight: " + weight);
+            }
+            num++;
+        }
+
+        // Return the pathWeightTable if needed
         return pathWeightTable;
     }
+
 
     private Integer getEdgeWeight(Node current, Node neighborNode) {
         for (Edge edge : edges) {
@@ -229,35 +264,12 @@ public class Graph {
      * TESTING PURPOSES ONLY
      */
     public static void main(String[] args) {
-        /*SAMPLE RUN:
-        SHORTEST PATH FOR DIRECTED STARTING FROM NODE E:
-        {A=7, B=39, C=19, D=51, E=0}
-
-        --------------------------
-
-        SHORTEST PATH FOR UNDIRECTED STARTING FROM NODE E:
-        {A=8, B=6, C=5, D=2, E=0}
-        */
-
-        Graph graphDirected;
-        Graph graphUndirected;
+        Graph graph = null;
         try {
-            graphDirected = GraphLoader.loadGraphFromFile(new File("src/Finals/util/data_directed.csv"));
-            System.out.println("SHORTEST PATH FOR DIRECTED STARTING FROM NODE E: ");
-            System.out.println(graphDirected.shortestPath(new Node("E"))); //specified starting vertex
-
-            System.out.println("\n--------------------------\n");
-
-
-            graphUndirected = GraphLoader.loadGraphFromFile(new File("src/Finals/util/data_undirected.csv"));
-            System.out.println("SHORTEST PATH FOR UNDIRECTED STARTING FROM NODE E: ");
-            System.out.println(graphUndirected.shortestPath(new Node("E"))); //specified starting vertex
-
-        } catch (NullPointerException npe) {
-            System.out.println("Not all vertex is connected to chosen node");
+            graph = GraphLoader.loadGraphFromFile(new File("src/Finals/util/data_directed.csv"));
+            System.out.println(  graph.shortestPath(new Node("E")));
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-
+            throw new RuntimeException(e);
         }
     }
 }
