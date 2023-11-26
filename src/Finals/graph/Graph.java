@@ -96,6 +96,12 @@ public class Graph {
         boolean[] visited = new boolean[nodeCount];
     }
 
+    /**
+     * A helper function for DFS traversal starting from a specific node.
+     *
+     * @param currentNode The current node being visited.
+     * @param visited     An array to track visited nodes.
+     */
     private void DFSUtil(Node currentNode, boolean[] visited) {
         if(currentNode == null){
             return;
@@ -103,7 +109,6 @@ public class Graph {
         // Mark the current node as visited and print it
         System.out.print(currentNode.getData() + " ");
         visited[nodes.indexOf(currentNode)] = true;
-
     }
 
 
