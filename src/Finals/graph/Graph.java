@@ -1,6 +1,7 @@
 package Finals.graph;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -118,6 +119,14 @@ public class Graph {
         // Mark the current node as visited and print it
         System.out.print(currentNode.getData() + " ");
         visited[nodes.indexOf(currentNode)] = true;
+        // Recur for all the neighbors of the current node
+        Iterator<Node> neighborIterator = currentNode.getNeighbors().iterator();
+        while (neighborIterator.hasNext()) {
+            Node neighbor = neighborIterator.next();
+            if (!visited[nodes.indexOf(neighbor)]) {
+                DFSUtil(neighbor, visited);
+            }
+        }
     }
 
 
