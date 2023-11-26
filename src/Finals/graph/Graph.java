@@ -92,12 +92,10 @@ public class Graph {
 
     }
 
-    /**TODO: DEPTH FIRST SEARCH
-     * Marius Jerwin*/
-    public void depthFirstSearch(){
-        //yung graph na ide depth first search nyo is yung "this"
-
+    public void depthFirstSearch(Node startNode){
+        boolean[] visited = new boolean[nodeCount];
     }
+
 
     /**TODO: DIJKSTRA'S SHORTEST PATH ALGORITHM
      * Stephen, Hannah, Rey*/
@@ -134,22 +132,31 @@ public class Graph {
         Node node1 = new Node("Stephen");
         Node node2 = new Node("Alliah");
         Node node3 = new Node("Sugo");
+        Node node4 = new Node("Sanchie");
+        Node node5 = new Node("Lourd");
+        Node node6 = new Node("Chin");
+        Node node7 = new Node("Chie");
 
         graph.addNode(node1);
         graph.addNode(node2);
         graph.addNode(node3);
+        graph.addNode(node4);
+        graph.addNode(node5);
+        graph.addNode(node6);
+        graph.addNode(node7);
 
         System.out.println(graph.getNodes()); // [Stephen, Alliah, Sugo]
 
-        graph.addEdgeToUndirectedGraph(node1,node2,2); //Stephen ---- Alliah
-        graph.addEdgeToUndirectedGraph(node2,node3,3); //Alliah ---- Sugo
+        graph.addEdgeToUndirectedGraph(node1, node2, 2); //Stephen ---- Alliah
+        graph.addEdgeToUndirectedGraph(node1, node3, 3); //Stephen ---- Sugo
+        graph.addEdgeToUndirectedGraph(node2, node4, 1); //Alliah ---- Sanchie
+        graph.addEdgeToUndirectedGraph(node2, node5, 3); //Alliah ---- Lourd
+        graph.addEdgeToUndirectedGraph(node3, node6, 2); //Sugo ---- Chin
+        graph.addEdgeToUndirectedGraph(node3, node7, 2); //Sugo ---- Chie
 
-        System.out.println(graph.toString());
-        /*
-        Stephen ---- Alliah
-        Alliah ---- Sugo
-        */
+        System.out.print("Depth-First Search: ");
+        graph.depthFirstSearch(node1);
+        System.out.println();
 
-        System.out.println(node2.getNeighbors()); //[Stephen, Sugo]
     }
 }
