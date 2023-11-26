@@ -1,10 +1,13 @@
 package Finals.graph;
 
-import Finals.util.GraphLoader;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+import Finals.util.GraphLoader;
 import java.io.File;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * The DirectedGraph class represents a directed graph, consisting of nodes and directed edges.
@@ -63,13 +66,13 @@ public class Graph {
      * @param end   The ending node of the directed edge.
      */
     public void addEdgeToDirectedGraph(Node start, Node end, int weight) {
-        Edge edge = new Edge(start, end,weight);
+        Edge edge = new Edge(start, end, weight);
         start.getNeighbors().add(end); // Adding the end as the neighbor of the start node
         edges.add(edge);
     }
 
     public void addEdgeToUndirectedGraph(Node firstNode, Node secondNode, int weight) {
-        Edge edge = new Edge(firstNode, secondNode,weight);
+        Edge edge = new Edge(firstNode, secondNode, weight);
         firstNode.getNeighbors().add(secondNode); // Adding the secondNode as the neighbor of the firstNode
         secondNode.getNeighbors().add(firstNode); // Adding the firstNode as the neighbor of the secondNode
         edges.add(edge);
@@ -77,58 +80,115 @@ public class Graph {
 
     /**
      * Returns a string representation of the directed edges in the graph.
+     *
      * @return A string representing the directed edges.
      */
     @Override
-    public String toString(){
-        String temp="";
-        for (Edge edge:edges) {
-            temp+=edge.getFirstNode() + " ---> " +edge.getSecondNode() + " " + edge.getWeight() + "\n";
+    public String toString() {
+        String temp = "";
+        for (Edge edge : edges) {
+            temp += edge.getFirstNode() + " ---> " + edge.getSecondNode() + " " + edge.getWeight() + "\n";
         }
         return temp;
     }
 
-    /**TODO: BREADTH FIRST SEARCH
-     * Lourdene Sanchie*/
-    public void breadthFirstSearch(){
-        //yung graph na ibre breadth first search nyo is yung "this"
+    /**
+     * TODO: BREADTH FIRST SEARCH
+     * Lourdene Sanchie
+     * <p>
+     * SAMPLE RUN
+     * Breadth First Search:
+     * ==========================
+     * Stephen Alliah Sugo Sanchie Lourd Chin Chie
+     */
+    public void breadthFirstSearch(Node node) {
+        System.out.println();
+        System.out.println("Breadth First Search: ");
+        System.out.println("==========================");
 
+        // Checks if the graph is empty
+        if (nodes.isEmpty()) {
+            System.out.println("The graph is empty");
+            return;
+        }
+
+        // Checks if the starting vertex is invalid
+        if (node == null || !nodes.contains(node)) {
+            System.out.println("Invalid starting vertex.");
+            return;
+        }
+
+        // Array to keep track of visited nodes
+        boolean[] visited = new boolean[nodeCount];
+
+        // Queue for traversal
+        Queue<Node> queue = new LinkedList<>();
+
+        // Enqueue the starting node and mark it as visited
+        queue.add(node);
+        visited[getNodes().indexOf(node)] = true;
+
+        while (!queue.isEmpty()) {
+            // Dequeue the current node
+            Node current = queue.poll();
+
+            // Print the data of the current node
+            System.out.print(current.getData() + " ");
+
+            // Get the neighbors of the current node
+            List<Node> neighbors = current.getNeighbors();
+
+            // For-loop that will traverse the neighbors list
+            for (Node neighbor : neighbors) {
+                int index = getNodes().indexOf(neighbor);
+
+                // Mark the neighbor as visited and enqueue the neighbor 
+                if (!visited[index]) {
+                    visited[index] = true;
+                    queue.add(neighbor);
+                }
+            }
+        }
     }
 
-    /**TODO: DEPTH FIRST SEARCH
-     * Marius Jerwin*/
-    public void depthFirstSearch(){
+    /**
+     * TODO: DEPTH FIRST SEARCH
+     * Marius Jerwin
+     */
+    public void depthFirstSearch(Node node) {
         //yung graph na ide depth first search nyo is yung "this"
 
     }
 
-    /**TODO: DIJKSTRA'S SHORTEST PATH ALGORITHM
-     * Stephen, Hannah, Rey*/
-    public HashMap<String, Integer> shortestPath(Node startingNode) throws Exception{
+    /**
+     * TODO: DIJKSTRA'S SHORTEST PATH ALGORITHM
+     * Stephen, Hannah, Rey
+     */
+    public HashMap<String, Integer> shortestPath(Node startingNode) throws Exception {
         //validation if the startingNOde is on the nodes
-        if (!nodes.contains(startingNode)){
+        if (!nodes.contains(startingNode)) {
             throw new Exception("Starting Node Not Found!");
         }
 
-        HashMap<String,Integer> pathWeightTable = new HashMap<>(); //stores the path  as well as the weights
+        HashMap<String, Integer> pathWeightTable = new HashMap<>(); //stores the path  as well as the weights
         List<Node> visitedNodes = new LinkedList<>();
         List<Node> unvisitedNodes = new LinkedList<>();
 
         //putting all nodes in the table and on the unvisitedNode
-        for (Node node: nodes) {
-            pathWeightTable.put(node.getData(),Integer.MAX_VALUE);
+        for (Node node : nodes) {
+            pathWeightTable.put(node.getData(), Integer.MAX_VALUE);
             unvisitedNodes.add(node);
         }
 
         // Set the distance of the starting node to 0
         pathWeightTable.put(startingNode.getData(), 0);
 
-        while (!unvisitedNodes.isEmpty()){
+        while (!unvisitedNodes.isEmpty()) {
             Node current = getMinimumDistanceNode(unvisitedNodes, pathWeightTable);
             unvisitedNodes.remove(current);
             visitedNodes.add(current);
 
-            for (Node neighborNode: current.getNeighbors()) {
+            for (Node neighborNode : current.getNeighbors()) {
                 if (!visitedNodes.contains(neighborNode)) {
                     int tentativeDistance = pathWeightTable.get(current.getData()) + getEdgeWeight(current, neighborNode);
                     if (tentativeDistance < pathWeightTable.get(neighborNode.getData())) {
@@ -141,8 +201,8 @@ public class Graph {
     }
 
     private Integer getEdgeWeight(Node current, Node neighborNode) {
-        for (Edge edge:edges) {
-            if ((edge.getFirstNode().equals(current) && edge.getSecondNode().equals(neighborNode) ) || (edge.getFirstNode().equals(neighborNode) && edge.getSecondNode().equals(current) )){
+        for (Edge edge : edges) {
+            if ((edge.getFirstNode().equals(current) && edge.getSecondNode().equals(neighborNode)) || (edge.getFirstNode().equals(neighborNode) && edge.getSecondNode().equals(current))) {
                 return edge.getWeight();
             }
         }
@@ -165,8 +225,9 @@ public class Graph {
     }
 
 
-
-    /**TESTING PURPOSES ONLY*/
+    /**
+     * TESTING PURPOSES ONLY
+     */
     public static void main(String[] args) {
         /*SAMPLE RUN:
         SHORTEST PATH FOR DIRECTED STARTING FROM NODE E:
@@ -194,8 +255,10 @@ public class Graph {
 
         } catch (NullPointerException npe) {
             System.out.println("Not all vertex is connected to chosen node");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
+
         }
     }
 }
+
