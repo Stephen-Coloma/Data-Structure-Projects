@@ -91,11 +91,60 @@ public class Graph {
     /**
      * TODO: BREADTH FIRST SEARCH
      * Lourdene Sanchie
+     * 
+     * SAMPLE RUN
+     * Breadth First Search:
+     * ==========================
+     * Stephen Alliah Sugo Sanchie Lourd Chin Chie
      */
     public void breadthFirstSearch(Node node) {
-        //yung graph na ibre breadth first search nyo is yung "this"
+        System.out.println();
+        System.out.println("Breadth First Search: ");
+        System.out.println("==========================");
 
+        // Checks if the graph is empty
+        if (nodes.isEmpty()) { 
+            System.out.println("The graph is empty"); 
+            return;
+        }
 
+        // Checks if the starting vertex is invalid
+        if (node == null || !nodes.contains(node)) {
+            System.out.println("Invalid starting vertex.");
+            return;
+        }
+
+        // Array to keep track of visited nodes
+        boolean[] visited = new boolean[nodeCount];
+
+        // Queue for traversal
+        Queue<Node> queue = new LinkedList<>();
+
+        // Enqueue the starting node and mark it as visited
+        queue.add(node);
+        visited[getNodes().indexOf(node)] = true;
+
+        while (!queue.isEmpty()) {
+            // Dequeue the current node
+            Node current = queue.poll();
+
+            // Print the data of the current node
+            System.out.print(current.getData() + " ");
+
+            // Get the neighbors of the current node
+            List<Node> neighbors = current.getNeighbors();
+
+            // For-loop that will traverse the neighbors list
+            for (Node neighbor : neighbors) { 
+                int index = getNodes().indexOf(neighbor);
+
+                // Mark the neighbor as visited and enqueue the neighbor 
+                if (!visited[index]) {
+                    visited[index] = true; 
+                    queue.add(neighbor);
+                }
+            }
+        }
     }
 
     /**
@@ -104,34 +153,7 @@ public class Graph {
      */
     public void depthFirstSearch(Node node) {
         //yung graph na ide depth first search nyo is yung "this"
-        System.out.println();
-        System.out.println("Breadth First Search: ");
-        System.out.println("==========================");
-        if (nodes.isEmpty()) { //checheck niya if empty ba siya
-            System.out.println("The graph is empty"); //print this if empty
-            return;
-        }
-
-        boolean[] visited = new boolean[nodeCount];//gawa ng array for visited nodes
-        Queue<Node> queue = new LinkedList<>();//queue for traversal to
-
-        queue.add(node);
-
-        visited[getNodes().indexOf(node)] = true;//add and gawing true yung unang node kasi visited na siya
-
-        while (!queue.isEmpty()) {
-            Node current = queue.poll(); // remove yung current node sa queue
-            System.out.print(current.getData() + " "); //priprint niya yung current
-
-            List<Node> neighbors = current.getNeighbors(); //list for neighbors ng current node
-            for (Node neighbor : neighbors) { //traverse niya yung list
-                int index = getNodes().indexOf(neighbor);
-                if (!visited[index]) {
-                    queue.add(neighbor); //add niya lahat ng neighbor ng current node sa queue
-                    visited[index] = true; //gawin niyang visited lahat ng neighbors na di pa  visited
-                }
-            }
-        }
+    
     }
 
         /**TODO: DIJKSTRA'S SHORTEST PATH ALGORITHM
@@ -198,8 +220,7 @@ public class Graph {
         */
 
             System.out.println(node2.getNeighbors()); //[Stephen, Sanchie, Lourd]
-
-            graph.depthFirstSearch(node1);
+            graph.breadthFirstSearch(node1);
         }
     }
 
