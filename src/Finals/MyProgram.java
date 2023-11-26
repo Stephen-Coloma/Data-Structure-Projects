@@ -128,33 +128,34 @@ public class MyProgram {
 
     /**
      * Initiates a depth-first traversal on the loaded graph.
-     * Actual implementation should be defined in the Graph class.
      */
     private void depthFirstTraversal() {
         if (graph != null) {
-            // TODO:  Implement the Depth First Traversal logic here.
-            System.out.println("Depth First Traversal executed.");
+            System.out.println("Depth First Traversal:");
+            graph.depthFirstSearch(graph.getNodes().get(0)); // Assuming the traversal starts from the first node
+            System.out.println();
         } else {
             System.out.println("Graph not loaded. Please load a graph first.");
         }
     }
+
 
     /**
      * Initiates a breadth-first traversal on the loaded graph.
-     * Actual implementation should be defined in the Graph class.
      */
     private void breadthFirstTraversal() {
         if (graph != null) {
-            // TODO: Implement the Breadth First Traversal logic here.
-            System.out.println("Breadth First Traversal executed.");
+            System.out.println("Breadth First Traversal:");
+            graph.breadthFirstSearch(graph.getNodes().get(0)); // Assuming the traversal starts from the first node
+            System.out.println();
         } else {
             System.out.println("Graph not loaded. Please load a graph first.");
         }
     }
 
+
     /**
      * Demonstrates the functionality to find the shortest path between two vertices.
-     * The actual path-finding logic should be implemented in the Graph class.
      */
     private void showShortestPath() {
         if (graph != null) {
