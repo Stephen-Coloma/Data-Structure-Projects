@@ -91,9 +91,18 @@ public class Graph {
         //yung graph na ibre breadth first search nyo is yung "this"
 
     }
-
+    /**
+     * Depth First Search (DFS) traversal starting from a specified node.
+     *
+     * @param startNode The starting node for DFS.
+     */
     public void depthFirstSearch(Node startNode){
+        // Mark all the vertices as not visited
         boolean[] visited = new boolean[nodeCount];
+
+
+        // Call the recursive helper function to perform DFS traversal
+        DFSUtil(startNode, visited);
     }
 
     /**
