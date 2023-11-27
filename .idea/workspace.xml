@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="merge: merged branch BFS and shortest into branch stephen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/MyProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/MyProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Finals/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Graph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +70,7 @@
       <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MyProgram">
+  <component name="RunManager" selected="Application.Graph">
     <configuration name="DirectedGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Finals.graph.DirectedGraph" />
       <module name="CS211_9342_MixAndMatch" />
@@ -139,7 +138,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MyProgram" />
         <item itemvalue="Application.Graph" />
         <item itemvalue="Application.GraphLoader" />
         <item itemvalue="Application.UndirectedGraph" />

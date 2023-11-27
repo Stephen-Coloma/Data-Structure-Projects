@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Queue;
 
@@ -91,30 +92,27 @@ public class Graph {
         return temp;
     }
 
+
     /**
-     * TODO: BREADTH FIRST SEARCH
-     * Lourdene Sanchie
-     * <p>
-     * SAMPLE RUN
-     * Breadth First Search:
-     * ==========================
-     * Stephen Alliah Sugo Sanchie Lourd Chin Chie
+     * Breadth First Search (DFS) traversal starting from a specified node.
+     *
+     * @param startNode The starting node for DFS.
      */
-    public void breadthFirstSearch(Node startingNode) throws Exception{
+    public void breadthFirstSearch(Node startNode) throws Exception{
         // Checks if the graph is empty
         if (nodes.isEmpty()) {
             throw new Exception("The graph is empty");
         }
 
         // Checks if the starting vertex is invalid
-        if (startingNode == null || !nodes.contains(startingNode)) {
+        if (startNode == null || !nodes.contains(startNode)) {
             throw new Exception("Invalid Starting Vertex for BreadFirstSearch Traversal.");
         }
 
         //change the passed node so that it becomes the node that is in the nodes list
         for (Node node:nodes) {
-            if (node.getData().equals(startingNode.getData())){
-                startingNode = node;
+            if (node.getData().equals(startNode.getData())){
+                startNode = node;
             }
         }
 
@@ -125,8 +123,8 @@ public class Graph {
         Queue<Node> queue = new LinkedList<>();
 
         // Enqueue the starting node and mark it as visited
-        queue.add(startingNode);
-        visited[getNodes().indexOf(startingNode)] = true;
+        queue.add(startNode);
+        visited[getNodes().indexOf(startNode)] = true;
 
         while (!queue.isEmpty()) {
             // Dequeue the current node
@@ -150,23 +148,67 @@ public class Graph {
             }
         }
     }
-
     /**
-     * TODO: DEPTH FIRST SEARCH
-     * Marius Jerwin
+     * Depth First Search (DFS) traversal starting from a specified node.
+     *
+     * @param startNode The starting node for DFS.
      */
-    public void depthFirstSearch(Node node) {
-        //yung graph na ide depth first search nyo is yung "this"
+    public void depthFirstSearch(Node startNode) throws Exception{
+        // Checks if the graph is empty
+        if (nodes.isEmpty()) {
+            throw new Exception("The graph is empty");
+        }
 
+        // Checks if the starting vertex is invalid
+        if (startNode == null || !nodes.contains(startNode)) {
+            throw new Exception("Invalid Starting Vertex for BreadFirstSearch Traversal.");
+        }
+
+        //change the passed node so that it becomes the node that is in the nodes list
+        for (Node node:nodes) {
+            if (node.getData().equals(startNode.getData())){
+                startNode = node;
+            }
+        }
+
+        // Mark all the vertices as not visited
+        boolean[] visited = new boolean[nodeCount];
+        // Call the recursive helper function to perform DFS traversal
+        DFSUtil(startNode, visited);
     }
 
     /**
-     * TODO: DIJKSTRA'S SHORTEST PATH ALGORITHM
-     * Stephen, Hannah, Rey
+     * A helper function for DFS traversal starting from a specific node.
+     *
+     * @param currentNode The current node being visited.
+     * @param visited     An array to track visited nodes.
      */
-    public HashMap<String, Integer> shortestPath(Node startingNode) throws Exception {
-        // Validate if the startingNode is on the nodes
-        if (!nodes.contains(startingNode)) {
+    private void DFSUtil(Node currentNode, boolean[] visited) {
+        if(currentNode == null){
+            return;
+        }
+        // Mark the current node as visited and print it
+        System.out.print(currentNode.getData() + " ");
+        visited[nodes.indexOf(currentNode)] = true;
+        // Recur for all the neighbors of the current node
+        Iterator<Node> neighborIterator = currentNode.getNeighbors().iterator();
+        while (neighborIterator.hasNext()) {
+            Node neighbor = neighborIterator.next();
+            if (!visited[nodes.indexOf(neighbor)]) {
+                DFSUtil(neighbor, visited);
+            }
+        }
+    }
+
+
+    /**
+     * Method that performs the shortest path algorithm (dijkstra's algorithm)
+     *
+     * @param startNode the node to which the traversal starts from to all other nodes
+     */
+    public void shortestPath(Node startNode) throws Exception {
+        // Validate if the startNode is on the nodes
+        if (!nodes.contains(startNode)) {
             throw new RuntimeException("Invalid Starting Vertex for Shortest Path.");
         }
 
@@ -177,7 +219,7 @@ public class Graph {
 
         // Putting all nodes in the table and on the unvisitedNode
         LinkedList<String> initialLinkedList = new LinkedList<>();
-        initialLinkedList.add(startingNode.getData());
+        initialLinkedList.add(startNode.getData());
         tracker.put(initialLinkedList, 0);
 
         for (Node node : nodes) {
@@ -186,7 +228,7 @@ public class Graph {
         }
 
         // Set the distance of the starting node to 0
-        pathWeightTable.put(startingNode.getData(), 0);
+        pathWeightTable.put(startNode.getData(), 0);
 
         while (!unvisitedNodes.isEmpty()) {
             Node current = getMinimumDistanceNode(unvisitedNodes, pathWeightTable);
@@ -222,19 +264,30 @@ public class Graph {
         // Print the shortest paths and their weights //DOCTOREDD
         int num = 0;
         for (LinkedList<String> path : tracker.keySet()) {
+            String pathString="";
+            for (int i = 0; i < path.size(); i++) {
+                // Print the current element
+                pathString+=path.get(i);
+
+                // Add a dash if it's not the last element
+                if (i < path.size() - 1) {
+                    pathString+=(" -> ");
+                }
+            }
+
             if (num != 3){
                 int weight = tracker.get(path);
-                System.out.println("Shortest Path from " + startingNode.getData() + " to " + path.getLast() +
-                        ": " + path + ", Weight: " + weight);
+                System.out.println("From " + startNode.getData() + " to " + path.getLast() +
+                        ": \n" + pathString + ", Weight: " + weight + "\n");
             }
             num++;
         }
-
-        // Return the pathWeightTable if needed
-        return pathWeightTable;
     }
 
-
+    /**A helper method for the shortest path method that gets the weight of an edge
+     * @param current the first node
+     * @param neighborNode the second/neighboring node
+     * @return - edge weight*/
     private Integer getEdgeWeight(Node current, Node neighborNode) {
         for (Edge edge : edges) {
             if ((edge.getFirstNode().equals(current) && edge.getSecondNode().equals(neighborNode)) || (edge.getFirstNode().equals(neighborNode) && edge.getSecondNode().equals(current))) {
@@ -244,6 +297,10 @@ public class Graph {
         throw new NoSuchElementException("An edge does not exist");
     }
 
+    /**A helper method for the shortest path method that gets the minimum edge distnace to be used to determine the next node to
+     * be visited in the algorithm.
+     * @param unvisitedNodes list of unvisited nodes
+     * @param pathWeightTable the table used to store the distances*/
     private Node getMinimumDistanceNode(List<Node> unvisitedNodes, HashMap<String, Integer> pathWeightTable) {
         Node minDistanceNode = null;
         int minDistance = Integer.MAX_VALUE;
@@ -267,10 +324,13 @@ public class Graph {
         Graph graph = null;
         try {
             graph = GraphLoader.loadGraphFromFile(new File("src/Finals/util/data_directed.csv"));
-            System.out.println(  graph.shortestPath(new Node("E")));
+            graph.shortestPath(new Node("E"));
+            graph.breadthFirstSearch(new Node("A"));
+            graph.depthFirstSearch(new Node("A"));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 }
+
 
