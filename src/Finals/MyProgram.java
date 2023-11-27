@@ -97,13 +97,15 @@ public class MyProgram {
         System.out.println("You can perform depth-first and breadth-first traversals,");
         System.out.println("as well as find the shortest path between vertices.");
         System.out.println("------------------------------------------------------");
+        System.out.print("Please enter to continue...");
+        scanner.nextLine();
     }
 
     /**
      * Displays the menu options for the user.
      */
     private void displayMenu() {
-        System.out.println("------------------------------------------------------");
+        System.out.println("\n------------------------------------------------------");
         System.out.println("Menu:");
         System.out.println("1. Load file containing the graph's data");
         System.out.println("2. Perform Depth First Traversal of the graph");
@@ -117,11 +119,27 @@ public class MyProgram {
      * Handles loading a graph from a user-specified file path.
      */
     private void loadGraph() {
-        System.out.print("Enter the file path: ");
+        System.out.println("\nTo be able to read your graph data by the program, you must have this file content:");
+        System.out.println("-----------------------------------------------------------------------------------");
+        System.out.println("1. Specify the kind of graph it is on the first line. (i.e. DIRECTED or UNDIRECTED)");
+        System.out.println("2. On succeeding line, make sure that it is comma separated.");
+        System.out.println("3. A,B,6 means A has an edge to B whose weight is 6.");
+        System.out.println("4. We have default file called \"data_directed.csv\" and \"data_undirected.csv you can choose if you want.");
+        System.out.println("\nSample Data stored as csv.");
+        System.out.println("UNDIRECTED");
+        System.out.println("A,B,2");
+        System.out.println("A,C,12");
+        System.out.println("B,C,4");
+        System.out.println("C,B,5");
+        System.out.println("A,D,9");
+
+        System.out.print("\nEnter the file path: ");
         String path = "src/Finals/util/"+scanner.nextLine();
         try {
             graph = GraphLoader.loadGraphFromFile(new File(path));
             System.out.println("Graph loaded successfully.");
+            System.out.print("Please enter to continue...");
+            scanner.nextLine();
         } catch (Exception e) {
             System.out.println("Error loading graph: " + e.getMessage());
         }
@@ -132,20 +150,23 @@ public class MyProgram {
      */
     private void showDepthFirstTraversal() {
         if (graph != null) {
-            System.out.println("Depth First Traversal:");
             do {
                 System.out.print("Enter starting Vertex: ");
                 String startingVertex = scanner.nextLine();
                 try {
+                    System.out.println("Depth First Traversal:");
                     graph.depthFirstSearch(new Node(startingVertex)); //user input of starting vertex
                     break; //if goods ang input
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }while (true);
-            System.out.println();
+            System.out.print("\nPlease enter to continue...");
+            scanner.nextLine();
         } else {
             System.out.println("Graph not loaded. Please load a graph first.");
+            System.out.print("Please enter to continue...");
+            scanner.nextLine();
         }
     }
 
@@ -155,20 +176,23 @@ public class MyProgram {
      */
     private void showBreadthFirstTraversal() {
         if (graph != null) {
-            System.out.println("Breadth First Traversal:");
             do {
                 System.out.print("Enter starting Vertex: ");
                 String startingVertex = scanner.nextLine();
                 try {
+                    System.out.println("Breadth First Traversal:");
                     graph.breadthFirstSearch(new Node(startingVertex)); //user input of starting vertex
                     break; //if goods ang input
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }while (true);
-            System.out.println();
+            System.out.print("\nPlease enter to continue...");
+            scanner.nextLine();
         } else {
             System.out.println("Graph not loaded. Please load a graph first.");
+            System.out.print("Please enter to continue...");
+            scanner.nextLine();
         }
     }
 
@@ -178,20 +202,23 @@ public class MyProgram {
      */
     private void showShortestPath() {
         if (graph != null) {
-            System.out.println("Shortest Path:");
             do {
                 System.out.print("Enter starting Vertex: ");
                 String startingVertex = scanner.nextLine();
                 try {
+                    System.out.println("Shortest Path:\n");
                     graph.shortestPath(new Node(startingVertex)); //user input of starting vertex
                     break; //if goods ang input
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }while (true);
-            System.out.println();
+            System.out.print("\nPlease enter to continue...");
+            scanner.nextLine();
         } else {
             System.out.println("Graph not loaded. Please load a graph first.");
+            System.out.print("Please enter to continue...");
+            scanner.nextLine();
         }
     }
 }

@@ -261,7 +261,7 @@ public class Graph {
             }
         }
 
-        // Print the shortest paths and their weights //DOCTOREDD
+        // Print the shortest paths and their weights
         int num = 0;
         for (LinkedList<String> path : tracker.keySet()) {
             String pathString="";
@@ -278,7 +278,7 @@ public class Graph {
             if (num != 3){
                 int weight = tracker.get(path);
                 System.out.println("From " + startNode.getData() + " to " + path.getLast() +
-                        ": \n" + pathString + ", Weight: " + weight + "\n");
+                        ": \n" + pathString + ", Weight: " + weight);
             }
             num++;
         }

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="merge: merged branch BFS and shortest into branch stephen">
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="conflict: fixed merge conflict from merging marsjer to stephen branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Finals/MyProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/MyProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Finals/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Graph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +71,7 @@
       <recent name="C:\Users\steph\Desktop\cs211_9342_mixandmatch\src\Midterms\midlab2\tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Graph">
+  <component name="RunManager" selected="Application.MyProgram">
     <configuration name="DirectedGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Finals.graph.DirectedGraph" />
       <module name="CS211_9342_MixAndMatch" />
@@ -138,6 +139,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MyProgram" />
         <item itemvalue="Application.Graph" />
         <item itemvalue="Application.GraphLoader" />
         <item itemvalue="Application.UndirectedGraph" />
@@ -146,12 +148,22 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="conflict: fixed merge conflict from merging marsjer to stephen branch">
+      <option name="closed" value="true" />
+      <created>1701087124951</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701087124951</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: operator '=' for PostfixEvaluator &#10;remove: remove other showValidOperators method in MyProgram" />
     <MESSAGE value="merge: merged branch BFS and shortest into branch stephen" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge: merged branch BFS and shortest into branch stephen" />
+    <MESSAGE value="conflict: fixed merge conflict from merging marsjer to stephen branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="conflict: fixed merge conflict from merging marsjer to stephen branch" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyStack_java$DecryptionHuffmanCode.ic" NAME="DecryptionHuffmanCode Coverage Results" MODIFIED="1698824265345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
