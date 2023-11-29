@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="conflict: fixed merge conflict from merging marsjer to stephen branch">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/MyProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/MyProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/graph/Graph.java" afterDir="false" />
-    </list>
+    <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="conflict: fixed merge conflict from merging marsjer to stephen branch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "stephen",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/dana/IdeaProjects/BSCS 2/src/prelim",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,7 +73,7 @@
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Finals.graph.*" />
+          <option name="PATTERN" value="Finals.finlab.graph.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,11 +82,11 @@
       </method>
     </configuration>
     <configuration name="Graph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Finals.graph.Graph" />
+      <option name="MAIN_CLASS_NAME" value="Finals.finlab.graph.Graph" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Finals.graph.*" />
+          <option name="PATTERN" value="Finals.finlab.graph.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,11 +95,11 @@
       </method>
     </configuration>
     <configuration name="GraphLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Finals.util.GraphLoader" />
+      <option name="MAIN_CLASS_NAME" value="Finals.finlab.util.GraphLoader" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Finals.util.*" />
+          <option name="PATTERN" value="Finals.finlab.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,11 +108,11 @@
       </method>
     </configuration>
     <configuration name="MyProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Finals.MyProgram" />
+      <option name="MAIN_CLASS_NAME" value="Finals.finlab.MyProgram" />
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Finals.*" />
+          <option name="PATTERN" value="Finals.finlab.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,7 +125,7 @@
       <module name="CS211_9342_MixAndMatch" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Finals.graph.*" />
+          <option name="PATTERN" value="Finals.finlab.graph.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

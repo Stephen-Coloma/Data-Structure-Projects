@@ -13,11 +13,11 @@
  * </p>
  */
 
-package Finals;
+package Finals.finlab;
 
-import Finals.graph.Graph;
-import Finals.graph.Node;
-import Finals.util.GraphLoader;
+import Finals.finlab.graph.Graph;
+import Finals.finlab.graph.Node;
+import Finals.finlab.util.GraphLoader;
 
 import java.io.File;
 import java.util.Scanner;
@@ -134,7 +134,7 @@ public class MyProgram {
         System.out.println("A,D,9");
 
         System.out.print("\nEnter the file path: ");
-        String path = "src/Finals/util/"+scanner.nextLine();
+        String path = "src/Finals/finlab/util/"+scanner.nextLine();
         try {
             graph = GraphLoader.loadGraphFromFile(new File(path));
             System.out.println("Graph loaded successfully.");

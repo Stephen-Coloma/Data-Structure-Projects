@@ -1,4 +1,4 @@
-package Finals.graph;
+package Finals.finlab.graph;
 
 /**
  * The Edge class represents a connection between two nodes in a graph.

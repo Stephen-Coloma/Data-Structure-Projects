@@ -1,6 +1,6 @@
-package Finals.graph;
+package Finals.finlab.graph;
 
-import Finals.util.GraphLoader;
+import Finals.finlab.util.GraphLoader;
 import java.io.File;
 import java.util.*;
 import java.util.ArrayList;

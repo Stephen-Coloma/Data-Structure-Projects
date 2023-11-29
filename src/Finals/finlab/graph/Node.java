@@ -1,4 +1,4 @@
-package Finals.graph;
+package Finals.finlab.graph;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
-package Finals.util;
+package Finals.finlab.util;
 
-import Finals.graph.Graph;
-import Finals.graph.Node;
+import Finals.finlab.graph.Graph;
+import Finals.finlab.graph.Node;
 
 import java.io.BufferedReader;
 import java.io.File;
