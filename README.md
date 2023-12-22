@@ -1,12 +1,12 @@
-# CS211_9342_midGroupB
+## CS211_9342_midGroupB
 
-## Group Project 
-
+---
+# Group Project on Data Structures
 A group programming project for the course CS 211 - DATA STRUCTURES (AY 2023-2024).
 
 ### Authors and Acknowledgment
 
-**Group B**
+**Group MixNMatch:**
 1. **COLOMA**, Stephen M.
 2. **GUZMAN**, Sanchie Earl M.
 3. **NONATO**, Marius Glenn M.
@@ -17,19 +17,19 @@ A group programming project for the course CS 211 - DATA STRUCTURES (AY 2023-202
 
 ---
 
-## Group Project 1: Comparative Analysis of Sorting Algorithms
+# PRELIM PROJECTS
+## 1. Comparative Analysis of Sorting Algorithms
 
-This project aims to perform a comparative analysis of three sorting algorithms: Bubble Sort, Insertion Sort, and Selection Sort.
+This project aims to perform a comparative analysis of three sorting algorithms. Dataset of various sizes
+and scenarios were utilized to compare the performance of the three sorting algorithms. Further, a detailed comparison paper were  
+the requirement for this project.
 
-### Sorting Util Classes
 
-- **Prelims.Project1.BubbleSort.java**: Contains the implementation of the Bubble Sort algorithm.
+### Sorting Algorithms:
 
-- **Prelims.Project1.InsertionSort.java**: Holds the implementation of the Insertion Sort algorithm.
-
-- **Prelims.Project1.SelectionSort.java**: Features the implementation of the Selection Sort algorithm.
-
-### Technical Report, Data Files, and More
+- **Bubble Sort Algorithm**
+- **Insertion Sort Algorithm**
+- **Selection Sort Algorithm**
 
 For a report of our findings, methodology, and results, refer to our detailed [MixAndMatchPrelimGroupProjectOnAlgorithmAnalysis](https://docs.google.com/document/d/1gKtJAHLXlthI0EKCrLfHiYVjrzdE2HUzpNh-_AHTRSQ/edit).
 
@@ -37,89 +37,41 @@ Data files for various sizes and scenarios can be found in the `Prelims.Project1
 
 ---
 
-## Group Project 2: Linked List-based Implementation
+## 2. LinkedList Implementation and Application
 
-This section provides information about our second project, which utilizes linked lists for its implementation.
+In this project, we were tasked to illustrate a real life application of the linked list data structure in representing data.
+The project imitates the Google Classroom and a "list of list of list" were utilized to represent the courses, course terms and term activities.
+Furthermore, CRUD (Creat, Read, Update, and Delete) operations were implemented in the application as it is required for this project.
 
-### GUI and Utility Classes
-
-- **Prelims.Project2.GUI**: Describes the primary GUI components of our application.
-
-- **Prelims.Project2.UtilGUI**: Contains utility GUI classes that support the main GUI.
-
-- **Prelims.Project2.LinkedListImplementation**: Provides the core linked list functionality for our system.
-
-### Sample Run
-
-1. On course list page
-
-![Alt Text](src/Prelims/Project2/assets/README/CourseListPage.png)
-
-
-2. Adding course in course list
-
-![Alt Text](src/Prelims/Project2/assets/README/AddCourseInList.png)
-
-
-3. Editing course in course list
-
-![Alt Text](src/Prelims/Project2/assets/README/EditCourseInList.png)
-
-
-4. On term list page
-
-![Alt Text](src/Prelims/Project2/assets/README/TermListPage.png)
-
-
-5. On topic list page with selected term
-
-![Alt Text](src/Prelims/Project2/assets/README/SelectedTermAndTopicListPage.png)
-
-
-6. Adding topic in topic list
-
-![Alt Text](src/Prelims/Project2/assets/README/AddTopicInList.png)
-
-
-7. Editing topic in topic list
-
-![Alt Text](src/Prelims/Project2/assets/README/EditTopicInList.png)
-
-
-8. On module and task page
-
-![Alt Text](src/Prelims/Project2/assets/README/ModuleAndTaskPage.png)
 
 ---
 
-## Troubleshooting
+# MIDTERM PROJECTS
+## 1. Infix to Postfix and Postfix Evaluation
+The goal of this project is to create a program that can efficiently convert an infix mathematical expression into its equivalent postfix form. In addition to this conversion, the project also aims to evaluate the postfix expression and determine its numerical value. The underlying logic of the program relies on the use of a stack data structure to manage the order of operations and efficiently process the expressions.
 
-For any questions or further assistance regarding the projects, reach out to our project team:
+### Allowed Operations:
+1. Addition (+)
+2. Subtraction (-)
+3. Multiplication (*)
+4. Division (/)
+5. Exponentiation (^)
+6. Equal Symbol (=)
 
-- Stephen M. COLOMA
-- Sanchie Earl M. GUZMAN
-- Marius Glenn M. NONATO
-- Hannah T. RAGUDOS
-- Jerwin Kyle R. RAMOS
-- Rey Daniel L. ROQUE
-- Lourdene Eira C. SANTOS
+---
+## 2. Huffman Coding
+In this project, a program were developed to emulate huffman coding. The user is able to enter a set of characters, strings of paragraphs and the program automatically creates the huffman code for each character in the given text.
+Furthermore, the program calculates the storage savings in using the huffman code compared to ASCII encodings. 
+Tree data structure were utilized in this project
+### Other functionalities include: 
+
+- Encrypting entered text to huffman code
+- Decrypting huffman code to equivalent text
+- Count frequency of character occurrences
 
 ---
 
-## General Instructions
-
-For instructions on working with the source code:
-
-1. Clone the project.
-2. Create a feature branch.
-3. Edit the source code.
-4. Commit changes.
-5. Push the feature branch.
-6. Create a merge request.
-
-**Note:** Avoid merging changes directly into the main branch. Always use the feature branch and merge request method.
-
----
-
-Explore and learn from our comparative analysis and linked list implementation.
-
+# FINAL PROJECTS
+## 1. Breadth First Search, Depth First Search, Dijkstra's Shortest Path 
+This project aims to represent the BFS, DFS and Dijkstra's Algorithm in a menu based program. The program is designed to be able to perform both in directed and undirected type of graphs. The graph is loaded in a file that contains information of the graph.
+Graph, Stack and Queue data structures were utilised in this project.

@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc1f1fcf-f5ac-437c-941b-b5e8a50432fb" name="Changes" comment="conflict: fixed merge conflict from merging marsjer to stephen branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/finlab/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/finlab/graph/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Finals/finlab/util/GraphLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Finals/finlab/util/GraphLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +164,7 @@
       <updated>1701869382609</updated>
       <workItem from="1701869386389" duration="90000" />
       <workItem from="1702370507813" duration="674000" />
+      <workItem from="1703249345072" duration="2737000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
