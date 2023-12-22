@@ -61,9 +61,9 @@ The goal of this project is to create a program that can efficiently convert an 
 ---
 ## 2. Huffman Coding
 In this project, a program were developed to emulate huffman coding. The user is able to enter a set of characters, strings of paragraphs and the program automatically creates the huffman code for each character in the given text.
-Furthermore, the program calculates the storage savings in using the huffman code compared to ASCII encodings. 
+Furthermore, the program calculates the storage savings in using the huffman code compared to ASCII encodings.
 Tree data structure were utilized in this project
-### Other functionalities include: 
+### Other functionalities include:
 
 - Encrypting entered text to huffman code
 - Decrypting huffman code to equivalent text
@@ -72,6 +72,6 @@ Tree data structure were utilized in this project
 ---
 
 # FINAL PROJECTS
-## 1. Breadth First Search, Depth First Search, Dijkstra's Shortest Path 
+## 1. Breadth First Search, Depth First Search, Dijkstra's Shortest Path
 This project aims to represent the BFS, DFS and Dijkstra's Algorithm in a menu based program. The program is designed to be able to perform both in directed and undirected type of graphs. The graph is loaded in a file that contains information of the graph.
 Graph, Stack and Queue data structures were utilised in this project.
