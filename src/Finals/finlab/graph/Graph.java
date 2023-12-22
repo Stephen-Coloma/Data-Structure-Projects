@@ -58,23 +58,16 @@ public class Graph {
         }
     }
 
-    /**
-     * Adds a directed edge to the graph, connecting the specified start and end nodes.
-     * Updates the neighbor list of the start node.
-     *
-     * @param start The starting node of the directed edge.
-     * @param end   The ending node of the directed edge.
-     */
-    public void addEdgeToDirectedGraph(Node start, Node end, int weight) {
-        Edge edge = new Edge(start, end, weight);
-        start.getNeighbors().add(end); // Adding the end as the neighbor of the start node
+
+    public void addEdgeToDirectedGraph(Edge edge) {
+        // Adding the end as the neighbor of the start node
+        edge.getFirstNode().getNeighbors().add(edge.getSecondNode());
         edges.add(edge);
     }
 
-    public void addEdgeToUndirectedGraph(Node firstNode, Node secondNode, int weight) {
-        Edge edge = new Edge(firstNode, secondNode, weight);
-        firstNode.getNeighbors().add(secondNode); // Adding the secondNode as the neighbor of the firstNode
-        secondNode.getNeighbors().add(firstNode); // Adding the firstNode as the neighbor of the secondNode
+    public void addEdgeToUndirectedGraph(Edge edge) {
+        edge.getFirstNode().getNeighbors().add(edge.getSecondNode()); // Adding the secondNode as the neighbor of the firstNode
+        edge.getSecondNode().getNeighbors().add(edge.getFirstNode()); // Adding the firstNode as the neighbor of the secondNode
         edges.add(edge);
     }
 

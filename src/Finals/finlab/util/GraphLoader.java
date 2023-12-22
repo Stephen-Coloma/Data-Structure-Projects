@@ -37,7 +37,7 @@ public class GraphLoader {
 
                         for (Node node:nodeList) {
                             if (start.toString().equals(node.toString())){
-                                graph.addEdgeToDirectedGraph(node,end,weight); // edge for the directed graph
+//                                graph.addEdgeToDirectedGraph(node,end,weight); // edge for the directed graph
                             }
                         }
                     }
@@ -54,7 +54,7 @@ public class GraphLoader {
 
                         for (Node node:nodeList) {
                             if (start.toString().equals(node.toString())){
-                                graph.addEdgeToUndirectedGraph(node,end,weight);
+//                                graph.addEdgeToUndirectedGraph(node,end,weight);
                             }
                         }
                     }
